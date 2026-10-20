@@ -1,0 +1,53 @@
+name: Export offline bilingual review ZIP
+
+on:
+  push:
+    branches: [review/offline-bilingual-export-20261021]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble reviewed ZIP
+        shell: pwsh
+        run: |
+          $zip = Join-Path $env:GITHUB_WORKSPACE 'zoro-offline-bilingual-review.zip'
+          $output = [System.IO.File]::Create($zip)
+          try {
+            foreach ($part in Get-ChildItem -LiteralPath 'review-zip-parts' -Filter '*.part' | Sort-Object Name) {
+              $inputPart = [System.IO.File]::OpenRead($part.FullName)
+              try { $inputPart.CopyTo($output) } finally { $inputPart.Dispose() }
+            }
+          } finally { $output.Dispose() }
+          $expected = (Get-Content -Raw -LiteralPath 'review-zip-parts/zip-sha256.txt').Trim()
+          if ((Get-FileHash -Algorithm SHA256 -LiteralPath $zip).Hash.ToLowerInvariant() -ne $expected) { throw 'Reassembled ZIP checksum mismatch' }
+      - name: Verify ZIP extraction and manifest
+        shell: pwsh
+        run: |
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $zip = Join-Path $env:GITHUB_WORKSPACE 'zoro-offline-bilingual-review.zip'
+          $destination = Join-Path $env:RUNNER_TEMP 'zoro-review-validation'
+          [System.IO.Compression.ZipFile]::ExtractToDirectory($zip, $destination)
+          $manifest = Get-Content -Raw -LiteralPath (Join-Path $destination 'MANIFEST.json') | ConvertFrom-Json
+          foreach ($entry in $manifest.files) {
+            $path = Join-Path $destination $entry.path
+            if (!(Test-Path -LiteralPath $path -PathType Leaf)) { throw "Missing file: $($entry.path)" }
+            $actual = (Get-FileHash -Algorithm SHA256 -LiteralPath $path).Hash.ToLowerInvariant()
+            if ($actual -ne $entry.sha256) { throw "Checksum mismatch: $($entry.path)" }
+          }
+          $required = @('README_FOR_CHATGPT.md', 'changes/git-diff.patch', 'tests/TEST_RESULTS.md', 'verification/FEATURE_VERIFICATION.md', 'source/apps/desktop/src/routes/reader.tsx', 'source/apps/desktop/src/components/reader/BilingualTextViewer.tsx', 'source/apps/desktop/src-tauri/src/commands/offline_translation.rs')
+          foreach ($path in $required) { if (!(Test-Path -LiteralPath (Join-Path $destination $path))) { throw "Missing required file: $path" } }
+          Write-Output "Verified $($manifest.files.Count) manifest files and all required deliverables."
+          Get-FileHash -Algorithm SHA256 -LiteralPath $zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zoro-offline-bilingual-review
+          path: ${{ runner.temp }}/zoro-review-validation/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,14 @@
+{
+    "status":  "PASS",
+    "zipName":  "zoro-offline-bilingual-review.zip",
+    "featureCommit":  "d24f66b03d9f7f3d7a60156c77be9b0d0e8e9ddf",
+    "bytes":  10084478,
+    "sha256":  "8d2ff1d9d60c1c4ffdcc9fef8c2663b50be042f149a325b59a8830491e9025b2",
+    "archiveEntries":  463,
+    "manifestFilesVerified":  462,
+    "requiredFilesVerified":  20,
+    "extraction":  "PASS",
+    "allFileHashes":  "PASS",
+    "forbiddenEntries":  "none",
+    "verifiedUTC":  "2026-10-20T19:18:49.7991340Z"
+}
