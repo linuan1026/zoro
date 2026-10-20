@@ -10,6 +10,7 @@
 
 @layer base {
 	:root {
+		color-scheme: light;
 		--background: 0 0% 100%;
 		--foreground: 0 0% 3.9%;
 		--card: 0 0% 100%;
@@ -33,6 +34,7 @@
 	}
 
 	.dark {
+		color-scheme: dark;
 		--background: 222 47% 11%;
 		--foreground: 210 40% 98%;
 		--card: 222 47% 11%;
@@ -56,6 +58,12 @@
 }
 
 @layer base {
+	/* WebView2 native popups need explicit colors as well as color-scheme. */
+	select option,
+	select optgroup {
+		background-color: hsl(var(--popover));
+		color: hsl(var(--popover-foreground));
+	}
 	* {
 		@apply border-border;
 	}

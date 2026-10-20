@@ -950,6 +950,9 @@ export function Settings() {
 		try {
 			const config = await commands.getAiConfig();
 			setAiConfig(config);
+			// Refresh persisted metadata without replacing an editable draft. In
+			// particular, an AI save may finish while PDF auto-save is pending.
+			if (aiConfigLoadedRef.current) return;
 			setAiNativeLang(config.nativeLang);
 			setAiAutoTranslate(config.autoTranslate);
 			setPromptTitleSystem(config.translationPrompts.titleSystem);
@@ -1698,7 +1701,11 @@ export function Settings() {
 	const handleResetPrompts = async () => {
 		try {
 			await commands.resetTranslationPrompts();
-			await loadAiConfig();
+			const config = await commands.getAiConfig();
+			setPromptTitleSystem(config.translationPrompts.titleSystem);
+			setPromptTitleUser(config.translationPrompts.titleUser);
+			setPromptAbstractSystem(config.translationPrompts.abstractSystem);
+			setPromptAbstractUser(config.translationPrompts.abstractUser);
 		} catch (err) {
 			logger.error("settings", "Failed to reset prompts", err);
 		}
@@ -1738,11 +1745,14 @@ export function Settings() {
 					extraArgs: pdfExtraArgs,
 				},
 			});
-			setPdfCustomApiKey("");
+			setPdfCustomApiKey((current) =>
+				current === pdfCustomApiKey ? "" : current,
+			);
 			await loadAiConfig();
 			await fetchAiConfig();
 		} catch (err) {
 			logger.error("settings", "Failed to save PDF translation config", err);
+			setPdfTestResult({ ok: false, msg: String(err) });
 		} finally {
 			setPdfSaving(false);
 		}

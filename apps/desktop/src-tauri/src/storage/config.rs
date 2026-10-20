@@ -63,3 +63,24 @@ pub fn save_config(data_dir: &Path, config: &AppConfig) -> Result<(), std::io::E
         .map_err(|e| std::io::Error::other(format!("TOML serialize error: {}", e)))?;
     fs::write(&config_path, content)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_pdf_translation_and_custom_language_survive_restart() {
+        let dir = std::env::temp_dir().join(format!("zoro-config-{}", uuid::Uuid::new_v4()));
+        fs::create_dir_all(&dir).unwrap();
+        let mut config = AppConfig::default();
+        config.general.native_lang = "zh-TW".to_string();
+        config.ai.pdf_translation.enabled = true;
+        config.ai.pdf_translation.custom_api_key = "existing-key".to_string();
+        save_config(&dir, &config).unwrap();
+        let loaded = load_config(&dir);
+        assert!(loaded.ai.pdf_translation.enabled);
+        assert_eq!(loaded.general.native_lang, "zh-TW");
+        assert_eq!(loaded.ai.pdf_translation.custom_api_key, "existing-key");
+        fs::remove_dir_all(&dir).unwrap();
+    }
+}

@@ -442,10 +442,12 @@ pub async fn update_ai_config(
     state: State<'_, AppState>,
     input: UpdateAiConfigInput,
 ) -> Result<(), String> {
-    let mut config = state
+    let mut persisted_config = state
         .config
         .lock()
         .map_err(|e| format!("Config lock error: {}", e))?;
+
+    let mut config = persisted_config.clone();
 
     if let Some(provider) = input.provider {
         config.ai.provider = provider;
@@ -572,6 +574,7 @@ pub async fn update_ai_config(
     crate::storage::config::save_config(&state.data_dir, &config)
         .map_err(|e| format!("Failed to save config: {}", e))?;
 
+    *persisted_config = config;
     Ok(())
 }
 

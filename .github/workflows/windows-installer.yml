@@ -1,0 +1,38 @@
+name: Windows installer (branch)
+
+on:
+  push:
+    branches: [fix/windows-pdf-settings-select]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @zoro/desktop type-check
+      - run: node --test apps/desktop/tests/settings-regression.test.mjs
+      - name: Build MCP sidecar
+        shell: bash
+        run: bash scripts/build-mcp-sidecar.sh --release --target x86_64-pc-windows-msvc
+      - name: Build NSIS installer without updater signing
+        working-directory: apps/desktop
+        shell: bash
+        run: pnpm tauri build --bundles nsis --config '{"bundle":{"createUpdaterArtifacts":false}}'
+      - run: cargo test --all
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Zoro-windows-x64-installer
+          path: target/release/bundle/nsis/*-setup.exe
+          if-no-files-found: error
