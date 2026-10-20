@@ -71,6 +71,7 @@ test("React sentence marks cover multiple formatting nodes, tables, one-to-many 
 });
 
 const dom = new JSDOM('<div id="test-root"></div>', { url: "https://zoro.invalid" });
+Object.defineProperty(globalThis, "navigator", { configurable: true, value: dom.window.navigator });
 Object.assign(globalThis, { window: dom.window, document: dom.window.document, Element: dom.window.Element, HTMLElement: dom.window.HTMLElement, NodeFilter: dom.window.NodeFilter, MutationObserver: dom.window.MutationObserver, IS_REACT_ACT_ENVIRONMENT: true });
 globalThis.ResizeObserver = class { observe() {} disconnect() {} };
 globalThis.requestAnimationFrame = (callback) => setTimeout(callback, 0);

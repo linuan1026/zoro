@@ -33,6 +33,14 @@ wrong-cwd 紀錄保留，回到專案根目錄重跑 Rustfmt 退出碼為 0。�
 14 檔（含 zh-TW.json）以暫存 Git index 分別模擬 autocrlf=true/false checkout：
 皆為 LF、與 Git blob 位元組相等，兩種模式 Biome 均通過，詳見 checkout-results.json。
 
+初次 V3 Windows CI 在語言模擬測試為 8/9：Node 22 自帶全域 navigator 的英文值，
+與 JSDOM window.navigator 的 zh-TW 不同，導致語言偵測的原斷言失敗。真實瀏覽器兩者
+相同。測試已明確將 global navigator 設為 JSDOM navigator，不修改正式語言邏輯或
+放寬斷言，並以 Node 22 重新執行全部測試。完整失敗輸出見 ci-initial-failure.txt。
+
+滑鼠反白另以 useMemo 保留 Markdown/KaTeX 解析，只由 React 更新活動 ID 與安全的
+範圍限定樣式；驗證文字節點保持同一 DOM 元素，並用 computedStyle 檢查實際反白顏色。
+
 完整語言測試驗證 1,151 鍵、插值、複數後綴、台灣詞彙、常見簡體殘留、系統語言、
 既有偏好優先與實際 React 重繪。啟動測試驗證初始 false、正常初始化仍連接與手動導覽；
 不是實際全新資料庫與視窗操控測試。請依 FEATURE_VERIFICATION.md 手動驗收。
