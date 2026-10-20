@@ -1,10 +1,16 @@
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 import ReactMarkdown from "react-markdown";
 import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import {
+	rehypeTranslationSearch,
+	safeTranslationUrl,
+	searchParts,
+} from "../../lib/translationContent";
 
 const markdownSchema = {
 	...defaultSchema,
@@ -16,7 +22,10 @@ const markdownSchema = {
 
 export const TranslationMarkdown = memo(function TranslationMarkdown({
 	text,
-}: { text: string }) {
+	query = "",
+	onOpenLink,
+}: { text: string; query?: string; onOpenLink?: (url: string) => void }) {
+	const { t } = useTranslation();
 	return (
 		<ReactMarkdown
 			remarkPlugins={[remarkGfm, remarkMath]}
@@ -24,13 +33,55 @@ export const TranslationMarkdown = memo(function TranslationMarkdown({
 				rehypeRaw,
 				[rehypeSanitize, markdownSchema],
 				[rehypeKatex, { trust: false, strict: "ignore" }],
+				[rehypeTranslationSearch, { query }],
 			]}
 			components={{
-				img: () => null,
-				a: ({ children }) => <span>{children}</span>,
+				img: ({ alt }) => (
+					<span className="block rounded border p-2 text-sm text-muted-foreground">
+						{t("offline.imageBlocked", { alt: alt ?? "" })}
+					</span>
+				),
+				a: ({ children, href }) => {
+					const url = safeTranslationUrl(href);
+					return url ? (
+						<button
+							type="button"
+							title={t("offline.externalLink", { url })}
+							className="cursor-pointer text-primary underline"
+							onClick={() => onOpenLink?.(url)}
+						>
+							{children} ↗
+						</button>
+					) : (
+						<span>{children}</span>
+					);
+				},
 			}}
 		>
 			{text}
 		</ReactMarkdown>
 	);
 });
+
+export function TranslationPlainText({
+	text,
+	query,
+}: { text: string; query: string }) {
+	return (
+		<div className="whitespace-pre-wrap break-words leading-relaxed">
+			{searchParts(text, query).map((part, index) =>
+				part.match ? (
+					<mark
+						key={`${index}-${part.text}`}
+						data-search
+						className="bg-yellow-300 text-black"
+					>
+						{part.text}
+					</mark>
+				) : (
+					part.text
+				),
+			)}
+		</div>
+	);
+}

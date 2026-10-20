@@ -3,6 +3,16 @@
 // See LICENSE file in the project root for full license information.
 
 import { invoke } from "@tauri-apps/api/core";
+import { confirm } from "@tauri-apps/plugin-dialog";
+import { open } from "@tauri-apps/plugin-shell";
+import { openConfirmedTranslationUrl } from "./translationContent";
+
+export const openOfflineTranslationLink = async (
+	value: string,
+	confirmation: string,
+) => {
+	await openConfirmedTranslationUrl(value, () => confirm(confirmation), open);
+};
 
 export interface OfflineTranslation {
 	id: string;

@@ -65,18 +65,48 @@ pub async fn list_offline_translations(
     source_pdf: String,
 ) -> Result<Vec<OfflineTranslation>, String> {
     let dir = translation_dir(&state, &paper_id)?;
-    if !dir.exists() {
-        return Ok(Vec::new());
-    }
+    list_documents(&dir, &source_pdf)
+}
+
+fn list_documents(
+    dir: &std::path::Path,
+    source_pdf: &str,
+) -> Result<Vec<OfflineTranslation>, String> {
+    let entries = match fs::read_dir(dir) {
+        Ok(entries) => entries,
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => return Ok(Vec::new()),
+        Err(error) => return Err(format!("Cannot access translation directory: {error}")),
+    };
     let mut documents = Vec::new();
-    for entry in fs::read_dir(dir).map_err(|e| e.to_string())? {
+    for entry in entries {
         let path = entry.map_err(|e| e.to_string())?.path();
         if path.extension().and_then(|ext| ext.to_str()) != Some("json") {
             continue;
         }
-        let document: OfflineTranslation =
-            serde_json::from_slice(&fs::read(path).map_err(|e| e.to_string())?)
-                .map_err(|e| e.to_string())?;
+        let bytes = match fs::read(&path) {
+            Ok(bytes) => bytes,
+            Err(error) => {
+                tracing::warn!(
+                    "Warning: offline translation {:?} unreadable ({:?})",
+                    path.file_name(),
+                    error.kind()
+                );
+                continue;
+            }
+        };
+        let document: OfflineTranslation = match serde_json::from_slice(&bytes) {
+            Ok(document) => document,
+            Err(error) => {
+                tracing::warn!(
+                    "Warning: offline translation {:?} invalid JSON ({:?}, line {}, column {})",
+                    path.file_name(),
+                    error.classify(),
+                    error.line(),
+                    error.column()
+                );
+                continue;
+            }
+        };
         if document.source_pdf == source_pdf {
             documents.push(document);
         }
@@ -128,6 +158,46 @@ pub async fn delete_offline_translation(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_list_isolates_corruption_and_preserves_sort_and_pdf_filter() {
+        let dir = std::env::temp_dir().join(format!("zoro-list-{}", uuid::Uuid::new_v4()));
+        fs::create_dir_all(&dir).unwrap();
+        for index in 1..=3 {
+            save_document(
+                dir.clone(),
+                &OfflineTranslation {
+                    id: uuid::Uuid::new_v4().to_string(),
+                    source_pdf: "paper.pdf".into(),
+                    name: format!("v{index}.md"),
+                    format: "md".into(),
+                    content: "中文 α".into(),
+                    created_at: format!("2026-10-2{index}T00:00:00Z"),
+                },
+            )
+            .unwrap();
+        }
+        let corrupt = dir.join("broken.json");
+        fs::write(&corrupt, b"{\"content\":").unwrap();
+        fs::write(dir.join("notes.txt"), b"not JSON").unwrap();
+        let listed = list_documents(&dir, "paper.pdf").unwrap();
+        assert_eq!(
+            listed
+                .iter()
+                .map(|doc| doc.name.as_str())
+                .collect::<Vec<_>>(),
+            vec!["v3.md", "v2.md", "v1.md"]
+        );
+        assert!(list_documents(&dir, "other.pdf").unwrap().is_empty());
+        assert_eq!(fs::read(&corrupt).unwrap(), b"{\"content\":");
+        assert!(list_documents(&dir.join("missing"), "paper.pdf")
+            .unwrap()
+            .is_empty());
+        assert!(list_documents(&corrupt, "paper.pdf").is_err());
+        fs::create_dir(dir.join("unreadable.json")).unwrap();
+        assert_eq!(list_documents(&dir, "paper.pdf").unwrap().len(), 3);
+        fs::remove_dir_all(dir).unwrap();
+    }
 
     #[test]
     fn test_translation_paths_reject_traversal() {

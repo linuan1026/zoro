@@ -45,22 +45,66 @@ export function mapTranslationOffset(
 	points: AlignmentPoint[],
 	offset: number,
 	direction: "pdf" | "text",
+	bounds?: AlignmentPoint,
 ): number | null {
-	const target = direction === "pdf" ? "text" : "pdf";
-	if (!points.length || offset < points[0][direction]) return null;
-	let index = 0;
-	while (index + 1 < points.length && points[index + 1][direction] <= offset)
-		index++;
-	const start = points[index];
-	const end = points[index + 1];
-	if (!end) return start[target];
-	const span = end[direction] - start[direction];
-	if (span <= 0) return start[target];
 	return (
-		start[target] +
-		Math.min(1, Math.max(0, (offset - start[direction]) / span)) *
-			(end[target] - start[target])
+		mapTranslationPosition(points, offset, direction, bounds)?.offset ?? null
 	);
+}
+
+export function mapTranslationPosition(
+	points: AlignmentPoint[],
+	offset: number,
+	direction: "pdf" | "text",
+	bounds?: AlignmentPoint,
+): { offset: number; precision: "exact" | "approximate" } | null {
+	const target = direction === "pdf" ? "text" : "pdf";
+	if (!Number.isFinite(offset)) return null;
+	if (
+		bounds &&
+		(!Number.isFinite(bounds.pdf) ||
+			!Number.isFinite(bounds.text) ||
+			bounds.pdf < 0 ||
+			bounds.text < 0)
+	)
+		return null;
+	const valid: AlignmentPoint[] = [];
+	for (const point of points) {
+		const previous = valid[valid.length - 1];
+		if (
+			!Number.isFinite(point.pdf) ||
+			!Number.isFinite(point.text) ||
+			point.pdf < 0 ||
+			point.text < 0
+		)
+			continue;
+		if (bounds && (point.pdf > bounds.pdf || point.text > bounds.text))
+			continue;
+		if (previous && (point.pdf <= previous.pdf || point.text <= previous.text))
+			continue;
+		valid.push(point);
+	}
+	const position = bounds
+		? Math.min(bounds[direction], Math.max(0, offset))
+		: offset;
+	if (!valid.length || position < valid[0][direction]) return null;
+	let index = 0;
+	while (index + 1 < valid.length && valid[index + 1][direction] <= position)
+		index++;
+	const start = valid[index];
+	if (Math.abs(position - start[direction]) < 0.5)
+		return { offset: start[target], precision: "exact" };
+	const end = valid[index + 1] ?? bounds;
+	if (!end) return null;
+	const span = end[direction] - start[direction];
+	if (span <= 0 || end[target] < start[target]) return null;
+	return {
+		offset:
+			start[target] +
+			Math.min(1, Math.max(0, (position - start[direction]) / span)) *
+				(end[target] - start[target]),
+		precision: "approximate",
+	};
 }
 
 export function decodeTranslation(bytes: Uint8Array): string {

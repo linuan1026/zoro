@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   windows:
@@ -24,6 +25,10 @@ jobs:
       - run: pnpm --filter @zoro/desktop type-check
       - run: node --test apps/desktop/tests/settings-regression.test.mjs
       - run: node --test apps/desktop/tests/offline-translations.test.mjs
+      - run: node --test apps/desktop/tests/offline-reliability.test.mjs
+      - run: cargo fmt --all -- --check
+      - name: Lint modified reader files
+        run: pnpm --filter @zoro/desktop exec biome check src/components/reader/BilingualTextViewer.tsx src/components/reader/TranslationMarkdown.tsx src/lib/commands.ts src/lib/offlineTranslation.ts src/lib/translationContent.ts src/lib/translationScroll.ts src/locales/offline.ts
       - name: Build MCP sidecar
         shell: bash
         run: bash scripts/build-mcp-sidecar.sh --release --target x86_64-pc-windows-msvc
@@ -36,4 +41,48 @@ jobs:
         with:
           name: Zoro-windows-x64-installer
           path: target/release/bundle/nsis/*-setup.exe
+          if-no-files-found: error
+
+  review:
+    if: github.ref == 'refs/heads/feat/offline-bilingual-reader'
+    needs: windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Assemble complete review source and build evidence
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/export-offline-review-v2.mjs "$env:RUNNER_TEMP/review-package"
+      - name: Create ZIP, extract and verify every manifest entry
+        shell: pwsh
+        run: |
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $root = "$env:RUNNER_TEMP/review-package"
+          $zip = "$env:RUNNER_TEMP/zoro-offline-bilingual-review-v2.zip"
+          $archive = [System.IO.Compression.ZipFile]::Open($zip, 'Create')
+          try {
+            foreach ($file in Get-ChildItem -LiteralPath $root -Recurse -File -Force) {
+              $relative = [System.IO.Path]::GetRelativePath($root, $file.FullName).Replace('\','/')
+              [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, $file.FullName, $relative, 'Optimal') | Out-Null
+            }
+          } finally { $archive.Dispose() }
+          $extracted = "$env:RUNNER_TEMP/review-verified"
+          [System.IO.Compression.ZipFile]::ExtractToDirectory($zip, $extracted)
+          $manifest = Get-Content -Raw "$extracted/MANIFEST.json" | ConvertFrom-Json
+          foreach ($entry in $manifest.files) {
+            $file = Join-Path $extracted $entry.path
+            if ((Get-FileHash -Algorithm SHA256 -LiteralPath $file).Hash.ToLowerInvariant() -ne $entry.sha256) { throw "Hash mismatch: $($entry.path)" }
+            if ((Get-Item -LiteralPath $file).Length -ne $entry.bytes) { throw "Size mismatch: $($entry.path)" }
+          }
+          Write-Output "Verified $($manifest.files.Count) files; ZIP bytes: $((Get-Item $zip).Length)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zoro-offline-bilingual-review-v2
+          path: ${{ runner.temp }}/review-verified/
+          include-hidden-files: true
           if-no-files-found: error

@@ -1,4 +1,13 @@
 export const offlineEnglish = {
+	exact: "Exact page anchor (page start only)",
+	approximate: "Approximate alignment (between anchors / document tail)",
+	unmapped: "No available mapping here · Independent scrolling",
+	searchScope:
+		"Search visible text, excluding formulas, image descriptions and matches spanning formatting boundaries.",
+	imageBlocked: "[Image blocked for privacy: {{alt}}]",
+	externalLink: "Open in external browser (confirmation required): {{url}}",
+	confirmExternal:
+		"Open this address in your external browser? This requires a network connection.\n{{url}}",
 	import: "Import translation",
 	documents: "Translation documents",
 	versions: "Translation version",
@@ -23,6 +32,13 @@ export const offlineEnglish = {
 };
 
 export const offlineTraditionalChinese: typeof offlineEnglish = {
+	exact: "精確頁碼錨點（僅頁首）",
+	approximate: "近似位置（錨點間／文件末端）",
+	unmapped: "此處無可用對應位置 · 獨立捲動",
+	searchScope: "搜尋可見文字，不包含公式、圖片說明及跨越格式邊界的文字。",
+	imageBlocked: "［基於隱私已停用圖片：{{alt}}］",
+	externalLink: "以外部瀏覽器開啟（需確認）：{{url}}",
+	confirmExternal: "要在外部瀏覽器開啟此網址嗎？此操作需要網路連線。\n{{url}}",
 	import: "匯入翻譯",
 	documents: "翻譯文件",
 	versions: "選擇譯文版本",

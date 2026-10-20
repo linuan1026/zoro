@@ -8,13 +8,15 @@ import {
 	ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import type { OfflineTranslation } from "@/lib/commands";
-import {
-	mapTranslationOffset,
-	splitTranslation,
-} from "@/lib/offlineTranslation";
+import * as commands from "@/lib/commands";
+import { splitTranslation } from "@/lib/offlineTranslation";
+import { bindTranslationScroll } from "@/lib/translationScroll";
 import { useAnnotationStore } from "@/stores/annotationStore";
 import { PdfAnnotationViewer } from "./PdfAnnotationViewer";
-import { TranslationMarkdown } from "./TranslationMarkdown";
+import {
+	TranslationMarkdown,
+	TranslationPlainText,
+} from "./TranslationMarkdown";
 
 export function BilingualTextViewer({
 	document,
@@ -34,7 +36,13 @@ export function BilingualTextViewer({
 		() => splitTranslation(document.content),
 		[document.content],
 	);
-	const anchored = sections.some((section) => section.page !== null);
+	const totalPages = useAnnotationStore((s) => s.totalPages);
+	const anchored = sections.some(
+		(section) => section.page !== null && section.page <= totalPages,
+	);
+	const [precision, setPrecision] = useState<
+		"exact" | "approximate" | "unmapped"
+	>("unmapped");
 	const [sync, setSync] = useState(false);
 	const [fontSize, setFontSize] = useState(17);
 	const [query, setQuery] = useState("");
@@ -43,7 +51,6 @@ export function BilingualTextViewer({
 	const [pageInput, setPageInput] = useState("");
 	const currentPage = useAnnotationStore((s) => s.currentPage);
 	const navigateToPage = useAnnotationStore((s) => s.navigateToPage);
-	const totalPages = useAnnotationStore((s) => s.totalPages);
 
 	const handleJump = (page: number) => {
 		const target = textRef.current?.querySelector<HTMLElement>(
@@ -62,54 +69,59 @@ export function BilingualTextViewer({
 				"[data-original] [class*='_container_']",
 			);
 			if (!pdf) return false;
-			let expectedPdf: number | null = null;
-			let expectedText: number | null = null;
-			let animation = 0;
 			const points = () =>
-				Array.from(
-					text.querySelectorAll<HTMLElement>("[data-zoro-page]"),
-				).flatMap((element) => {
+				sections.flatMap((section) => {
+					if (section.page === null) return [];
+					const element = text.querySelector<HTMLElement>(
+						`[data-zoro-page="${section.page}"]`,
+					);
+					if (!element) return [];
 					const page = pdf.querySelector<HTMLElement>(
 						`.page[data-page-number="${element.dataset.zoroPage}"]`,
 					);
 					if (!page) return [];
-					const pdfTop =
-						page.getBoundingClientRect().top -
-						pdf.getBoundingClientRect().top +
-						pdf.scrollTop;
-					return [{ pdf: pdfTop, text: element.offsetTop }];
+					return [
+						{
+							pdf:
+								page.getBoundingClientRect().top -
+								pdf.getBoundingClientRect().top +
+								pdf.scrollTop,
+							text:
+								element.getBoundingClientRect().top -
+								text.getBoundingClientRect().top +
+								text.scrollTop,
+						},
+					];
 				});
-			const handleScroll = (direction: "pdf" | "text") => {
-				const source = direction === "pdf" ? pdf : text;
-				const expected = direction === "pdf" ? expectedPdf : expectedText;
-				if (expected !== null && Math.abs(source.scrollTop - expected) < 1)
-					return;
-				if (direction === "pdf") expectedPdf = null;
-				else expectedText = null;
-				cancelAnimationFrame(animation);
-				animation = requestAnimationFrame(() => {
-					const offset = mapTranslationOffset(
-						points(),
-						source.scrollTop,
-						direction,
-					);
-					if (offset === null) return;
-					const target = direction === "pdf" ? text : pdf;
-					target.scrollTop = offset;
-					if (direction === "pdf") expectedText = target.scrollTop;
-					else expectedPdf = target.scrollTop;
-				});
+			const binding = bindTranslationScroll(pdf, text, points, setPrecision);
+			const resize = new ResizeObserver(binding.refresh);
+			const observeSizes = () => {
+				resize.disconnect();
+				resize.observe(pdf);
+				resize.observe(text);
+				for (const element of root.querySelectorAll(
+					".page, [data-zoro-page], article",
+				))
+					resize.observe(element);
 			};
-			const fromPdf = () => handleScroll("pdf");
-			const fromText = () => handleScroll("text");
-			pdf.addEventListener("scroll", fromPdf, { passive: true });
-			text.addEventListener("scroll", fromText, { passive: true });
+			const mutation = new MutationObserver(() => {
+				observeSizes();
+				binding.refresh();
+			});
+			mutation.observe(root, {
+				childList: true,
+				subtree: true,
+				attributes: true,
+				attributeFilter: ["style", "class"],
+			});
+			observeSizes();
+			window.addEventListener("resize", binding.refresh);
 			cleanup = () => {
-				pdf.removeEventListener("scroll", fromPdf);
-				text.removeEventListener("scroll", fromText);
-				cancelAnimationFrame(animation);
+				binding.dispose();
+				resize.disconnect();
+				mutation.disconnect();
+				window.removeEventListener("resize", binding.refresh);
 			};
-			fromPdf();
 			return true;
 		};
 		const timer = setInterval(() => {
@@ -120,59 +132,22 @@ export function BilingualTextViewer({
 			clearInterval(timer);
 			cleanup?.();
 		};
-	}, [sync, anchored, isActive]);
+	}, [sync, anchored, isActive, sections]);
 
 	useEffect(() => {
 		const root = textRef.current;
 		if (!root) return;
-		for (const mark of root.querySelectorAll("mark[data-search]"))
-			mark.replaceWith(...mark.childNodes);
-		root.normalize();
-		const matches: HTMLElement[] = [];
-		if (query.trim()) {
-			const walker = window.document.createTreeWalker(
-				root,
-				NodeFilter.SHOW_TEXT,
-			);
-			const nodes: Text[] = [];
-			while (walker.nextNode()) nodes.push(walker.currentNode as Text);
-			for (const node of nodes) {
-				if (node.parentElement?.closest(".katex, button")) continue;
-				const value = node.data;
-				const lowered = value.toLocaleLowerCase();
-				const needle = query.toLocaleLowerCase();
-				let start = 0;
-				let index = lowered.indexOf(needle);
-				if (index < 0) continue;
-				const fragment = window.document.createDocumentFragment();
-				while (index >= 0) {
-					fragment.append(value.slice(start, index));
-					const mark = window.document.createElement("mark");
-					mark.dataset.search = "true";
-					mark.className = "bg-yellow-300 text-black";
-					mark.textContent = value.slice(index, index + needle.length);
-					fragment.append(mark);
-					matches.push(mark);
-					start = index + needle.length;
-					index = lowered.indexOf(needle, start);
-				}
-				fragment.append(value.slice(start));
-				node.replaceWith(fragment);
-			}
-		}
+		const matches = query.trim()
+			? root.querySelectorAll<HTMLElement>("mark[data-search]")
+			: [];
 		setMatchCount(matches.length);
 		const match = matches[matchIndex % Math.max(matches.length, 1)];
-		if (match)
+		if (match && isActive)
 			root.scrollTop +=
 				match.getBoundingClientRect().top -
 				root.getBoundingClientRect().top -
 				24;
-		return () => {
-			for (const mark of matches)
-				if (mark.parentNode) mark.replaceWith(...mark.childNodes);
-			root.normalize();
-		};
-	}, [query, matchIndex]);
+	}, [query, matchIndex, isActive]);
 
 	return (
 		<div ref={rootRef} className="h-full w-full">
@@ -203,7 +178,13 @@ export function BilingualTextViewer({
 								{t("offline.sync")}
 							</label>
 							<span className="text-muted-foreground">
-								{t(anchored ? "offline.anchored" : "offline.unanchored")}
+								{t(
+									!anchored
+										? "offline.unanchored"
+										: !sync
+											? "offline.anchored"
+											: `offline.${precision}`,
+								)}
 							</span>
 							<label>
 								{t("offline.font")}{" "}
@@ -267,6 +248,7 @@ export function BilingualTextViewer({
 								className="min-w-0 flex-1 rounded border bg-background px-2 py-1 text-foreground"
 								aria-label={t("offline.search")}
 								placeholder={t("offline.search")}
+								title={t("offline.searchScope")}
 								value={query}
 								onChange={(event) => {
 									setQuery(event.target.value);
@@ -324,12 +306,25 @@ export function BilingualTextViewer({
 										</Button>
 									)}
 									{document.format === "txt" ? (
-										<div className="whitespace-pre-wrap break-words leading-relaxed">
-											{section.text}
-										</div>
+										<TranslationPlainText text={section.text} query={query} />
 									) : (
 										<article className="prose prose-slate max-w-none break-words text-[1em] dark:prose-invert prose-headings:leading-snug prose-table:block prose-table:overflow-x-auto">
-											<TranslationMarkdown text={section.text} />
+											<TranslationMarkdown
+												text={section.text}
+												query={query}
+												onOpenLink={(url) => {
+													void commands
+														.openOfflineTranslationLink(
+															url,
+															t("offline.confirmExternal", { url }),
+														)
+														.catch((error) =>
+															window.alert(
+																t("offline.error", { error: String(error) }),
+															),
+														);
+												}}
+											/>
 										</article>
 									)}
 								</section>

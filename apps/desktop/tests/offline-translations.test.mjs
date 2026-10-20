@@ -11,9 +11,18 @@ async function importSource(relativePath) {
   const { writeFile, unlink } = await import("node:fs/promises");
   const { randomUUID } = await import("node:crypto");
   const file = new URL(`./.offline-${randomUUID()}.mjs`, import.meta.url);
-  await writeFile(file, compiled);
+  const dependencies = [];
+  let output = compiled;
+  for (const match of compiled.matchAll(/from "(\.[^\"]+)"/g)) {
+    const dependency = new URL(`${match[1]}.ts`, new URL(relativePath, import.meta.url));
+    const dependencyFile = new URL(`./.offline-${randomUUID()}.mjs`, import.meta.url);
+    await writeFile(dependencyFile, ts.transpile(readFileSync(dependency, "utf8"), { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ES2022 }));
+    output = output.replace(match[0], `from "${dependencyFile.href}"`);
+    dependencies.push(dependencyFile);
+  }
+  await writeFile(file, output);
   try { return await import(file.href); }
-  finally { await unlink(file); }
+  finally { await Promise.all([file, ...dependencies].map((path) => unlink(path))); }
 }
 
 const { splitTranslation, mapTranslationOffset, decodeTranslation } = await importSource("../src/lib/offlineTranslation.ts");
@@ -33,7 +42,7 @@ test("unequal PDF and text lengths interpolate reversibly between real anchors",
   assert.equal(mapTranslationOffset(points, 1000, "text"), 500);
   assert.equal(mapTranslationOffset(points, 900, "pdf"), 2000);
   assert.equal(mapTranslationOffset(points, 0, "pdf"), null);
-  assert.equal(mapTranslationOffset(points, 3000, "text"), 1800);
+  assert.equal(mapTranslationOffset(points, 3000, "text"), null);
   assert.equal(mapTranslationOffset([], 0, "pdf"), null);
 });
 
