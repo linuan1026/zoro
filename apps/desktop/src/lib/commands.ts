@@ -4,6 +4,34 @@
 
 import { invoke } from "@tauri-apps/api/core";
 
+export interface OfflineTranslation {
+	id: string;
+	sourcePdf: string;
+	name: string;
+	format: "md" | "txt";
+	content: string;
+	createdAt: string;
+}
+export const listOfflineTranslations = (paperId: string, sourcePdf: string) =>
+	invoke<OfflineTranslation[]>("list_offline_translations", {
+		paperId,
+		sourcePdf,
+	});
+export const importOfflineTranslation = (
+	paperId: string,
+	sourcePdf: string,
+	name: string,
+	content: string,
+) =>
+	invoke<OfflineTranslation>("import_offline_translation", {
+		paperId,
+		sourcePdf,
+		name,
+		content,
+	});
+export const deleteOfflineTranslation = (paperId: string, id: string) =>
+	invoke<void>("delete_offline_translation", { paperId, id });
+
 // Types matching the Rust backend
 export interface PaperResponse {
 	id: string;
@@ -496,18 +524,23 @@ export const setDebugMode = (enabled: boolean) =>
 
 export const clearLogs = () => invoke<void>("clear_logs");
 
-export const pushFrontendLog = (level: string, source: string, message: string) =>
-	invoke<void>("push_frontend_log", { level, source, message });
+export const pushFrontendLog = (
+	level: string,
+	source: string,
+	message: string,
+) => invoke<void>("push_frontend_log", { level, source, message });
 
 export interface LogConfigResponse {
 	logToFile: boolean;
 	logRetentionDays: number;
 }
 
-export const getLogConfig = () =>
-	invoke<LogConfigResponse>("get_log_config");
+export const getLogConfig = () => invoke<LogConfigResponse>("get_log_config");
 
-export const updateLogConfig = (logToFile?: boolean, logRetentionDays?: number) =>
+export const updateLogConfig = (
+	logToFile?: boolean,
+	logRetentionDays?: number,
+) =>
 	invoke<void>("update_log_config", {
 		logToFile: logToFile ?? null,
 		logRetentionDays: logRetentionDays ?? null,

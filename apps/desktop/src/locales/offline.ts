@@ -1,0 +1,46 @@
+export const offlineEnglish = {
+	import: "Import translation",
+	documents: "Translation documents",
+	versions: "Translation version",
+	original: "Original PDF only",
+	delete: "Delete translation",
+	confirmDelete:
+		"Delete this translation version? The original PDF will be kept.",
+	local: "Offline · No API key required",
+	invalidFile:
+		"Choose a non-empty .md or .txt file (UTF-8 or UTF-16 with BOM), up to 10 MiB.",
+	error: "Translation: {{error}}",
+	sync: "Sync scrolling",
+	anchored: "Page anchors · Approximate alignment between anchors",
+	unanchored: "No page anchors · Independent scrolling",
+	font: "Text size",
+	toTranslation: "Translation for PDF page {{page}}",
+	toOriginal: "Original PDF · Page {{page}}",
+	page: "Jump to page anchor",
+	search: "Search translation",
+	previous: "Previous",
+	next: "Next",
+};
+
+export const offlineTraditionalChinese: typeof offlineEnglish = {
+	import: "匯入翻譯",
+	documents: "翻譯文件",
+	versions: "選擇譯文版本",
+	original: "僅顯示原始 PDF",
+	delete: "刪除譯文",
+	confirmDelete: "確定刪除此譯文版本？原始 PDF 會保留。",
+	local: "離線閱讀 · 不需 API Key",
+	invalidFile:
+		"請選擇非空白的 .md 或 .txt 文件（UTF-8 或含 BOM 的 UTF-16），上限 10 MiB。",
+	error: "譯文：{{error}}",
+	sync: "同步捲動",
+	anchored: "頁碼錨點 · 錨點之間為近似對齊",
+	unanchored: "無頁碼錨點 · 左右獨立捲動",
+	font: "文字大小",
+	toTranslation: "前往 PDF 第 {{page}} 頁譯文",
+	toOriginal: "返回原始 PDF · 第 {{page}} 頁",
+	page: "跳至頁碼錨點",
+	search: "搜尋譯文",
+	previous: "上一個",
+	next: "下一個",
+};

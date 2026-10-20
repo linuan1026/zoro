@@ -2,7 +2,7 @@ name: Windows installer (branch)
 
 on:
   push:
-    branches: [fix/windows-pdf-settings-select]
+    branches: [fix/windows-pdf-settings-select, feat/offline-bilingual-reader]
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @zoro/desktop type-check
       - run: node --test apps/desktop/tests/settings-regression.test.mjs
+      - run: node --test apps/desktop/tests/offline-translations.test.mjs
       - name: Build MCP sidecar
         shell: bash
         run: bash scripts/build-mcp-sidecar.sh --release --target x86_64-pc-windows-msvc

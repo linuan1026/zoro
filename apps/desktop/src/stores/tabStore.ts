@@ -18,6 +18,7 @@ export interface Tab {
 	pdfFilename?: string;
 	/** Bilingual side-by-side PDF mode */
 	bilingualMode?: boolean;
+	offlineTranslationId?: string;
 	/** Sync scrolling between bilingual panes (default true) */
 	bilingualSyncScroll?: boolean;
 	/** Translation PDF filename for bilingual mode (e.g. "paper.zh.pdf") */

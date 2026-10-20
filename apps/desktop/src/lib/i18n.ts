@@ -12,12 +12,14 @@ import es from "@/locales/es.json";
 import fr from "@/locales/fr.json";
 import ja from "@/locales/ja.json";
 import ko from "@/locales/ko.json";
+import { offlineEnglish, offlineTraditionalChinese } from "@/locales/offline";
 import pt from "@/locales/pt.json";
 import ru from "@/locales/ru.json";
 import zhCN from "@/locales/zh-CN.json";
 
 export const supportedLanguages = [
 	{ code: "en", label: "English" },
+	{ code: "zh-TW", label: "繁體中文" },
 	{ code: "zh-CN", label: "简体中文" },
 	{ code: "ja", label: "日本語" },
 	{ code: "ko", label: "한국어" },
@@ -35,15 +37,16 @@ i18n
 	.use(initReactI18next)
 	.init({
 		resources: {
-			en: { translation: en },
-			"zh-CN": { translation: zhCN },
-			ja: { translation: ja },
-			ko: { translation: ko },
-			es: { translation: es },
-			fr: { translation: fr },
-			de: { translation: de },
-			pt: { translation: pt },
-			ru: { translation: ru },
+			en: { translation: { ...en, offline: offlineEnglish } },
+			"zh-TW": { translation: { ...zhCN, offline: offlineTraditionalChinese } },
+			"zh-CN": { translation: { ...zhCN, offline: offlineTraditionalChinese } },
+			ja: { translation: { ...ja, offline: offlineEnglish } },
+			ko: { translation: { ...ko, offline: offlineEnglish } },
+			es: { translation: { ...es, offline: offlineEnglish } },
+			fr: { translation: { ...fr, offline: offlineEnglish } },
+			de: { translation: { ...de, offline: offlineEnglish } },
+			pt: { translation: { ...pt, offline: offlineEnglish } },
+			ru: { translation: { ...ru, offline: offlineEnglish } },
 		},
 		fallbackLng: "en",
 		interpolation: {
