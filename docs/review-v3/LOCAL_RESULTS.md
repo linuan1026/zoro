@@ -29,6 +29,10 @@ render 建立新 pairs 陣列觸發幾何重算迴圈，該次測試程序已終
 最後一次複驗曾在外部封裝資料夾誤執行 Rustfmt，因找不到 Cargo.toml 失敗；
 wrong-cwd 紀錄保留，回到專案根目錄重跑 Rustfmt 退出碼為 0。這不是程式格式錯誤。
 
+封裝紀錄已遮蔽使用者路徑，並移除行尾空白以通過 Git 空白檢查；錯誤文字完整保留。
+14 檔（含 zh-TW.json）以暫存 Git index 分別模擬 autocrlf=true/false checkout：
+皆為 LF、與 Git blob 位元組相等，兩種模式 Biome 均通過，詳見 checkout-results.json。
+
 完整語言測試驗證 1,151 鍵、插值、複數後綴、台灣詞彙、常見簡體殘留、系統語言、
 既有偏好優先與實際 React 重繪。啟動測試驗證初始 false、正常初始化仍連接與手動導覽；
 不是實際全新資料庫與視窗操控測試。請依 FEATURE_VERIFICATION.md 手動驗收。

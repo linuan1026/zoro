@@ -45,10 +45,10 @@ node : src/components/reader/useSentenceAlignment.ts:98:3 lint/style/useSingleVa
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (src/components/...BLE  ━━━━━━━━━━:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
 
   × Declare variables separately
-  
+
      96 │ 	const [boxes, setBoxes] = useState<HighlightBox[]>([]);
      97 │ 	useEffect(() => {
    > 98 │ 		const root = rootRef.current,
@@ -57,9 +57,9 @@ node : src/components/reader/useSentenceAlignment.ts:98:3 lint/style/useSingleVa
         │ 			^^^^^^^^^^^^^^^^^^^^^^^
     100 │ 		const pdf = root?.querySelector<HTMLElement>("[data-original]");
     101 │ 		if (!root || !text || !pdf || !enabled || !isActive || !pairs.length) {
-  
+
   i Unsafe fix: Break out into multiple declarations
-  
+
      96  96 │   	const [boxes, setBoxes] = useState<HighlightBox[]>([]);
      97  97 │   	useEffect(() => {
      98     │ - → → const·root·=·rootRef.current,
@@ -68,12 +68,12 @@ node : src/components/reader/useSentenceAlignment.ts:98:3 lint/style/useSingleVa
          99 │ + → → const·text·=·textRef.current;
     100 100 │   		const pdf = root?.querySelector<HTMLElement>("[data-original]");
     101 101 │   		if (!root || !text || !pdf || !enabled || !isActive || !pairs.length) {
-  
+
 
 src/components/reader/useSentenceAlignment.ts:106:3 lint/style/useSingleVarDeclarator  FIXABLE  ━━━━━━━━━━
 
   × Declare variables separately
-  
+
     104 │ 			return;
     105 │ 		}
   > 106 │ 		let disposed = false,
@@ -82,9 +82,9 @@ src/components/reader/useSentenceAlignment.ts:106:3 lint/style/useSingleVarDecla
         │ 			^^^^^^^^^^
     108 │ 		let pointer: { x: number; y: number; target: Element | null } | null = null;
     109 │ 		const cache = new Map<string, Range[]>();
-  
+
   i Unsafe fix: Break out into multiple declarations
-  
+
     104 104 │   			return;
     105 105 │   		}
     106     │ - → → let·disposed·=·false,
@@ -93,12 +93,12 @@ src/components/reader/useSentenceAlignment.ts:106:3 lint/style/useSingleVarDecla
         107 │ + → → let·frame·=·0;
     108 108 │   		let pointer: { x: number; y: number; target: Element | null } | null = null;
     109 109 │   		const cache = new Map<string, Range[]>();
-  
+
 
 src/lib/sentenceAlignment.ts:283:5 lint/style/useSingleVarDeclarator  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━
 
   × Declare variables separately
-  
+
     281 │ 			const children: AlignmentNode[] = [];
     282 │ 			for (let index = 0; index < boundaries.length - 1; index++) {
   > 283 │ 				const start = boundaries[index],
@@ -107,9 +107,9 @@ src/lib/sentenceAlignment.ts:283:5 lint/style/useSingleVarDeclarator  FIXABLE  �
         │ 					^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     285 │ 				const ids = [
     286 │ 					...new Set(
-  
+
   i Unsafe fix: Break out into multiple declarations
-  
+
     281 281 │   			const children: AlignmentNode[] = [];
     282 282 │   			for (let index = 0; index < boundaries.length - 1; index++) {
     283     │ - → → → → const·start·=·boundaries[index],
@@ -118,35 +118,35 @@ src/lib/sentenceAlignment.ts:283:5 lint/style/useSingleVarDeclarator  FIXABLE  �
         284 │ + → → → → const·end·=·boundaries[index·+·1];
     285 285 │   				const ids = [
     286 286 │   					...new Set(
-  
+
 
 src/lib/sentenceAlignment.ts:319:5 lint/performance/noDelete  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Avoid the delete operator which can impact performance.
-  
+
     317 │ 				leaf.node.properties = {};
     318 │ 				leaf.node.children = children;
   > 319 │ 				delete leaf.node.value;
         │ 				^^^^^^^^^^^^^^^^^^^^^^
     320 │ 			}
     321 │ 		}
-  
+
   i Unsafe fix: Use an undefined assignment instead.
-  
+
     317 317 │   				leaf.node.properties = {};
     318 318 │   				leaf.node.children = children;
     319     │ - → → → → delete·leaf.node.value;
         319 │ + → → → → leaf.node.value·=·undefined;
     320 320 │   			}
     321 321 │   		}
-  
+
 
 Checked 10 files in 19ms. No fixes applied.
 Found 4 errors.
 check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Some errors were emitted while running checks.
-  
+
 
 undefined
 <WORKSPACE>\apps\desktop:
@@ -168,7 +168,7 @@ cargo :    Compiling tauri v2.10.3
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (   Compiling tauri v2.10.3:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
     Checking zoro-metadata v0.1.0 (<WORKSPACE>\crates\zoro-metadata)
     Checking zoro-subscriptions v0.1.0 (<WORKSPACE>\crates\zoro-subscriptions)
     Checking zoro-plugins v0.1.0 (<WORKSPACE>\crates\zoro-plugins)
@@ -225,7 +225,7 @@ node.exe : npm warn Unknown env config "min-release-age". This will stop working
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (npm warn Unknow...version of npm.:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
 
 > @zoro/desktop@0.1.0 build <WORKSPACE>\apps\desktop
 > tsc -b && vite build
@@ -237,7 +237,7 @@ Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
 ✓ 8376 modules transformed.
 rendering chunks...
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps
 /api/event.js is dynamically imported by <WORKSPACE>/apps/desktop/src/plugins/Plug
 inManager.ts but also statically imported by <WORKSPACE>/apps/desktop/src/App.tsx,
@@ -253,21 +253,21 @@ uan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/st
 /zoro/apps/desktop/src/stores/translationStore.ts, <WORKSPACE>/node_modules/.pnpm/
 @tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/webview.js, <WORKSPACE>/node_m
 odules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/webviewWindow.js, <USER_HOME>/Documents/自創程式/論
-文翻譯左右對照/zoro/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/window.js, dynamic import will not 
+文翻譯左右對照/zoro/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/window.js, dynamic import will not
 move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-dialog@2.6.0/node_modules/@t
 auri-apps/plugin-dialog/dist-js/index.js is dynamically imported by <WORKSPACE>/ap
 ps/desktop/src/components/library/ZoteroImportDialog.tsx, <WORKSPACE>/apps/desktop
-/src/components/reader/NoteEditor.tsx, <WORKSPACE>/apps/desktop/src/lib/utils.ts, 
+/src/components/reader/NoteEditor.tsx, <WORKSPACE>/apps/desktop/src/lib/utils.ts,
 <WORKSPACE>/apps/desktop/src/routes/settings.tsx, <USER_HOME>/Documents/自創
 程式/論文翻譯左右對照/zoro/apps/desktop/src/routes/settings.tsx, <WORKSPACE>/apps/desktop/sr
 c/routes/settings.tsx but also statically imported by <WORKSPACE>/apps/desktop/src
 /components/reader/OfflineTranslationToolbar.tsx, <WORKSPACE>/apps/desktop/src/lib
 /commands.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-shell@2.3.5/node_modules/@ta
 uri-apps/plugin-shell/dist-js/index.js is dynamically imported by <WORKSPACE>/apps
 /desktop/src/plugins/PluginManager.ts, <WORKSPACE>/apps/desktop/src/routes/reader.
@@ -276,7 +276,7 @@ r/BrowserPanel.tsx, <WORKSPACE>/apps/desktop/src/hooks/useMenuEvents.ts, C:/User
 linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/lib/commands.ts, <USER_HOME>/Documents/自創程式/論文翻譯左右對照/z
 oro/apps/desktop/src/routes/webview.tsx, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/apps/desktop/src/lib/commands.ts is dynamically imported by C:/Use
 rs/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/reader/SidebarTabPanel.tsx but also statically i
 mported by <WORKSPACE>/apps/desktop/src/App.tsx, <USER_HOME>/Documents/自創程
@@ -311,7 +311,7 @@ ers/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop
 創程式/論文翻譯左右對照/zoro/apps/desktop/src/stores/papersCoolStore.ts, <WORKSPACE>/apps/des
 ktop/src/stores/translationStore.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-fs@2.4.5/node_modules/@tauri
 -apps/plugin-fs/dist-js/index.js is dynamically imported by <WORKSPACE>/apps/deskt
 op/src/components/reader/NoteEditor.tsx but also statically imported by <USER_HOME>/Documents/自創程式/論文翻譯左右對照/zor
@@ -320,7 +320,7 @@ ps/desktop/src/components/reader/PdfAnnotationViewer.tsx, <WORKSPACE>/apps/deskt
 /src/plugins/PluginManager.ts, <WORKSPACE>/apps/desktop/src/routes/reader.tsx, dyn
 amic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-clipboard-manager@2.3.2/node
 _modules/@tauri-apps/plugin-clipboard-manager/dist-js/index.js is dynamically imported by <USER_HOME>/Documents
 /自創程式/論文翻譯左右對照/zoro/apps/desktop/src/plugins/PluginManager.ts but also statically imported by <USER_HOME>/Docum
@@ -419,7 +419,7 @@ node.exe : npm warn Unknown env config "min-release-age". This will stop working
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (npm warn Unknow...version of npm.:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
 
 > @zoro/desktop@0.1.0 build <WORKSPACE>\apps\desktop
 > tsc -b && vite build
@@ -431,7 +431,7 @@ Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
 ✓ 8376 modules transformed.
 rendering chunks...
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps
 /api/event.js is dynamically imported by <WORKSPACE>/apps/desktop/src/plugins/Plug
 inManager.ts but also statically imported by <WORKSPACE>/apps/desktop/src/App.tsx,
@@ -447,21 +447,21 @@ uan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/st
 /zoro/apps/desktop/src/stores/translationStore.ts, <WORKSPACE>/node_modules/.pnpm/
 @tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/webview.js, <WORKSPACE>/node_m
 odules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/webviewWindow.js, <USER_HOME>/Documents/自創程式/論
-文翻譯左右對照/zoro/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/window.js, dynamic import will not 
+文翻譯左右對照/zoro/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/window.js, dynamic import will not
 move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-dialog@2.6.0/node_modules/@t
 auri-apps/plugin-dialog/dist-js/index.js is dynamically imported by <WORKSPACE>/ap
 ps/desktop/src/components/library/ZoteroImportDialog.tsx, <WORKSPACE>/apps/desktop
-/src/components/reader/NoteEditor.tsx, <WORKSPACE>/apps/desktop/src/lib/utils.ts, 
+/src/components/reader/NoteEditor.tsx, <WORKSPACE>/apps/desktop/src/lib/utils.ts,
 <WORKSPACE>/apps/desktop/src/routes/settings.tsx, <USER_HOME>/Documents/自創
 程式/論文翻譯左右對照/zoro/apps/desktop/src/routes/settings.tsx, <WORKSPACE>/apps/desktop/sr
 c/routes/settings.tsx but also statically imported by <WORKSPACE>/apps/desktop/src
 /components/reader/OfflineTranslationToolbar.tsx, <WORKSPACE>/apps/desktop/src/lib
 /commands.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-shell@2.3.5/node_modules/@ta
 uri-apps/plugin-shell/dist-js/index.js is dynamically imported by <WORKSPACE>/apps
 /desktop/src/plugins/PluginManager.ts, <WORKSPACE>/apps/desktop/src/routes/reader.
@@ -470,7 +470,7 @@ r/BrowserPanel.tsx, <WORKSPACE>/apps/desktop/src/hooks/useMenuEvents.ts, C:/User
 linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/lib/commands.ts, <USER_HOME>/Documents/自創程式/論文翻譯左右對照/z
 oro/apps/desktop/src/routes/webview.tsx, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/apps/desktop/src/lib/commands.ts is dynamically imported by C:/Use
 rs/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/reader/SidebarTabPanel.tsx but also statically i
 mported by <WORKSPACE>/apps/desktop/src/App.tsx, <USER_HOME>/Documents/自創程
@@ -505,7 +505,7 @@ ers/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop
 創程式/論文翻譯左右對照/zoro/apps/desktop/src/stores/papersCoolStore.ts, <WORKSPACE>/apps/des
 ktop/src/stores/translationStore.ts, dynamic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-fs@2.4.5/node_modules/@tauri
 -apps/plugin-fs/dist-js/index.js is dynamically imported by <WORKSPACE>/apps/deskt
 op/src/components/reader/NoteEditor.tsx but also statically imported by <USER_HOME>/Documents/自創程式/論文翻譯左右對照/zor
@@ -514,7 +514,7 @@ ps/desktop/src/components/reader/PdfAnnotationViewer.tsx, <WORKSPACE>/apps/deskt
 /src/plugins/PluginManager.ts, <WORKSPACE>/apps/desktop/src/routes/reader.tsx, dyn
 amic import will not move module into another chunk.
 
-[plugin vite:reporter] 
+[plugin vite:reporter]
 (!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-clipboard-manager@2.3.2/node
 _modules/@tauri-apps/plugin-clipboard-manager/dist-js/index.js is dynamically imported by <USER_HOME>/Documents
 /自創程式/論文翻譯左右對照/zoro/apps/desktop/src/plugins/PluginManager.ts but also statically imported by <USER_HOME>/Docum
@@ -617,76 +617,76 @@ node : src/components\HighlightedText.tsx:45:12 lint/suspicious/noArrayIndexKey 
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (src/components\...━━━━━━━━━━━━━━━:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
 
   × Avoid using the index of an array as key property in an element.
-  
+
     43 │ 				words.includes(part.toLowerCase()) ? (
     44 │ 					<mark
   > 45 │ 						key={i}
        │ 						     ^
     46 │ 						className="bg-yellow-200 dark:bg-yellow-700/60 text-inherit rounded-sm px-0.5"
     47 │ 					>
-  
+
   i This is the source of the key value.
-  
+
     40 │ 	return (
     41 │ 		<span className={className}>
   > 42 │ 			{parts.map((part, i) =>
        │ 			                  ^
     43 │ 				words.includes(part.toLowerCase()) ? (
     44 │ 					<mark
-  
+
   i The order of the items may change, and this also affects performances and component state.
-  
-  i Check the React documentation. 
-  
+
+  i Check the React documentation.
+
 
 src/components\CollapsibleAuthors.tsx:39:2 lint/correctness/useExhaustiveDependencies ━━━━━━━━━━━━━━
 
   × This hook specifies more dependencies than necessary: authors
-  
+
     38 │ 	// Reset state when authors change
   > 39 │ 	useEffect(() => {
        │ 	^^^^^^^^^
     40 │ 		setExpanded(false);
     41 │ 	}, [authors]);
-  
+
   i Outer scope values aren't valid dependencies because mutating them doesn't re-render the component.
-  
+
     39 │ 	useEffect(() => {
     40 │ 		setExpanded(false);
   > 41 │ 	}, [authors]);
        │ 	    ^^^^^^^
-    42 │ 
+    42 │
     43 │ 	// Measure after mount to determine if collapse is needed, and compute
-  
+
 
 src/components\CollapsibleAuthors.tsx:45:2 lint/correctness/useExhaustiveDependencies ━━━━━━━━━━━━━━
 
   × This hook specifies more dependencies than necessary: fullText
-  
+
     43 │ 	// Measure after mount to determine if collapse is needed, and compute
     44 │ 	// how many head/tail authors to keep
   > 45 │ 	useEffect(() => {
        │ 	^^^^^^^^^
     46 │ 		const el = measureRef.current;
     47 │ 		if (!el || authors.length === 0) {
-  
+
   i This dependency can be removed from the list.
-  
+
     102 │ 		setVisibleHead(bestHead);
     103 │ 		setVisibleTail(tailCount);
   > 104 │ 	}, [authors, maxLines, fullText]);
         │ 	                       ^^^^^^^^
-    105 │ 
+    105 │
     106 │ 	const handleToggle = useCallback((e: React.MouseEvent) => {
-  
+
 
 src/components\browser\BrandIcons.tsx:15:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Alternative text title element cannot be empty
-  
+
     13 │ 	const id = `gemini-${Math.random().toString(36).slice(2, 8)}`;
     14 │ 	return (
   > 15 │ 		<svg
@@ -697,19 +697,19 @@ src/components\browser\BrandIcons.tsx:15:3 lint/a11y/noSvgWithoutTitle ━━━
   > 21 │ 		>
        │ 		^
     22 │ 			<path
-    23 │ 				d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 
+    23 │ 				d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134
 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397
  2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a
 14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z"
-  
+
   i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
 s role="img", you should add the aria-label or aria-labelledby attribute.
-  
+
 
 src/components\browser\BrandIcons.tsx:79:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Alternative text title element cannot be empty
-  
+
     77 │ export function ChatGPTIcon({ size = 20, className }: IconProps) {
     78 │ 	return (
   > 79 │ 		<svg
@@ -725,7 +725,7 @@ src/components\browser\BrandIcons.tsx:79:3 lint/a11y/noSvgWithoutTitle ━━━
 3-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.33
 3 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.12
 8zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.23
-8.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 
+8.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482
 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021
 -4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.61
 6c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3
@@ -733,15 +733,15 @@ src/components\browser\BrandIcons.tsx:79:3 lint/a11y/noSvgWithoutTitle ━━━
  0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.40
 1 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z" />
     89 │ 		</svg>
-  
+
   i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
 s role="img", you should add the aria-label or aria-labelledby attribute.
-  
+
 
 src/components\browser\BrandIcons.tsx:95:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Alternative text title element cannot be empty
-  
+
      93 │ export function ClaudeIcon({ size = 20, className }: IconProps) {
      94 │ 	return (
    > 95 │ 		<svg
@@ -765,15 +765,15 @@ src/components\browser\BrandIcons.tsx:95:3 lint/a11y/noSvgWithoutTitle ━━━
 -2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.
 012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086
 -.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"
-  
+
   i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
 s role="img", you should add the aria-label or aria-labelledby attribute.
-  
+
 
 src/components\browser\BrandIcons.tsx:113:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Alternative text title element cannot be empty
-  
+
     111 │ export function KimiIcon({ size = 20, className }: IconProps) {
     112 │ 	return (
   > 113 │ 		<svg
@@ -785,15 +785,15 @@ src/components\browser\BrandIcons.tsx:113:3 lint/a11y/noSvgWithoutTitle ━━�
         │ 		^
     120 │ 			<rect width="24" height="24" rx="4" fill="#000" />
     121 │ 			<path
-  
+
   i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
 s role="img", you should add the aria-label or aria-labelledby attribute.
-  
+
 
 src/components\browser\BrandIcons.tsx:135:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Alternative text title element cannot be empty
-  
+
     133 │ export function DeepSeekIcon({ size = 20, className }: IconProps) {
     134 │ 	return (
   > 135 │ 		<svg
@@ -812,24 +812,24 @@ src/components\browser\BrandIcons.tsx:135:3 lint/a11y/noSvgWithoutTitle ━━�
 7.684a3.055 3.055 0 01-.465.137 9.597 9.597 0 00-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152
  12.85c.403 2.284 1.569 4.175 3.36 5.653 1.858 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.133-.284 4.994-1.86.47.234.962
 .327 1.78.397.63.059 1.236-.03 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.74
-6-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.96-2.015 
+6-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.96-2.015
 2.093-3.517.02-.23-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.52-2.16-.392.024-.321.471-.235.763.09.288.
 207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.224
 -2.887-1.298-4.482-.02-.386.093-.522.477-.592a4.696 4.696 0 011.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.86 1.525
- 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306 
-0 01.415-.287.302.302 0 01.2.288.306.306 0 01-.31.307.303.303 0 01-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245 
+ 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306
+0 01.415-.287.302.302 0 01.2.288.306.306 0 01-.31.307.303.303 0 01-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245
 1.245 0 01-.798-.254c-.274-.23-.47-.358-.552-.758a1.73 1.73 0 01.016-.588c.07-.327-.008-.537-.239-.727-.187-.156-.426-.
 199-.688-.199a.559.559 0 01-.254-.078c-.11-.054-.2-.19-.114-.358.028-.054.16-.186.192-.21.356-.202.767-.136 1.146.016.3
 52.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.25.452z"
-  
+
   i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
 s role="img", you should add the aria-label or aria-labelledby attribute.
-  
+
 
 src/components\browser\BrandIcons.tsx:153:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Alternative text title element cannot be empty
-  
+
     151 │ 	const id = `wenxin-${Math.random().toString(36).slice(2, 8)}`;
     152 │ 	return (
   > 153 │ 		<svg
@@ -846,15 +846,15 @@ L12.002 12 12 19.551l6.059-3.394a1.31 1.31 0 00.68-1.142zM12.68 4.833a1.393 1.39
 .67-.68 1.142v6.027c0 .47.259.905.68 1.142l2.795 1.566V11.09a1.546 1.546 0 00.221.79 1.527 1.527 0 01-.216-.834l.004-.0
 94.02-.15.018-.084.017-.062.039-.117.062-.142.035-.065.081-.13.094-.122.084-.091.08-.075.125-.1.071-.048.134-.076 5.87-
 3.29-2.796-1.566z"
-  
+
   i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
 s role="img", you should add the aria-label or aria-labelledby attribute.
-  
+
 
 src/components\browser\BrandIcons.tsx:180:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Alternative text title element cannot be empty
-  
+
     178 │ export function DoubaoIcon({ size = 20, className }: IconProps) {
     179 │ 	return (
   > 180 │ 		<svg
@@ -868,15 +868,15 @@ src/components\browser\BrandIcons.tsx:180:3 lint/a11y/noSvgWithoutTitle ━━�
     188 │ 				d="M5.31 15.756c.172-3.75 1.883-5.999 2.549-6.739-3.26 2.058-5.425 5.658-6.358 8.308v1.12C1.501 21.513 4.
 226 24 7.59 24a6.59 6.59 0 002.2-.375c.353-.12.7-.248 1.039-.378.913-.899 1.65-1.91 2.243-2.992-4.877 2.431-7.974.072-7
 .763-4.5l.002.001z"
-  
+
   i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
 s role="img", you should add the aria-label or aria-labelledby attribute.
-  
+
 
 src/components\library\AddPaperDialog.tsx:68:7 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
     66 │ 				<form onSubmit={handleSubmit} className="space-y-3">
     67 │ 					<div>
   > 68 │ 						<label className="text-sm font-medium">
@@ -886,15 +886,15 @@ src/components\library\AddPaperDialog.tsx:68:7 lint/a11y/noLabelWithoutControl �
        │ 						^^^^^^^^
     71 │ 						<Input
     72 │ 							value={title}
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\library\AddPaperDialog.tsx:79:7 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
     77 │ 					</div>
     78 │ 					<div>
   > 79 │ 						<label className="text-sm font-medium">
@@ -904,15 +904,15 @@ src/components\library\AddPaperDialog.tsx:79:7 lint/a11y/noLabelWithoutControl �
        │ 						^^^^^^^^
     82 │ 						<Input
     83 │ 							value={authors}
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\library\AddPaperDialog.tsx:90:8 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
     88 │ 					<div className="grid grid-cols-2 gap-3">
     89 │ 						<div>
   > 90 │ 							<label className="text-sm font-medium">
@@ -922,15 +922,15 @@ src/components\library\AddPaperDialog.tsx:90:8 lint/a11y/noLabelWithoutControl �
        │ 							^^^^^^^^
     93 │ 							<Input
     94 │ 								value={doi}
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\library\AddPaperDialog.tsx:100:8 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
      98 │ 						</div>
      99 │ 						<div>
   > 100 │ 							<label className="text-sm font-medium">
@@ -947,15 +947,15 @@ The number of diagnostics exceeds the number allowed by Biome.
 Diagnostics not shown: 149.
 Checked 131 files in 542ms. Fixed 41 files.
 Found 152 errors.
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\library\AddPaperDialog.tsx:111:7 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
     109 │ 					</div>
     110 │ 					<div>
   > 111 │ 						<label className="text-sm font-medium">
@@ -965,15 +965,15 @@ src/components\library\AddPaperDialog.tsx:111:7 lint/a11y/noLabelWithoutControl 
         │ 						^^^^^^^^
     114 │ 						<Input
     115 │ 							value={url}
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\library\AddPaperDialog.tsx:122:8 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
     120 │ 					<div className="grid grid-cols-2 gap-3">
     121 │ 						<div>
   > 122 │ 							<label className="text-sm font-medium">
@@ -983,15 +983,15 @@ src/components\library\AddPaperDialog.tsx:122:8 lint/a11y/noLabelWithoutControl 
         │ 							^^^^^^^^
     125 │ 							<Input
     126 │ 								value={pdfUrl}
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\library\AddPaperDialog.tsx:132:8 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
     130 │ 						</div>
     131 │ 						<div>
   > 132 │ 							<label className="text-sm font-medium">
@@ -1001,15 +1001,15 @@ src/components\library\AddPaperDialog.tsx:132:8 lint/a11y/noLabelWithoutControl 
         │ 							^^^^^^^^
     135 │ 							<Input
     136 │ 								value={htmlUrl}
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\library\AddPaperDialog.tsx:143:7 lint/a11y/noLabelWithoutControl ━━━━━━━━━━━━━━━━━━━━
 
   × A form label must be associated with an input.
-  
+
     141 │ 					</div>
     142 │ 					<div>
   > 143 │ 						<label className="text-sm font-medium">
@@ -1019,15 +1019,15 @@ src/components\library\AddPaperDialog.tsx:143:7 lint/a11y/noLabelWithoutControl 
         │ 						^^^^^^^^
     146 │ 						<Input
     147 │ 							value={tags}
-  
+
   i Consider adding a `for` or `htmlFor` attribute to the label element or moving the input element to inside the label
  element.
-  
+
 
 src/components\layout\TabBar.tsx:304:3 lint/a11y/useFocusableInteractive ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × The HTML element with the interactive role "tab" is not focusable.
-  
+
     303 │ 	return (
   > 304 │ 		<div
         │ 		^^^^
@@ -1038,17 +1038,17 @@ src/components\layout\TabBar.tsx:304:3 lint/a11y/useFocusableInteractive ━━�
         │ 		^
     316 │ 			{/* Icon */}
     317 │ 			{isHome ? (
-  
+
   i A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigatio
 n, even with an added role like "tab".
-  
+
   i Add a tabIndex attribute to make this element focusable.
-  
+
 
 src/components\layout\TabBar.tsx:304:3 lint/a11y/useKeyWithClickEvents ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event.
-  
+
     303 │ 	return (
   > 304 │ 		<div
         │ 		^^^^
@@ -1059,15 +1059,15 @@ src/components\layout\TabBar.tsx:304:3 lint/a11y/useKeyWithClickEvents ━━━
         │ 		^
     316 │ 			{/* Icon */}
     317 │ 			{isHome ? (
-  
+
   i Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigat
 ion.
-  
+
 
 check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   × Some errors were emitted while applying fixes.
-  
+
 
 <WORKSPACE>\apps\desktop:
  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @zoro/desktop@0.1.0 lint: `biome check src/ "--fix"`
@@ -1248,29 +1248,29 @@ node : • turbo 2.8.14
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (• turbo 2.8.14:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
 • Packages in scope: @zoro/browser-extension, @zoro/core, @zoro/desktop, @zoro/plugin-sdk
 • Running lint in 4 packages
 • Remote caching disabled
 @zoro/core:lint: cache miss, executing 15aa57b6cd843127
 @zoro/browser-extension:lint: cache miss, executing 9b429c32e8082e76
 @zoro/desktop:lint: cache miss, executing 66e5d3982be7e125
-@zoro/core:lint: 
+@zoro/core:lint:
 @zoro/core:lint: > @zoro/core@0.1.0 lint <WORKSPACE>\packages\core
 @zoro/core:lint: > biome check src/
-@zoro/core:lint: 
-@zoro/browser-extension:lint: 
+@zoro/core:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: > @zoro/browser-extension@0.1.0 lint <WORKSPACE>\apps\browser-extension
 @zoro/browser-extension:lint: > biome check src/
-@zoro/browser-extension:lint: 
-@zoro/desktop:lint: 
+@zoro/browser-extension:lint:
+@zoro/desktop:lint:
 @zoro/desktop:lint: > @zoro/desktop@0.1.0 lint <WORKSPACE>\apps\desktop
 @zoro/desktop:lint: > biome check src/
-@zoro/desktop:lint: 
+@zoro/desktop:lint:
 @zoro/browser-extension:lint: src/content\detectors\generic.ts:17:3 lint/complexity/noForEach ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Prefer for...of instead of forEach.
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:     15 │   const authorMetas = doc.querySelectorAll('meta[name="citation_author"]');
 @zoro/browser-extension:lint:     16 │   const authors: string[] = [];
 @zoro/browser-extension:lint:   > 17 │   authorMetas.forEach((el) => {
@@ -1279,16 +1279,16 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:   > 19 │     if (name) authors.push(name);
 @zoro/browser-extension:lint:   > 20 │   });
 @zoro/browser-extension:lint:        │   ^^
-@zoro/browser-extension:lint:     21 │ 
+@zoro/browser-extension:lint:     21 │
 @zoro/browser-extension:lint:     22 │   const doi = doc.querySelector('meta[name="citation_doi"]')?.getAttribute("content") || undefined;
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   i forEach may lead to performance issues when working with large arrays. When combined with functions like filter or map, this causes multiple iterations over the same type.
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/content\detectors\arxiv.ts:27:3 lint/complexity/noForEach ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Prefer for...of instead of forEach.
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:     25 │   const authorElements = doc.querySelectorAll(".authors a, meta[name='citation_author']");
 @zoro/browser-extension:lint:     26 │   const authors: string[] = [];
 @zoro/browser-extension:lint:   > 27 │   authorElements.forEach((el) => {
@@ -1299,16 +1299,16 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:   > 31 │     }
 @zoro/browser-extension:lint:   > 32 │   });
 @zoro/browser-extension:lint:        │   ^^
-@zoro/browser-extension:lint:     33 │ 
+@zoro/browser-extension:lint:     33 │
 @zoro/browser-extension:lint:     34 │   const abstractEl = doc.querySelector(".abstract");
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   i forEach may lead to performance issues when working with large arrays. When combined with functions like filter or map, this causes multiple iterations over the same type.
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/content\detectors\doi.ts:30:3 lint/complexity/noForEach ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Prefer for...of instead of forEach.
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:     28 │   const authorMetas = doc.querySelectorAll('meta[name="citation_author"], meta[name="DC.creator"]');
 @zoro/browser-extension:lint:     29 │   const authors: string[] = [];
 @zoro/browser-extension:lint:   > 30 │   authorMetas.forEach((el) => {
@@ -1317,16 +1317,16 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:   > 32 │     if (name) authors.push(name);
 @zoro/browser-extension:lint:   > 33 │   });
 @zoro/browser-extension:lint:        │   ^^
-@zoro/browser-extension:lint:     34 │ 
+@zoro/browser-extension:lint:     34 │
 @zoro/browser-extension:lint:     35 │   const abstract_text =
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   i forEach may lead to performance issues when working with large arrays. When combined with functions like filter or map, this causes multiple iterations over the same type.
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/popup\main.tsx format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Formatter would have printed the following content:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/browser-extension:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/browser-extension:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1343,23 +1343,23 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/browser-extension:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/browser-extension:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/browser-extension:lint:         4 │ + 
+@zoro/browser-extension:lint:         4 │ +
 @zoro/browser-extension:lint:         5 │ + import·React·from·"react";
 @zoro/browser-extension:lint:         6 │ + import·ReactDOM·from·"react-dom/client";
 @zoro/browser-extension:lint:         7 │ + import·App·from·"./App";
-@zoro/browser-extension:lint:         8 │ + 
+@zoro/browser-extension:lint:         8 │ +
 @zoro/browser-extension:lint:         9 │ + ReactDOM.createRoot(document.getElementById("root")·as·HTMLElement).render(
 @zoro/browser-extension:lint:        10 │ + → <React.StrictMode>
 @zoro/browser-extension:lint:        11 │ + → → <App·/>
 @zoro/browser-extension:lint:        12 │ + → </React.StrictMode>,
 @zoro/browser-extension:lint:        13 │ + );
-@zoro/browser-extension:lint:     14 14 │   
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:     14 14 │
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/background\index.ts organizeImports ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Import statements could be sorted:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      3  3 │   // See LICENSE file in the project root for full license information.␍
 @zoro/browser-extension:lint:      4  4 │   ␍
 @zoro/browser-extension:lint:      5    │ - import·{·checkConnection·}·from·"./connector";␍
@@ -1368,12 +1368,12 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         6 │ + import·{·checkConnection·}·from·"./connector";␍
 @zoro/browser-extension:lint:      7  7 │   ␍
 @zoro/browser-extension:lint:      8  8 │   // Track detected papers per tab␍
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/background\connector.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Formatter would have printed the following content:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/browser-extension:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/browser-extension:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1398,31 +1398,31 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/browser-extension:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/browser-extension:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/browser-extension:lint:         4 │ + 
+@zoro/browser-extension:lint:         4 │ +
 @zoro/browser-extension:lint:         5 │ + import·{·ping·}·from·"../lib/api";
-@zoro/browser-extension:lint:         6 │ + 
+@zoro/browser-extension:lint:         6 │ +
 @zoro/browser-extension:lint:         7 │ + let·isConnected·=·false;
-@zoro/browser-extension:lint:         8 │ + 
+@zoro/browser-extension:lint:         8 │ +
 @zoro/browser-extension:lint:         9 │ + export·async·function·checkConnection():·Promise<boolean>·{
 @zoro/browser-extension:lint:        10 │ + → isConnected·=·await·ping();
 @zoro/browser-extension:lint:        11 │ + → return·isConnected;
 @zoro/browser-extension:lint:        12 │ + }
-@zoro/browser-extension:lint:        13 │ + 
+@zoro/browser-extension:lint:        13 │ +
 @zoro/browser-extension:lint:        14 │ + export·function·getConnectionStatus():·boolean·{
 @zoro/browser-extension:lint:        15 │ + → return·isConnected;
 @zoro/browser-extension:lint:        16 │ + }
-@zoro/browser-extension:lint:        17 │ + 
+@zoro/browser-extension:lint:        17 │ +
 @zoro/browser-extension:lint:        18 │ + //·Periodically·check·connection
 @zoro/browser-extension:lint:        19 │ + setInterval(async·()·=>·{
 @zoro/browser-extension:lint:        20 │ + → await·checkConnection();
 @zoro/browser-extension:lint:        21 │ + },·30000);·//·Every·30·seconds
-@zoro/browser-extension:lint:     22 22 │   
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:     22 22 │
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/content\detectors\generic.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Formatter would have printed the following content:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/browser-extension:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/browser-extension:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1444,9 +1444,9 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:     19    │ - ····if·(name)·authors.push(name);␍
 @zoro/browser-extension:lint:     20    │ - ··});␍
 @zoro/core:lint: src/types\subscription.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/core:lint: 
+@zoro/core:lint:
 @zoro/core:lint:   × Formatter would have printed the following content:
-@zoro/core:lint:   
+@zoro/core:lint:
 @zoro/core:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/core:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/core:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1461,20 +1461,20 @@ node : • turbo 2.8.14
 @zoro/core:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/core:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/core:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/core:lint:         4 │ + 
+@zoro/core:lint:         4 │ +
 @zoro/core:lint:         5 │ + export·interface·SubscriptionSourceInfo·{
 @zoro/core:lint:         6 │ + → source_type:·string;
 @zoro/core:lint:         7 │ + → display_name:·string;
 @zoro/core:lint:         8 │ + → description:·string;
 @zoro/core:lint:         9 │ + → default_config:·Record<string,·unknown>;
 @zoro/core:lint:        10 │ + }
-@zoro/core:lint:     11 11 │   
-@zoro/core:lint:   
-@zoro/core:lint: 
+@zoro/core:lint:     11 11 │
+@zoro/core:lint:
+@zoro/core:lint:
 @zoro/core:lint: src/index.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/core:lint: 
+@zoro/core:lint:
 @zoro/core:lint:   × Formatter would have printed the following content:
-@zoro/core:lint:   
+@zoro/core:lint:
 @zoro/core:lint:     1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/core:lint:     2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/core:lint:     3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1485,7 +1485,7 @@ node : • turbo 2.8.14
 @zoro/core:lint:        1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/core:lint:        2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/core:lint:        3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/core:lint:        4 │ + 
+@zoro/core:lint:        4 │ +
 @zoro/core:lint:        5 │ + export·type·{
 @zoro/core:lint:        6 │ + → Paper,
 @zoro/core:lint:        7 │ + → Author,
@@ -1502,13 +1502,13 @@ node : • turbo 2.8.14
 @zoro/core:lint:       18 │ + → ConnectorPingResponse,
 @zoro/core:lint:       19 │ + }·from·"./types/connector";
 @zoro/core:lint:       20 │ + export·type·{·SubscriptionSourceInfo·}·from·"./types/subscription";
-@zoro/core:lint:     8 21 │   
-@zoro/core:lint:   
-@zoro/core:lint: 
+@zoro/core:lint:     8 21 │
+@zoro/core:lint:
+@zoro/core:lint:
 @zoro/core:lint: src/types\paper.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/core:lint: 
+@zoro/core:lint:
 @zoro/core:lint:   × Formatter would have printed the following content:
-@zoro/core:lint:   
+@zoro/core:lint:
 @zoro/core:lint:       1     │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/core:lint:       2     │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/core:lint:       3     │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1557,26 +1557,26 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/browser-extension:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/browser-extension:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/browser-extension:lint:         4 │ + 
+@zoro/browser-extension:lint:         4 │ +
 @zoro/browser-extension:lint:         5 │ + import·type·{·DetectionResult·}·from·"../../lib/types";
-@zoro/browser-extension:lint:         6 │ + 
+@zoro/browser-extension:lint:         6 │ +
 @zoro/browser-extension:lint:         7 │ + export·function·detectGeneric(url:·string,·doc:·Document):·DetectionResult·{
 @zoro/browser-extension:lint:         8 │ + → //·Look·for·citation·meta·tags·(Google·Scholar·/·Highwire·Press·format)
 @zoro/browser-extension:lint:         9 │ + → const·title·=·doc
 @zoro/browser-extension:lint:        10 │ + → → .querySelector('meta[name="citation_title"]')
 @zoro/browser-extension:lint:        11 │ + → → ?.getAttribute("content");
-@zoro/browser-extension:lint:        12 │ + 
+@zoro/browser-extension:lint:        12 │ +
 @zoro/browser-extension:lint:        13 │ + → if·(!title)·{
 @zoro/browser-extension:lint:        14 │ + → → return·{·detected:·false,·source:·"generic"·};
 @zoro/browser-extension:lint:        15 │ + → }
-@zoro/browser-extension:lint:        16 │ + 
+@zoro/browser-extension:lint:        16 │ +
 @zoro/browser-extension:lint:        17 │ + → const·authorMetas·=·doc.querySelectorAll('meta[name="citation_author"]');
 @zoro/browser-extension:lint:        18 │ + → const·authors:·string[]·=·[];
 @zoro/browser-extension:lint:        19 │ + → authorMetas.forEach((el)·=>·{
 @zoro/browser-extension:lint:        20 │ + → → const·name·=·el.getAttribute("content");
 @zoro/browser-extension:lint:        21 │ + → → if·(name)·authors.push(name);
 @zoro/browser-extension:lint:        22 │ + → });
-@zoro/browser-extension:lint:        23 │ + 
+@zoro/browser-extension:lint:        23 │ +
 @zoro/browser-extension:lint:        24 │ + → const·doi·=
 @zoro/browser-extension:lint:        25 │ + → → doc.querySelector('meta[name="citation_doi"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        26 │ + → → undefined;
@@ -1588,7 +1588,7 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        32 │ + → → doc
 @zoro/browser-extension:lint:        33 │ + → → → .querySelector('meta[name="citation_abstract"]')
 @zoro/browser-extension:lint:        34 │ + → → → ?.getAttribute("content")·||·undefined;
-@zoro/browser-extension:lint:        35 │ + 
+@zoro/browser-extension:lint:        35 │ +
 @zoro/browser-extension:lint:        36 │ + → return·{
 @zoro/browser-extension:lint:        37 │ + → → detected:·true,
 @zoro/core:lint:      29     │ - ··journal:·string·|·null;␍
@@ -1611,21 +1611,21 @@ node : • turbo 2.8.14
 @zoro/core:lint:      36     │ - }␍
 @zoro/core:lint:      37     │ - ␍
 @zoro/browser-extension:lint:        48 │ + }
-@zoro/browser-extension:lint:     39 49 │   
+@zoro/browser-extension:lint:     39 49 │
 @zoro/core:lint:      38     │ - export·interface·Author·{␍
 @zoro/core:lint:      39     │ - ··name:·string;␍
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/core:lint:      40     │ - ··affiliation?:·string;␍
 @zoro/core:lint:      41     │ - ··orcid?:·string;␍
 @zoro/core:lint:      42     │ - }␍
 @zoro/browser-extension:lint: src/content\index.ts organizeImports ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Import statements could be sorted:
 @zoro/core:lint:      43     │ - ␍
 @zoro/core:lint:      44     │ - export·interface·AttachmentInfo·{␍
 @zoro/core:lint:      45     │ - ··filename:·string;␍
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      3  3 │   // See LICENSE file in the project root for full license information.␍
 @zoro/browser-extension:lint:      4  4 │   ␍
 @zoro/core:lint:      46     │ - ··type:·string;␍
@@ -1645,12 +1645,12 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         8 │ + import·{·detectGeneric·}·from·"./detectors/generic";␍
 @zoro/browser-extension:lint:      9  9 │   ␍
 @zoro/browser-extension:lint:     10 10 │   function detectPaper(): DetectionResult {␍
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/content\detectors\arxiv.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Formatter would have printed the following content:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/browser-extension:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/browser-extension:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1791,7 +1791,7 @@ node : • turbo 2.8.14
 @zoro/core:lint:           1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/core:lint:           2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/core:lint:           3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/core:lint:           4 │ + 
+@zoro/core:lint:           4 │ +
 @zoro/core:lint:           5 │ + export·interface·Paper·{
 @zoro/core:lint:           6 │ + → id:·string;
 @zoro/core:lint:           7 │ + → slug:·string;
@@ -1801,12 +1801,12 @@ node : • turbo 2.8.14
 @zoro/core:lint:          11 │ + → abstract_text:·string·|·null;
 @zoro/core:lint:          12 │ + → doi:·string·|·null;
 @zoro/core:lint:   127 more lines truncated
-@zoro/core:lint:   
-@zoro/core:lint: 
+@zoro/core:lint:
+@zoro/core:lint:
 @zoro/core:lint: src/types\connector.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/core:lint: 
+@zoro/core:lint:
 @zoro/core:lint:   × Formatter would have printed the following content:
-@zoro/core:lint:   
+@zoro/core:lint:
 @zoro/core:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/core:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/core:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1836,12 +1836,12 @@ node : • turbo 2.8.14
 @zoro/core:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/core:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/core:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/core:lint:         4 │ + 
+@zoro/core:lint:         4 │ +
 @zoro/core:lint:         5 │ + export·interface·ConnectorPingResponse·{
 @zoro/core:lint:         6 │ + → version:·string;
 @zoro/core:lint:         7 │ + → name:·string;
 @zoro/core:lint:         8 │ + }
-@zoro/core:lint:         9 │ + 
+@zoro/core:lint:         9 │ +
 @zoro/core:lint:        10 │ + export·interface·ConnectorSaveItemRequest·{
 @zoro/core:lint:        11 │ + → title:·string;
 @zoro/core:lint:        12 │ + → authors?:·string[];
@@ -1853,20 +1853,20 @@ node : • turbo 2.8.14
 @zoro/core:lint:        18 │ + → abstract_text?:·string;
 @zoro/core:lint:        19 │ + → tags?:·string[];
 @zoro/core:lint:        20 │ + }
-@zoro/core:lint:        21 │ + 
+@zoro/core:lint:        21 │ +
 @zoro/core:lint:        22 │ + export·interface·ConnectorSaveItemResponse·{
 @zoro/core:lint:        23 │ + → success:·boolean;
 @zoro/core:lint:        24 │ + → paper_id?:·string;
 @zoro/core:lint:        25 │ + → message:·string;
 @zoro/core:lint:        26 │ + }
-@zoro/core:lint:     27 27 │   
-@zoro/core:lint:   
-@zoro/core:lint: 
+@zoro/core:lint:     27 27 │
+@zoro/core:lint:
+@zoro/core:lint:
 @zoro/core:lint: check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/core:lint: 
+@zoro/core:lint:
 @zoro/core:lint:   × Some errors were emitted while running checks.
-@zoro/core:lint:   
-@zoro/core:lint: 
+@zoro/core:lint:
+@zoro/core:lint:
 @zoro/browser-extension:lint:     50    │ - ······pdf_url:·`https://arxiv.org/pdf/${arxivId}`,␍
 @zoro/browser-extension:lint:     51    │ - ······html_url:·`https://arxiv.org/html/${arxivId}`,␍
 @zoro/browser-extension:lint:     52    │ - ······abstract_text,␍
@@ -1876,20 +1876,20 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/browser-extension:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/browser-extension:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/browser-extension:lint:         4 │ + 
+@zoro/browser-extension:lint:         4 │ +
 @zoro/browser-extension:lint:         5 │ + import·type·{·DetectionResult·}·from·"../../lib/types";
-@zoro/browser-extension:lint:         6 │ + 
+@zoro/browser-extension:lint:         6 │ +
 @zoro/browser-extension:lint:         7 │ + export·function·detectArxiv(url:·string,·doc:·Document):·DetectionResult·{
 @zoro/browser-extension:lint:         8 │ + → //·Match·arxiv.org/abs/XXXX.XXXXX·or·arxiv.org/pdf/XXXX.XXXXX
 @zoro/browser-extension:lint:         9 │ + → const·absMatch·=·url.match(/arxiv\.org\/abs\/(\d+\.\d+)(v\d+)?/);
 @zoro/browser-extension:lint:        10 │ + → const·pdfMatch·=·url.match(/arxiv\.org\/pdf\/(\d+\.\d+)(v\d+)?/);
 @zoro/browser-extension:lint:        11 │ + → const·htmlMatch·=·url.match(/arxiv\.org\/html\/(\d+\.\d+)(v\d+)?/);
-@zoro/browser-extension:lint:        12 │ + 
+@zoro/browser-extension:lint:        12 │ +
 @zoro/browser-extension:lint:        13 │ + → const·arxivId·=·absMatch?.[1]·||·pdfMatch?.[1]·||·htmlMatch?.[1];
 @zoro/browser-extension:lint:        14 │ + → if·(!arxivId)·{
 @zoro/browser-extension:lint:        15 │ + → → return·{·detected:·false,·source:·"arxiv"·};
 @zoro/browser-extension:lint:        16 │ + → }
-@zoro/browser-extension:lint:        17 │ + 
+@zoro/browser-extension:lint:        17 │ +
 @zoro/browser-extension:lint:        18 │ + → //·Extract·metadata·from·the·page
 @zoro/browser-extension:lint:        19 │ + → const·title·=
 @zoro/browser-extension:lint:        20 │ + → → doc
@@ -1899,7 +1899,7 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        24 │ + → → doc.querySelector('meta[name="citation_title"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        25 │ + → → doc.title.replace("·-·arXiv",·"").trim()·||
 @zoro/browser-extension:lint:        26 │ + → → "";
-@zoro/browser-extension:lint:        27 │ + 
+@zoro/browser-extension:lint:        27 │ +
 @zoro/browser-extension:lint:        28 │ + → const·authorElements·=·doc.querySelectorAll(
 @zoro/browser-extension:lint:        29 │ + → → ".authors·a,·meta[name='citation_author']",
 @zoro/browser-extension:lint:        30 │ + → );
@@ -1910,18 +1910,18 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        35 │ + → → → authors.push(name);
 @zoro/browser-extension:lint:        36 │ + → → }
 @zoro/browser-extension:lint:        37 │ + → });
-@zoro/browser-extension:lint:        38 │ + 
+@zoro/browser-extension:lint:        38 │ +
 @zoro/browser-extension:lint:        39 │ + → const·abstractEl·=·doc.querySelector(".abstract");
 @zoro/browser-extension:lint:        40 │ + → const·abstract_text·=·abstractEl
 @zoro/browser-extension:lint:        41 │ + → → ?·abstractEl.textContent?.replace(/^Abstract:\s*/,·"").trim()
 @zoro/browser-extension:lint:        42 │ + → → :·doc
 @zoro/browser-extension:lint:        43 │ + → → → → .querySelector('meta[name="citation_abstract"]')
 @zoro/browser-extension:lint:        44 │ + → → → → ?.getAttribute("content")·||·undefined;
-@zoro/browser-extension:lint:        45 │ + 
+@zoro/browser-extension:lint:        45 │ +
 @zoro/browser-extension:lint:        46 │ + → const·doi·=
 @zoro/browser-extension:lint:        47 │ + → → doc.querySelector('meta[name="citation_doi"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        48 │ + → → undefined;
-@zoro/browser-extension:lint:        49 │ + 
+@zoro/browser-extension:lint:        49 │ +
 @zoro/browser-extension:lint:        50 │ + → return·{
 @zoro/browser-extension:lint:        51 │ + → → detected:·true,
 @zoro/browser-extension:lint:        52 │ + → → source:·"arxiv",
@@ -1937,13 +1937,13 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        62 │ + → → },
 @zoro/browser-extension:lint:        63 │ + → };
 @zoro/browser-extension:lint:        64 │ + }
-@zoro/browser-extension:lint:     56 65 │   
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:     56 65 │
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/content\index.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Formatter would have printed the following content:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/browser-extension:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/browser-extension:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -1996,31 +1996,31 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/browser-extension:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/browser-extension:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/browser-extension:lint:         4 │ + 
+@zoro/browser-extension:lint:         4 │ +
 @zoro/browser-extension:lint:         5 │ + import·{·detectArxiv·}·from·"./detectors/arxiv";
 @zoro/browser-extension:lint:         6 │ + import·{·detectDoi·}·from·"./detectors/doi";
 @zoro/browser-extension:lint:         7 │ + import·{·detectGeneric·}·from·"./detectors/generic";
 @zoro/browser-extension:lint:         8 │ + import·type·{·DetectionResult·}·from·"../lib/types";
-@zoro/browser-extension:lint:         9 │ + 
+@zoro/browser-extension:lint:         9 │ +
 @zoro/browser-extension:lint:        10 │ + function·detectPaper():·DetectionResult·{
 @zoro/browser-extension:lint:        11 │ + → const·url·=·window.location.href;
-@zoro/browser-extension:lint:        12 │ + 
+@zoro/browser-extension:lint:        12 │ +
 @zoro/browser-extension:lint:        13 │ + → //·Try·detectors·in·priority·order
 @zoro/browser-extension:lint:        14 │ + → const·arxivResult·=·detectArxiv(url,·document);
 @zoro/browser-extension:lint:        15 │ + → if·(arxivResult.detected)·return·arxivResult;
-@zoro/browser-extension:lint:        16 │ + 
+@zoro/browser-extension:lint:        16 │ +
 @zoro/browser-extension:lint:        17 │ + → const·doiResult·=·detectDoi(url,·document);
 @zoro/browser-extension:lint:        18 │ + → if·(doiResult.detected)·return·doiResult;
-@zoro/browser-extension:lint:        19 │ + 
+@zoro/browser-extension:lint:        19 │ +
 @zoro/browser-extension:lint:        20 │ + → const·genericResult·=·detectGeneric(url,·document);
 @zoro/browser-extension:lint:        21 │ + → if·(genericResult.detected)·return·genericResult;
-@zoro/browser-extension:lint:        22 │ + 
+@zoro/browser-extension:lint:        22 │ +
 @zoro/browser-extension:lint:        23 │ + → return·{·detected:·false,·source:·"none"·};
 @zoro/browser-extension:lint:        24 │ + }
-@zoro/browser-extension:lint:        25 │ + 
+@zoro/browser-extension:lint:        25 │ +
 @zoro/browser-extension:lint:        26 │ + //·Run·detection·and·send·result·to·background
 @zoro/browser-extension:lint:        27 │ + const·result·=·detectPaper();
-@zoro/browser-extension:lint:        28 │ + 
+@zoro/browser-extension:lint:        28 │ +
 @zoro/browser-extension:lint:        29 │ + if·(result.detected·&&·result.metadata)·{
 @zoro/browser-extension:lint:        30 │ + → chrome.runtime.sendMessage({
 @zoro/browser-extension:lint:        31 │ + → → type:·"PAPER_DETECTED",
@@ -2028,7 +2028,7 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        33 │ + → → source:·result.source,
 @zoro/browser-extension:lint:        34 │ + → });
 @zoro/browser-extension:lint:        35 │ + }
-@zoro/browser-extension:lint:        36 │ + 
+@zoro/browser-extension:lint:        36 │ +
 @zoro/browser-extension:lint:        37 │ + //·Listen·for·requests·from·popup
 @zoro/browser-extension:lint:        38 │ + chrome.runtime.onMessage.addListener((message,·_sender,·sendResponse)·=>·{
 @zoro/browser-extension:lint:        39 │ + → if·(message.type·===·"GET_PAPER_METADATA")·{
@@ -2042,13 +2042,13 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        47 │ + → }
 @zoro/browser-extension:lint:        48 │ + → return·true;·//·Keep·message·channel·open·for·async·response
 @zoro/browser-extension:lint:        49 │ + });
-@zoro/browser-extension:lint:     50 50 │   
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:     50 50 │
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/background\index.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Formatter would have printed the following content:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/browser-extension:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/browser-extension:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -2101,21 +2101,21 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/browser-extension:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/browser-extension:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/browser-extension:lint:         4 │ + 
+@zoro/browser-extension:lint:         4 │ +
 @zoro/browser-extension:lint:         5 │ + import·{·checkConnection·}·from·"./connector";
 @zoro/browser-extension:lint:         6 │ + import·type·{·PaperMetadata·}·from·"../lib/types";
-@zoro/browser-extension:lint:         7 │ + 
+@zoro/browser-extension:lint:         7 │ +
 @zoro/browser-extension:lint:         8 │ + //·Track·detected·papers·per·tab
 @zoro/browser-extension:lint:         9 │ + const·detectedPapers·=·new·Map<number,·PaperMetadata>();
-@zoro/browser-extension:lint:        10 │ + 
+@zoro/browser-extension:lint:        10 │ +
 @zoro/browser-extension:lint:        11 │ + //·Check·connection·on·startup
 @zoro/browser-extension:lint:        12 │ + checkConnection();
-@zoro/browser-extension:lint:        13 │ + 
+@zoro/browser-extension:lint:        13 │ +
 @zoro/browser-extension:lint:        14 │ + //·Listen·for·paper·detection·from·content·scripts
 @zoro/browser-extension:lint:        15 │ + chrome.runtime.onMessage.addListener((message,·sender,·sendResponse)·=>·{
 @zoro/browser-extension:lint:        16 │ + → if·(message.type·===·"PAPER_DETECTED"·&&·sender.tab?.id)·{
 @zoro/browser-extension:lint:        17 │ + → → detectedPapers.set(sender.tab.id,·message.metadata);
-@zoro/browser-extension:lint:        18 │ + 
+@zoro/browser-extension:lint:        18 │ +
 @zoro/browser-extension:lint:        19 │ + → → //·Update·badge·to·show·paper·detected
 @zoro/browser-extension:lint:        20 │ + → → chrome.action.setBadgeText({
 @zoro/browser-extension:lint:        21 │ + → → → tabId:·sender.tab.id,
@@ -2126,19 +2126,19 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        26 │ + → → → color:·"#3b82f6",
 @zoro/browser-extension:lint:        27 │ + → → });
 @zoro/browser-extension:lint:        28 │ + → }
-@zoro/browser-extension:lint:        29 │ + 
+@zoro/browser-extension:lint:        29 │ +
 @zoro/browser-extension:lint:        30 │ + → if·(message.type·===·"GET_DETECTED_PAPER"·&&·sender.tab?.id)·{
 @zoro/browser-extension:lint:        31 │ + → → sendResponse(detectedPapers.get(sender.tab.id)·||·null);
 @zoro/browser-extension:lint:        32 │ + → }
-@zoro/browser-extension:lint:        33 │ + 
+@zoro/browser-extension:lint:        33 │ +
 @zoro/browser-extension:lint:        34 │ + → return·true;
 @zoro/browser-extension:lint:        35 │ + });
-@zoro/browser-extension:lint:        36 │ + 
+@zoro/browser-extension:lint:        36 │ +
 @zoro/browser-extension:lint:        37 │ + //·Clean·up·when·tab·is·closed
 @zoro/browser-extension:lint:        38 │ + chrome.tabs.onRemoved.addListener((tabId)·=>·{
 @zoro/browser-extension:lint:        39 │ + → detectedPapers.delete(tabId);
 @zoro/browser-extension:lint:        40 │ + });
-@zoro/browser-extension:lint:        41 │ + 
+@zoro/browser-extension:lint:        41 │ +
 @zoro/browser-extension:lint:        42 │ + //·Clean·up·when·tab·navigates
 @zoro/browser-extension:lint:        43 │ + chrome.tabs.onUpdated.addListener((tabId,·changeInfo)·=>·{
 @zoro/browser-extension:lint:        44 │ + → if·(changeInfo.url)·{
@@ -2146,13 +2146,13 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        46 │ + → → chrome.action.setBadgeText({·tabId,·text:·""·});
 @zoro/browser-extension:lint:        47 │ + → }
 @zoro/browser-extension:lint:        48 │ + });
-@zoro/browser-extension:lint:     49 49 │   
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:     49 49 │
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/content\detectors\doi.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:   × Formatter would have printed the following content:
-@zoro/browser-extension:lint:   
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint:      1    │ - //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team␍
 @zoro/browser-extension:lint:      2    │ - //·Licensed·under·the·AGPL-3.0·license.␍
 @zoro/browser-extension:lint:      3    │ - //·See·LICENSE·file·in·the·project·root·for·full·license·information.␍
@@ -2211,31 +2211,31 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:         1 │ + //·Copyright·(c)·2026·Ruihang·Li·and·the·Zoro·Team
 @zoro/browser-extension:lint:         2 │ + //·Licensed·under·the·AGPL-3.0·license.
 @zoro/browser-extension:lint:         3 │ + //·See·LICENSE·file·in·the·project·root·for·full·license·information.
-@zoro/browser-extension:lint:         4 │ + 
+@zoro/browser-extension:lint:         4 │ +
 @zoro/browser-extension:lint:         5 │ + import·type·{·DetectionResult·}·from·"../../lib/types";
-@zoro/browser-extension:lint:         6 │ + 
+@zoro/browser-extension:lint:         6 │ +
 @zoro/browser-extension:lint:         7 │ + export·function·detectDoi(url:·string,·doc:·Document):·DetectionResult·{
 @zoro/browser-extension:lint:         8 │ + → //·Look·for·DOI·in·URL
 @zoro/browser-extension:lint:         9 │ + → const·doiUrlMatch·=·url.match(/doi\.org\/(10\.\d{4,}\/[^\s]+)/);
-@zoro/browser-extension:lint:        10 │ + 
+@zoro/browser-extension:lint:        10 │ +
 @zoro/browser-extension:lint:        11 │ + → //·Look·for·DOI·in·meta·tags
 @zoro/browser-extension:lint:        12 │ + → const·doiMeta·=
 @zoro/browser-extension:lint:        13 │ + → → doc.querySelector('meta[name="citation_doi"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        14 │ + → → doc.querySelector('meta[name="DC.identifier"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        15 │ + → → doc.querySelector('meta[name="dc.identifier"]')?.getAttribute("content");
-@zoro/browser-extension:lint:        16 │ + 
+@zoro/browser-extension:lint:        16 │ +
 @zoro/browser-extension:lint:        17 │ + → const·doi·=
 @zoro/browser-extension:lint:        18 │ + → → doiUrlMatch?.[1]·||·(doiMeta?.startsWith("10.")·?·doiMeta·:·undefined);
-@zoro/browser-extension:lint:        19 │ + 
+@zoro/browser-extension:lint:        19 │ +
 @zoro/browser-extension:lint:        20 │ + → if·(!doi)·{
 @zoro/browser-extension:lint:        21 │ + → → return·{·detected:·false,·source:·"doi"·};
 @zoro/browser-extension:lint:        22 │ + → }
-@zoro/browser-extension:lint:        23 │ + 
+@zoro/browser-extension:lint:        23 │ +
 @zoro/browser-extension:lint:        24 │ + → const·title·=
 @zoro/browser-extension:lint:        25 │ + → → doc.querySelector('meta[name="citation_title"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        26 │ + → → doc.querySelector('meta[name="DC.title"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        27 │ + → → doc.title;
-@zoro/browser-extension:lint:        28 │ + 
+@zoro/browser-extension:lint:        28 │ +
 @zoro/browser-extension:lint:        29 │ + → const·authorMetas·=·doc.querySelectorAll(
 @zoro/browser-extension:lint:        30 │ + → → 'meta[name="citation_author"],·meta[name="DC.creator"]',
 @zoro/browser-extension:lint:        31 │ + → );
@@ -2244,7 +2244,7 @@ node : • turbo 2.8.14
 @zoro/browser-extension:lint:        34 │ + → → const·name·=·el.getAttribute("content");
 @zoro/browser-extension:lint:        35 │ + → → if·(name)·authors.push(name);
 @zoro/browser-extension:lint:        36 │ + → });
-@zoro/browser-extension:lint:        37 │ + 
+@zoro/browser-extension:lint:        37 │ +
 @zoro/browser-extension:lint:        38 │ + → const·abstract_text·=
 @zoro/browser-extension:lint:        39 │ + → → doc
 @zoro/browser-extension:lint:        40 │ + → → → .querySelector('meta[name="citation_abstract"]')
@@ -2254,12 +2254,12 @@ node : • turbo 2.8.14
 ited (1)
 @zoro/browser-extension:lint:        42 │ + → → doc.querySelector('meta[name="DC.description"]')?.getAttribute("content")·||
 @zoro/browser-extension:lint:        43 │ + → → undefined;
-@zoro/browser-extension:lint:        44 │ + 
+@zoro/browser-extension:lint:        44 │ +
 @zoro/browser-extension:lint:        45 │ + → const·pdf_url·=
 @zoro/browser-extension:lint:        46 │ + → → doc
 @zoro/browser-extension:lint:        47 │ + → → → .querySelector('meta[name="citation_pdf_url"]')
 @zoro/browser-extension:lint:        48 │ + → → → ?.getAttribute("content")·||·undefined;
-@zoro/browser-extension:lint:        49 │ + 
+@zoro/browser-extension:lint:        49 │ +
 @zoro/browser-extension:lint:        50 │ + → return·{
 @zoro/browser-extension:lint:        51 │ + → → detected:·true,
 @zoro/browser-extension:lint:        52 │ + → → source:·"doi",
@@ -2273,17 +2273,17 @@ ited (1)
 @zoro/browser-extension:lint:        60 │ + → → },
 @zoro/browser-extension:lint:        61 │ + → };
 @zoro/browser-extension:lint:        62 │ + }
-@zoro/browser-extension:lint:     56 63 │   
-@zoro/browser-extension:lint:   
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:     56 63 │
+@zoro/browser-extension:lint:
+@zoro/browser-extension:lint:
 @zoro/browser-extension:lint: src/popup\i18n.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-@zoro/browser-extension:lint: 
+@zoro/browser-extension:lint:
 @zoro/core#lint: command (<WORKSPACE>\packages\core) <USER_HOME>\AppData\L
 ocal\JetBrains\PyCharm2026.2\acp-agents\.runtimes\node\24.13.0\pnpm.cmd run lint exited (1)
 
  Tasks:    0 successful, 3 total
 Cached:    0 cached, 3 total
-  Time:    1.159s 
+  Time:    1.159s
 Failed:    @zoro/core#lint
 
  ERROR  run failed: command  exited (1)
@@ -2306,7 +2306,7 @@ cargo : note: did not finalize incremental compilation session directory `\\?\<U
 +                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (note: did not f...拒。 (os error 5):String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
   |
   = help: the next build will not be able to reuse work from this compilation
 
@@ -2591,7 +2591,7 @@ cargo : `cargo metadata` exited with an error: error: could not find `Cargo.toml
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (`cargo metadata...arent directory:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
 
 This utility formats all bin and lib files of the current crate using rustfmt.
 

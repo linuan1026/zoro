@@ -1,0 +1,156 @@
+[
+  {
+    "autocrlf": "true",
+    "biomeExit": 0,
+    "output": "Checked 14 files in 37ms. No fixes applied.\n",
+    "counts": [
+      {
+        "file": "apps/desktop/src/components/reader/BilingualTextViewer.tsx",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/components/reader/TranslationMarkdown.tsx",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/components/reader/OfflineTranslationToolbar.tsx",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/components/reader/useSentenceAlignment.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/commands.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/offlineTranslation.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/translationContent.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/translationScroll.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/sentenceAlignment.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/uiPreferences.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/i18n.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/locales/offline.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/locales/zh-TW.json",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/stores/uiStore.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      }
+    ]
+  },
+  {
+    "autocrlf": "false",
+    "biomeExit": 0,
+    "output": "Checked 14 files in 36ms. No fixes applied.\n",
+    "counts": [
+      {
+        "file": "apps/desktop/src/components/reader/BilingualTextViewer.tsx",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/components/reader/TranslationMarkdown.tsx",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/components/reader/OfflineTranslationToolbar.tsx",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/components/reader/useSentenceAlignment.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/commands.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/offlineTranslation.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/translationContent.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/translationScroll.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/sentenceAlignment.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/uiPreferences.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/lib/i18n.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/locales/offline.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/locales/zh-TW.json",
+        "crlf": 0,
+        "matchesGitBlob": true
+      },
+      {
+        "file": "apps/desktop/src/stores/uiStore.ts",
+        "crlf": 0,
+        "matchesGitBlob": true
+      }
+    ]
+  }
+]
