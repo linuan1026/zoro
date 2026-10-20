@@ -48,6 +48,10 @@ Range 快取在縮放／DOM／視窗／欄寬變化後失效重算；快速 poin
 保留表格、搜尋標記及公式結構。句子高亮只改 class，不改原始 Markdown。
 英文反白由 React 矩形覆蓋層呈現，`pointer-events: none`，深淺主題採半透明黃色。
 
+Markdown/KaTeX 解析結果以 useMemo 保留；hover 只更新 React 管理的活動 ID 屬性與
+範圍限定樣式，不重解析整篇文件，也不替換文字節點。動態 CSS 只接受驗證過的英數／
+底線／連字號 ID，其他內容無法注入樣式。外部連結處理 callback 保持穩定。
+
 `BilingualTextViewer.tsx` 管理 hover、固定 ID、獨立逐句開關及預設關閉的自動跟隨。
 滑鼠移入任一側可雙向對照；點擊固定，再點同句或「解除固定句子」取消。
 有選取範圍時不攔截選字；連結按鈕保留原本安全確認操作。

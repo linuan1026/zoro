@@ -58,16 +58,16 @@ test("normalization retains chemical symbols, matches across line hyphenation an
 
 test("React sentence marks cover multiple formatting nodes, tables, one-to-many targets, and coexist with search/KaTeX safely", () => {
 	const spoof = renderToStaticMarkup(element(TranslationMarkdown, { text: '<span data-alignment="er-alpha">wrong</span>', pairs: [pair], activeId: pair.id }));
-	assert.doesNotMatch(spoof, /data-alignment/);
+	assert.doesNotMatch(spoof, /<[^>]+data-alignment=/);
   const pairs = [{ id: "table", source: pair.source, target: [{ section: 1, text: "雌二醇與 ERα。" }, { section: 1, text: "第二句。" }] }];
   const text = "| 藥物 | 說明 |\n| --- | --- |\n| Fulvestrant | **雌二醇**與 ERα。 |\n\n第二句。 $E=mc^2$";
   const render = (activeId, section = 1) => renderToStaticMarkup(element(TranslationMarkdown, { text, pairs, section, activeId, query: "ERα" }));
   const marked = render("table");
-  assert.match(marked, /data-alignment="table"/); assert.match(marked, /bg-yellow-200/); assert.match(marked, /data-search="true"/); assert.match(marked, /<table>/); assert.match(marked, /class="katex"/);
-  assert.doesNotMatch(render(null), /bg-yellow-200/);
-  assert.doesNotMatch(render("table", 2), /data-alignment/);
+  assert.match(marked, /data-alignment="table"/); assert.match(marked, /data-active-alignment="table"/); assert.match(marked, /background-color: rgba/); assert.match(marked, /data-search="true"/); assert.match(marked, /<table>/); assert.match(marked, /class="katex"/);
+  assert.doesNotMatch(render(null), /<style>/);
+  assert.doesNotMatch(render("table", 2), /<[^>]+data-alignment=/);
   assert.doesNotMatch(renderToStaticMarkup(element(TranslationMarkdown, { text: '<script>alert(1)</script>\n\n'+chinese, pairs: [pair], activeId: pair.id })), /<script/);
-  assert.doesNotMatch(renderToStaticMarkup(element(TranslationMarkdown, { text: `${chinese} ${chinese}`, pairs: [pair], activeId: pair.id })), /data-alignment/);
+  assert.doesNotMatch(renderToStaticMarkup(element(TranslationMarkdown, { text: `${chinese} ${chinese}`, pairs: [pair], activeId: pair.id })), /<[^>]+data-alignment=/);
 });
 
 const dom = new JSDOM('<div id="test-root"></div>', { url: "https://zoro.invalid" });
@@ -113,9 +113,11 @@ test("mounted React hover, reverse hover, rapid moves, pin/unpin, zoom, inactive
   const render = async (props = {}, key = "v1") => { await act(async () => root.render(element(Harness, { ...props, key }))); };
   const dispatch = async (target, type, x = 20, y = 15) => { await act(async () => { target.dispatchEvent(new window.MouseEvent(type, { bubbles: type !== "pointerleave", clientX: x, clientY: y })); await new Promise((resolve) => setTimeout(resolve, 8)); }); };
   await render();
+  const originalTarget = document.querySelector('[data-alignment]');
   await dispatch(document.getElementById("source"), "pointermove");
+  assert.equal(document.querySelector('[data-alignment]'), originalTarget);
   assert.match(document.getElementById("active").textContent, /^er-alpha::1$/);
-  assert.match(document.getElementById("target").innerHTML, /bg-yellow-200/);
+  assert.equal(window.getComputedStyle(document.querySelector('[data-alignment]')).backgroundColor, "rgba(250, 204, 21, 0.32)");
   await dispatch(document.getElementById("source"), "click");
   await dispatch(document.querySelector("[data-original]"), "pointerleave");
   assert.match(document.getElementById("active").textContent, /^er-alpha:er-alpha:1$/);

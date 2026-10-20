@@ -32,6 +32,16 @@ export function BilingualTextViewer({
 	isActive: boolean;
 }) {
 	const { t } = useTranslation();
+	const handleOpenLink = useCallback(
+		(url: string) => {
+			void commands
+				.openOfflineTranslationLink(url, t("offline.confirmExternal", { url }))
+				.catch((error) =>
+					window.alert(t("offline.error", { error: String(error) })),
+				);
+		},
+		[t],
+	);
 	const rootRef = useRef<HTMLDivElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
 	const aligned = useMemo(
@@ -405,18 +415,7 @@ export function BilingualTextViewer({
 												section={section.page}
 												activeId={activeId}
 												query={query}
-												onOpenLink={(url) => {
-													void commands
-														.openOfflineTranslationLink(
-															url,
-															t("offline.confirmExternal", { url }),
-														)
-														.catch((error) =>
-															window.alert(
-																t("offline.error", { error: String(error) }),
-															),
-														);
-												}}
+												onOpenLink={handleOpenLink}
 											/>
 										</article>
 									)}
