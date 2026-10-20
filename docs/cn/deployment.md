@@ -330,7 +330,7 @@ Release 工作流自动生成中英双语下载指南，格式如下：
 
 ### Windows checkout 換行格式
 
-根目錄 `.gitattributes` 將 `.ts` 與 `.tsx` 的 checkout 格式固定為 LF，即使
+根目錄 `.gitattributes` 將 `.ts`、`.tsx` 與 `.json` 的 checkout 格式固定為 LF，即使
 Windows 設定 `core.autocrlf=true` 也不轉為 CRLF，以符合 Biome 預設 formatter。
 沒有停用格式檢查、lint 或測試；不影響二進位檔、PowerShell 檔案或應用程式行為。
 既有 TypeScript Git blob 原本即為 LF，不需大規模 renormalize。分支建置與

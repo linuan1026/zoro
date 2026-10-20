@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import * as commands from "@/lib/commands";
 import { decodeTranslation } from "@/lib/offlineTranslation";
+import { importBilingualBundle } from "@/lib/sentenceAlignment";
 import {
 	offlineTranslationKey,
 	useOfflineTranslationStore,
@@ -71,23 +72,37 @@ export function OfflineTranslationToolbar({
 			localStorage.setItem(storageKey, selected ?? "");
 	}, [loadedKey, storageKey, selected]);
 
-	const handleImport = async () => {
+	const handleImport = async (aligned = false) => {
 		setBusy(true);
 		setError("");
 		try {
 			const path = await open({
 				multiple: false,
 				directory: false,
-				filters: [{ name: t("offline.documents"), extensions: ["md", "txt"] }],
+				filters: [
+					{
+						name: t(aligned ? "offline.alignmentImport" : "offline.documents"),
+						extensions: aligned ? ["json"] : ["md", "txt"],
+					},
+				],
 			});
 			if (!path) return;
-			const name = path.split(/[\\/]/).pop() ?? "";
-			if (!/\.(md|txt)$/i.test(name)) throw new Error(t("offline.invalidFile"));
+			let name = path.split(/[\\/]/).pop() ?? "";
+			if (!(aligned ? /\.json$/i : /\.(md|txt)$/i).test(name))
+				throw new Error(t("offline.invalidFile"));
 			let content: string;
 			try {
 				content = decodeTranslation(await readFile(path));
 			} catch {
 				throw new Error(t("offline.invalidFile"));
+			}
+			if (aligned) {
+				try {
+					content = importBilingualBundle(content);
+					name = name.replace(/\.json$/i, ".md");
+				} catch {
+					throw new Error(t("offline.alignmentInvalid"));
+				}
 			}
 			const document = await commands.importOfflineTranslation(
 				paperId,
@@ -132,8 +147,21 @@ export function OfflineTranslationToolbar({
 
 	return (
 		<div className="flex flex-wrap items-center gap-2 border-b bg-background px-3 py-1 text-xs">
-			<Button size="sm" variant="ghost" disabled={busy} onClick={handleImport}>
+			<Button
+				size="sm"
+				variant="ghost"
+				disabled={busy}
+				onClick={() => void handleImport()}
+			>
 				{t("offline.import")}
+			</Button>
+			<Button
+				size="sm"
+				variant="ghost"
+				disabled={busy}
+				onClick={() => void handleImport(true)}
+			>
+				{t("offline.alignmentImport")}
 			</Button>
 			{documents.length > 0 && (
 				<>

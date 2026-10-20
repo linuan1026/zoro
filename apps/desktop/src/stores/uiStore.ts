@@ -11,6 +11,10 @@ import {
 } from "@/lib/columnConfig";
 import i18n from "@/lib/i18n";
 import type { SupportedLanguage } from "@/lib/i18n";
+import {
+	initialOnboardingVisibility,
+	normalizeUiLanguage,
+} from "@/lib/uiPreferences";
 import { invoke } from "@tauri-apps/api/core";
 import { useEffect, useState } from "react";
 import { create } from "zustand";
@@ -295,7 +299,7 @@ export const useUiStore = create<UiState>((set, get) => ({
 		return DEFAULT_READER_SIDEBAR_CONFIG;
 	})(),
 
-	showOnboarding: localStorage.getItem(ONBOARDING_KEY) !== "true",
+	showOnboarding: initialOnboardingVisibility(),
 
 	theme: loadSetting<Theme>("zoro-theme", "system"),
 	confirmBeforeDelete: loadSetting<boolean>("zoro-confirm-delete", true),
@@ -309,9 +313,9 @@ export const useUiStore = create<UiState>((set, get) => ({
 	),
 	showReaderTerminal: loadSetting<boolean>("zoro-show-reader-terminal", true),
 	terminalFontSize: loadSetting<number>("zoro-terminal-font-size", 13),
-	language: (localStorage.getItem("zoro-ui-language") ??
-		i18n.language ??
-		"en") as SupportedLanguage,
+	language: normalizeUiLanguage(
+		localStorage.getItem("zoro-ui-language") ?? i18n.language ?? "en",
+	) as SupportedLanguage,
 	uiScale: loadSetting<number>("zoro-ui-scale", 1),
 
 	htmlReaderTypography: loadSetting<HtmlReaderTypography>(

@@ -7,6 +7,10 @@ import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import {
+	type SentencePair,
+	rehypeSentenceAlignment,
+} from "../../lib/sentenceAlignment";
+import {
 	rehypeTranslationSearch,
 	safeTranslationUrl,
 	searchParts,
@@ -24,7 +28,17 @@ export const TranslationMarkdown = memo(function TranslationMarkdown({
 	text,
 	query = "",
 	onOpenLink,
-}: { text: string; query?: string; onOpenLink?: (url: string) => void }) {
+	pairs = [],
+	section = null,
+	activeId = null,
+}: {
+	text: string;
+	query?: string;
+	onOpenLink?: (url: string) => void;
+	pairs?: SentencePair[];
+	section?: number | null;
+	activeId?: string | null;
+}) {
 	const { t } = useTranslation();
 	return (
 		<ReactMarkdown
@@ -34,6 +48,7 @@ export const TranslationMarkdown = memo(function TranslationMarkdown({
 				[rehypeSanitize, markdownSchema],
 				[rehypeKatex, { trust: false, strict: "ignore" }],
 				[rehypeTranslationSearch, { query }],
+				[rehypeSentenceAlignment, { pairs, section, activeId }],
 			]}
 			components={{
 				img: ({ alt }) => (

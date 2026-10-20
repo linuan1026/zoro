@@ -16,6 +16,8 @@ import { offlineEnglish, offlineTraditionalChinese } from "@/locales/offline";
 import pt from "@/locales/pt.json";
 import ru from "@/locales/ru.json";
 import zhCN from "@/locales/zh-CN.json";
+import zhTW from "@/locales/zh-TW.json";
+import { normalizeUiLanguage } from "./uiPreferences";
 
 export const supportedLanguages = [
 	{ code: "en", label: "English" },
@@ -38,7 +40,7 @@ i18n
 	.init({
 		resources: {
 			en: { translation: { ...en, offline: offlineEnglish } },
-			"zh-TW": { translation: { ...zhCN, offline: offlineTraditionalChinese } },
+			"zh-TW": { translation: { ...zhTW, offline: offlineTraditionalChinese } },
 			"zh-CN": { translation: { ...zhCN, offline: offlineTraditionalChinese } },
 			ja: { translation: { ...ja, offline: offlineEnglish } },
 			ko: { translation: { ...ko, offline: offlineEnglish } },
@@ -53,6 +55,7 @@ i18n
 			escapeValue: false, // React already escapes
 		},
 		detection: {
+			convertDetectedLanguage: normalizeUiLanguage,
 			order: ["localStorage", "navigator"],
 			lookupLocalStorage: "zoro-ui-language",
 			caches: ["localStorage"],

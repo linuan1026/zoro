@@ -1,5 +1,11 @@
 # 开发指南
 
+V3 使用獨立 `apps/desktop/src/locales/zh-TW.json`，與英文保持相同翻譯鍵／插值並採用
+台灣用語。介面語言優先尊重既有偏好，再依 WebView navigator；不修改 AI/PDF 目標語言。
+啟動預設直接進入文獻庫，必要初始化保留；新手導覽僅由設定頁明確手動開啟。
+`node --test apps/desktop/tests/v3.test.mjs` 驗證逐句、語言與啟動回歸；JSDOM 幾何為
+模擬，不能當作真實 Windows GUI 驗收。
+
 ## 环境要求
 
 | 依赖 | 最低版本 | 说明 |

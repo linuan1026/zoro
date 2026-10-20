@@ -257,7 +257,7 @@ Step-by-step release process:
 
 ### Windows checkout line endings
 
-The root `.gitattributes` keeps `.ts` and `.tsx` files as LF in every checkout,
+The root `.gitattributes` keeps `.ts`, `.tsx` and `.json` files as LF in every checkout,
 including Windows hosts with `core.autocrlf=true`. This matches Biome's default
 formatter without disabling formatting, lint or tests. The rule does not affect
 binary assets, PowerShell files or application behavior. No bulk renormalization

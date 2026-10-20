@@ -1,4 +1,13 @@
 export const offlineEnglish = {
+	alignmentImport: "Import bilingual sentence bundle (.json)",
+	alignmentInvalid:
+		"Invalid sentence alignment data. Check schema, IDs, page numbers, contexts and the 10 MiB size limit.",
+	sentenceAlignment: "Sentence correspondence",
+	autoFollow: "Follow translation automatically",
+	unpin: "Unpin sentence",
+	pinned: "Pinned",
+	alignmentHint:
+		"Hover to compare · Click to pin · Ambiguous/unmatched text is not aligned",
 	exact: "Exact page anchor (page start only)",
 	approximate: "Approximate alignment (between anchors / document tail)",
 	unmapped: "No available mapping here · Independent scrolling",
@@ -32,6 +41,14 @@ export const offlineEnglish = {
 };
 
 export const offlineTraditionalChinese: typeof offlineEnglish = {
+	alignmentImport: "匯入逐句雙語對照檔（.json）",
+	alignmentInvalid:
+		"逐句對照資料無效。請檢查格式、唯一 ID、頁碼、上下文及 10 MiB 大小限制。",
+	sentenceAlignment: "逐句對照",
+	autoFollow: "自動捲動至對應譯文",
+	unpin: "解除固定句子",
+	pinned: "已固定",
+	alignmentHint: "滑鼠移入對照・點擊固定・有歧義或無法定位時不對應",
 	exact: "精確頁碼錨點（僅頁首）",
 	approximate: "近似位置（錨點間／文件末端）",
 	unmapped: "此處無可用對應位置 · 獨立捲動",

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "katex/dist/katex.min.css";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import {
 import type { OfflineTranslation } from "@/lib/commands";
 import * as commands from "@/lib/commands";
 import { splitTranslation } from "@/lib/offlineTranslation";
+import { readAlignedDocument } from "@/lib/sentenceAlignment";
 import { bindTranslationScroll } from "@/lib/translationScroll";
 import { useAnnotationStore } from "@/stores/annotationStore";
 import { PdfAnnotationViewer } from "./PdfAnnotationViewer";
@@ -17,6 +18,7 @@ import {
 	TranslationMarkdown,
 	TranslationPlainText,
 } from "./TranslationMarkdown";
+import { useSentenceAlignment } from "./useSentenceAlignment";
 
 export function BilingualTextViewer({
 	document,
@@ -32,9 +34,45 @@ export function BilingualTextViewer({
 	const { t } = useTranslation();
 	const rootRef = useRef<HTMLDivElement>(null);
 	const textRef = useRef<HTMLDivElement>(null);
-	const sections = useMemo(
-		() => splitTranslation(document.content),
+	const aligned = useMemo(
+		() => readAlignedDocument(document.content),
 		[document.content],
+	);
+	const [sentenceEnabled, setSentenceEnabled] = useState(true);
+	const [autoFollow, setAutoFollow] = useState(false);
+	const [hoverId, setHoverId] = useState<string | null>(null);
+	const [pinnedId, setPinnedId] = useState<string | null>(null);
+	const activeId = sentenceEnabled ? (hoverId ?? pinnedId) : null;
+	const handlePin = useCallback(
+		(id: string | null) =>
+			setPinnedId((previous) => (previous === id ? null : id)),
+		[],
+	);
+	const boxes = useSentenceAlignment({
+		rootRef,
+		textRef,
+		pairs: aligned.pairs,
+		enabled: sentenceEnabled,
+		isActive,
+		activeId,
+		onHover: setHoverId,
+		onPin: handlePin,
+	});
+	useEffect(() => {
+		if (!activeId || !autoFollow || !isActive) return;
+		const text = textRef.current;
+		const target = text?.querySelector<HTMLElement>(
+			`[data-alignment="${activeId}"]`,
+		);
+		if (text && target)
+			text.scrollTop +=
+				target.getBoundingClientRect().top -
+				text.getBoundingClientRect().top -
+				40;
+	}, [activeId, autoFollow, isActive]);
+	const sections = useMemo(
+		() => splitTranslation(aligned.markdown),
+		[aligned.markdown],
 	);
 	const totalPages = useAnnotationStore((s) => s.totalPages);
 	const anchored = sections.some(
@@ -150,7 +188,17 @@ export function BilingualTextViewer({
 	}, [query, matchIndex, isActive]);
 
 	return (
-		<div ref={rootRef} className="h-full w-full">
+		<div ref={rootRef} className="relative h-full w-full overflow-hidden">
+			{sentenceEnabled &&
+				isActive &&
+				boxes.map((box, index) => (
+					<div
+						key={`${index}-${box.left}-${box.top}`}
+						aria-hidden
+						className="pointer-events-none absolute z-20 rounded-sm bg-yellow-300/35 dark:bg-yellow-400/25"
+						style={box}
+					/>
+				))}
 			<ResizablePanelGroup
 				orientation="horizontal"
 				autoSaveId="offline-bilingual-layout"
@@ -168,6 +216,48 @@ export function BilingualTextViewer({
 				<ResizablePanel id="translation" defaultSize="50%" minSize="20%">
 					<div className="flex h-full min-w-0 flex-col bg-background text-foreground">
 						<div className="flex flex-wrap items-center gap-2 border-b px-3 py-2 text-xs">
+							{aligned.pairs.length > 0 && (
+								<>
+									<label>
+										<input
+											type="checkbox"
+											checked={sentenceEnabled}
+											onChange={(event) => {
+												setSentenceEnabled(event.target.checked);
+												setHoverId(null);
+												setPinnedId(null);
+											}}
+										/>{" "}
+										{t("offline.sentenceAlignment")}
+									</label>
+									<label>
+										<input
+											type="checkbox"
+											checked={autoFollow}
+											onChange={(event) => setAutoFollow(event.target.checked)}
+										/>{" "}
+										{t("offline.autoFollow")}
+									</label>
+									<Button
+										size="sm"
+										variant="ghost"
+										disabled={!pinnedId}
+										onClick={() => {
+											setPinnedId(null);
+											setHoverId(null);
+										}}
+									>
+										{t("offline.unpin")}
+									</Button>
+									<span className="text-muted-foreground">
+										{t("offline.alignmentHint")}
+										{pinnedId ? ` · ${t("offline.pinned")}` : ""}
+									</span>
+								</>
+							)}
+							{aligned.invalid && (
+								<span role="alert">{t("offline.alignmentInvalid")}</span>
+							)}
 							<label className="flex items-center gap-1">
 								<input
 									type="checkbox"
@@ -311,6 +401,9 @@ export function BilingualTextViewer({
 										<article className="prose prose-slate max-w-none break-words text-[1em] dark:prose-invert prose-headings:leading-snug prose-table:block prose-table:overflow-x-auto">
 											<TranslationMarkdown
 												text={section.text}
+												pairs={aligned.pairs}
+												section={section.page}
+												activeId={activeId}
 												query={query}
 												onOpenLink={(url) => {
 													void commands

@@ -1,5 +1,9 @@
 # Offline bilingual reading
 
+V3 adds optional offline sentence correspondence: import a complete `.json` bilingual
+bundle using the new toolbar button. See [sentence alignment format](sentence-alignment.md).
+Plain Markdown/TXT, PDF+PDF and page synchronization remain supported independently.
+
 Open a library PDF and choose **Import translation** in the reader toolbar. Select
 a `.md` or `.txt` translation created outside Zoro. The document opens beside the
 original PDF immediately. No translation provider, BabelDOC, subscription, API key,
