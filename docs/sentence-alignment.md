@@ -67,7 +67,9 @@ rectangles. `pdfSentenceLocator.ts` clusters measurable fragments into horizonta
 orders fragments geometrically, separates large gutters, then follows the nearest unique
 vertically adjacent, overlapping, similarly indented line. Small adjacent scripts may join
 their body line. It never interleaves left/right columns by DOM order. Ambiguous continuation
-is stopped; disconnected columns/cross-page sentences need explicit source fragments.
+is stopped; significantly overlapping body fragments introduce a nonmatching barrier rather
+than being concatenated into a fabricated sentence. Disconnected columns/cross-page
+sentences need explicit source fragments.
 This is conservative geometric flow reconstruction, not a universal PDF reading-order engine.
 A PDF with missing, unusually rotated, overlapping or image-only text layers may remain
 unmapped; no OCR, fuzzy sentence similarity or approximate semantic matching is used.

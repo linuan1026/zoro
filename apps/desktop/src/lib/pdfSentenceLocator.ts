@@ -215,6 +215,19 @@ export function resolvePdfQuote(
 			if (value) value += "\n";
 			let previous: Fragment | undefined;
 			for (const fragment of sequence[lineIndex].fragments) {
+				if (
+					previous &&
+					Math.min(previous.rect.height, fragment.rect.height) >
+						Math.max(previous.rect.height, fragment.rect.height) * 0.75 &&
+					previous.rect.right - fragment.rect.left >
+						Math.max(
+							Math.min(previous.rect.height, fragment.rect.height) * 0.15,
+							Math.min(previous.rect.width, fragment.rect.width) * 0.25,
+						)
+				) {
+					value += "\uFFFC";
+					uncertain = true;
+				}
 				const adjacentScript =
 					previous &&
 					Math.min(previous.rect.height, fragment.rect.height) <=

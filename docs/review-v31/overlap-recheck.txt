@@ -1,0 +1,1009 @@
+V3.1 overlap regression: initial failure and actual final checks. Geometry remains mocked, GUI NOT TESTED.
+
+================================================================================
+overlap-after.txt
+================================================================================
+node.exe : npm warn Unknown env config "min-release-age". This will stop working in the next major version of npm.
+位於 線路:1 字元:1
++ & "<USER_HOME>\AppData\Local\JetBrains\PyCharm2026.2\acp-agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...version of npm.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+TAP version 13
+# react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: 'NO_I18NEXT_INSTANCE' }
+# Subtest: zero, single and sparse anchors distinguish exact, interpolated and unmapped positions
+ok 1 - zero, single and sparse anchors distinguish exact, interpolated and unmapped positions
+  ---
+  duration_ms: 2.0933
+  type: 'test'
+  ...
+# Subtest: mapping clamps both scroll ranges and rejects degenerate, nonfinite and inverted geometry
+ok 2 - mapping clamps both scroll ranges and rejects degenerate, nonfinite and inverted geometry
+  ---
+  duration_ms: 0.6671
+  type: 'test'
+  ...
+# Subtest: invalid, duplicate, reversed and fenced anchors do not create false page correspondence
+ok 3 - invalid, duplicate, reversed and fenced anchors do not create false page correspondence
+  ---
+  duration_ms: 0.9917
+  type: 'test'
+  ...
+# Subtest: bidirectional scroll echo is suppressed, geometry refreshes, and disposal cancels pending work
+ok 4 - bidirectional scroll echo is suppressed, geometry refreshes, and disposal cancels pending work
+  ---
+  duration_ms: 2.985
+  type: 'test'
+  ...
+# Subtest: React-owned Markdown highlights Chinese, case-insensitive English and literal special characters
+ok 5 - React-owned Markdown highlights Chinese, case-insensitive English and literal special characters
+  ---
+  duration_ms: 58.6724
+  type: 'test'
+  ...
+# Subtest: table structure and KaTeX survive search, clearing, format changes and version replacement
+ok 6 - table structure and KaTeX survive search, clearing, format changes and version replacement
+  ---
+  duration_ms: 91.3744
+  type: 'test'
+  ...
+# Subtest: safe links are explicit external-browser actions, unsafe URLs and all images stay inert
+ok 7 - safe links are explicit external-browser actions, unsafe URLs and all images stay inert
+  ---
+  duration_ms: 9.2097
+  type: 'test'
+  ...
+# Subtest: external opener validates before confirmation and opens only after explicit acceptance
+ok 8 - external opener validates before confirmation and opens only after explicit acceptance
+  ---
+  duration_ms: 0.8732
+  type: 'test'
+  ...
+# react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: 'NO_I18NEXT_INSTANCE' }
+# Subtest: page anchors preserve preamble and ignore fenced, duplicate and decreasing markers
+ok 9 - page anchors preserve preamble and ignore fenced, duplicate and decreasing markers
+  ---
+  duration_ms: 2.6619
+  type: 'test'
+  ...
+# Subtest: unequal PDF and text lengths interpolate reversibly between real anchors
+ok 10 - unequal PDF and text lengths interpolate reversibly between real anchors
+  ---
+  duration_ms: 0.7702
+  type: 'test'
+  ...
+# Subtest: strict UTF-8 and BOM UTF-16 preserve Chinese and scientific symbols
+ok 11 - strict UTF-8 and BOM UTF-16 preserve Chinese and scientific symbols
+  ---
+  duration_ms: 1.8175
+  type: 'test'
+  ...
+# Subtest: actual Markdown component renders tables, math, headings, emphasis and scientific notation
+ok 12 - actual Markdown component renders tables, math, headings, emphasis and scientific notation
+  ---
+  duration_ms: 91.8729
+  type: 'test'
+  ...
+# Subtest: untrusted Markdown cannot execute scripts, fetch images or navigate local paths
+ok 13 - untrusted Markdown cannot execute scripts, fetch images or navigate local paths
+  ---
+  duration_ms: 16.4566
+  type: 'test'
+  ...
+# Subtest: AI refresh during PDF debounce preserves enabled draft and custom zh-TW
+ok 14 - AI refresh during PDF debounce preserves enabled draft and custom zh-TW
+  ---
+  duration_ms: 3.2364
+  type: 'test'
+  ...
+# Subtest: overlapping initial reads hydrate only once
+ok 15 - overlapping initial reads hydrate only once
+  ---
+  duration_ms: 1.625
+  type: 'test'
+  ...
+# Subtest: PDF save sends enablement and preserves a newly typed key while IPC is pending
+ok 16 - PDF save sends enablement and preserves a newly typed key while IPC is pending
+  ---
+  duration_ms: 12.9928
+  type: 'test'
+  ...
+# Subtest: PDF write failure displays the error and retains the key for retry
+ok 17 - PDF write failure displays the error and retains the key for retry
+  ---
+  duration_ms: 9.1457
+  type: 'test'
+  ...
+# react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: 'NO_I18NEXT_INSTANCE' }
+# Subtest: bundle roundtrip persists explicit many-to-many/cross-page quotes without changing Markdown or legacy documents
+ok 18 - bundle roundtrip persists explicit many-to-many/cross-page quotes without changing Markdown or legacy documents
+  ---
+  duration_ms: 4.3532
+  type: 'test'
+  ...
+# Subtest: invalid IDs, duplicates, missing text, pages, sections, regions, schema, oversized and incomplete data fail closed
+ok 19 - invalid IDs, duplicates, missing text, pages, sections, regions, schema, oversized and incomplete data fail closed
+  ---
+  duration_ms: 83.7944
+  type: 'test'
+  ...
+# Subtest: normalization retains chemical symbols, matches across line hyphenation and ligatures, and rejects ambiguous repetitions
+ok 20 - normalization retains chemical symbols, matches across line hyphenation and ligatures, and rejects ambiguous repetitions
+  ---
+  duration_ms: 2.832
+  type: 'test'
+  ...
+# Subtest: React sentence marks cover multiple formatting nodes, tables, one-to-many targets, and coexist with search/KaTeX safely
+ok 21 - React sentence marks cover multiple formatting nodes, tables, one-to-many targets, and coexist with search/KaTeX safely
+  ---
+  duration_ms: 129.0759
+  type: 'test'
+  ...
+# Subtest: PDF range locator crosses multiple spans and lines, supports regions for duplicate two-column text, and recalculates zoom
+ok 22 - PDF range locator crosses multiple spans and lines, supports regions for duplicate two-column text, and recalculates zoom
+  ---
+  duration_ms: 44.0669
+  type: 'test'
+  ...
+# 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙
+# Subtest: mounted React hover, reverse hover, rapid moves, pin/unpin, zoom, inactive tabs, version switch and cleanup
+ok 23 - mounted React hover, reverse hover, rapid moves, pin/unpin, zoom, inactive tabs, version switch and cleanup
+  ---
+  duration_ms: 307.8957
+  type: 'test'
+  ...
+# Subtest: all 1151 zh-TW keys, plural suffixes and interpolation names match English; Taiwan vocabulary and no common simplified remnants
+ok 24 - all 1151 zh-TW keys, plural suffixes and interpolation names match English; Taiwan vocabulary and no common simplified remnants
+  ---
+  duration_ms: 21.6545
+  type: 'test'
+  ...
+# Subtest: Taiwan system language is detected without overriding explicit preferences; switching locale rerenders actual React controls
+ok 25 - Taiwan system language is detected without overriding explicit preferences; switching locale rerenders actual React controls
+  ---
+  duration_ms: 23.6798
+  type: 'test'
+  ...
+# Subtest: fresh, returning and second startup never auto-open onboarding; normal initialization and manual help remain intact
+ok 26 - fresh, returning and second startup never auto-open onboarding; normal initialization and manual help remain intact
+  ---
+  duration_ms: 2.7882
+  type: 'test'
+  ...
+# react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: 'NO_I18NEXT_INSTANCE' }
+# Subtest: exact geometry reconstruction covers a complete sentence across three lines/four spans despite scrambled DOM and zoom
+ok 27 - exact geometry reconstruction covers a complete sentence across three lines/four spans despite scrambled DOM and zoom
+  ---
+  duration_ms: 43.2533
+  type: 'test'
+  ...
+# Subtest: two columns are not interleaved; adjacent unrelated captions are not joined; repeated sentences require context or region
+ok 28 - two columns are not interleaved; adjacent unrelated captions are not joined; repeated sentences require context or region
+  ---
+  duration_ms: 18.407
+  type: 'test'
+  ...
+# Subtest: Greek identity, Unicode compatibility scripts and adjacent superscripts retain exact node/Range offsets
+ok 29 - Greek identity, Unicode compatibility scripts and adjacent superscripts retain exact node/Range offsets
+  ---
+  duration_ms: 6.4946
+  type: 'test'
+  ...
+# Subtest: missing page/layer, empty layer, empty region, exact text absence and ambiguous line continuation are distinct
+ok 30 - missing page/layer, empty layer, empty region, exact text absence and ambiguous line continuation are distinct
+  ---
+  duration_ms: 10.8282
+  type: 'test'
+  ...
+# Subtest: partial selectors highlight only supplied text; completeness declarations are unverified and old selectors remain valid
+ok 31 - partial selectors highlight only supplied text; completeness declarations are unverified and old selectors remain valid
+  ---
+  duration_ms: 6.9037
+  type: 'test'
+  ...
+# Subtest: coverage distinguishes absent IDs, existing unlocatable quotes, partial data and unloaded pages without exporting paper text
+ok 32 - coverage distinguishes absent IDs, existing unlocatable quotes, partial data and unloaded pages without exporting paper text
+  ---
+  duration_ms: 93.5427
+  type: 'test'
+  ...
+# Subtest: full Chinese targets cross formatting/table nodes, preserve formulas and one-to-many selectors without extending supplied fragments
+ok 33 - full Chinese targets cross formatting/table nodes, preserve formulas and one-to-many selectors without extending supplied fragments
+  ---
+  duration_ms: 79.9016
+  type: 'test'
+  ...
+# Subtest: mounted hover on every line highlights all ranges; selection, toolbar, pin, reverse hover and delayed layer remain compatible
+ok 34 - mounted hover on every line highlights all ranges; selection, toolbar, pin, reverse hover and delayed layer remain compatible
+  ---
+  duration_ms: 282.5149
+  type: 'test'
+  ...
+# Subtest: diagnostic namespace preserves interpolation and export grants no blanket filesystem scope
+ok 35 - diagnostic namespace preserves interpolation and export grants no blanket filesystem scope
+  ---
+  duration_ms: 2.3462
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4512.809
+
+
+================================================================================
+overlap-before.txt
+================================================================================
+react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: 'NO_I18NEXT_INSTANCE' }
+✔ exact geometry reconstruction covers a complete sentence across three lines/four spans despite scrambled DOM and zoom (21.809ms)
+✔ two columns are not interleaved; adjacent unrelated captions are not joined; repeated sentences require context or region (11.2858ms)
+✔ Greek identity, Unicode compatibility scripts and adjacent superscripts retain exact node/Range offsets (2.504ms)
+✖ missing page/layer, empty layer, empty region, exact text absence and ambiguous line continuation are distinct (6.299ms)
+✔ partial selectors highlight only supplied text; completeness declarations are unverified and old selectors remain valid (9.3424ms)
+✔ coverage distinguishes absent IDs, existing unlocatable quotes, partial data and unloaded pages without exporting paper text (70.9255ms)
+✔ full Chinese targets cross formatting/table nodes, preserve formulas and one-to-many selectors without extending supplied fragments (58.4077ms)
+✔ mounted hover on every line highlights all ranges; selection, toolbar, pin, reverse hover and delayed layer remain compatible (258.8387ms)
+✔ diagnostic namespace preserves interpolation and export grants no blanket filesystem scope (1.9197ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4202.9907
+
+✖ failing tests:
+
+test at apps\desktop\tests\v31.test.mjs:89:1
+✖ missing page/layer, empty layer, empty region, exact text absence and ambiguous line continuation are distinct (6.299ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'matched'
+  - 'order-unresolved'
+
+      at TestContext.<anonymous> (file:///<USER_HOME>/Documents/%E8%87%AA%E5%89%B5%E7%A8%8B%E5%BC%8F/%E8%AB%96%E6%96%87%E7%BF%BB%E8%AD%AF%E5%B7%A6%E5%8F%B3%E5%B0%8D%E7%85%A7/zoro/apps/desktop/tests/v31.test.mjs:98:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'matched',
+    expected: 'order-unresolved',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+
+================================================================================
+overlap-biome.txt
+================================================================================
+Checked 18 files in 39ms. No fixes applied.
+
+
+================================================================================
+overlap-build.txt
+================================================================================
+node.exe : npm warn Unknown env config "min-release-age". This will stop working in the next major version of npm.
+位於 線路:1 字元:1
++ & "<USER_HOME>\AppData\Local\JetBrains\PyCharm2026.2\acp-agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...version of npm.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+
+> @zoro/desktop@0.1.0 build <WORKSPACE>\apps\desktop
+> tsc -b && vite build
+
+vite v6.4.1 building for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+✓ 8380 modules transformed.
+rendering chunks...
+[plugin vite:reporter]
+(!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps
+/api/event.js is dynamically imported by <WORKSPACE>/apps/desktop/src/plugins/Plug
+inManager.ts but also statically imported by <WORKSPACE>/apps/desktop/src/App.tsx,
+ <WORKSPACE>/apps/desktop/src/components/BackgroundTaskPanel.tsx, <USER_HOME>
+026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/LogPanel.tsx, <USER_HOME>/Documents/自創程式/論文翻譯左右對照/
+zoro/apps/desktop/src/components/browser/BrowserPanel.tsx, <WORKSPACE>/apps/deskto
+p/src/components/library/ZoteroImportDialog.tsx, <WORKSPACE>/apps/desktop/src/comp
+onents/reader/TerminalPanel.tsx, <WORKSPACE>/apps/desktop/src/hooks/useMenuEvents.
+ts, <WORKSPACE>/apps/desktop/src/routes/feed.tsx, <USER_HOME>/Documents/自創
+程式/論文翻譯左右對照/zoro/apps/desktop/src/routes/reader.tsx, <WORKSPACE>/apps/desktop/src/
+routes/settings.tsx, <WORKSPACE>/apps/desktop/src/routes/webview.tsx, <USER_HOME>
+uan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/stores/agentStore.ts, <USER_HOME>/Documents/自創程式/論文翻譯左右對照
+/zoro/apps/desktop/src/stores/translationStore.ts, <WORKSPACE>/node_modules/.pnpm/
+@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/webview.js, <WORKSPACE>/node_m
+odules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/webviewWindow.js, <USER_HOME>/Documents/自創程式/論
+文翻譯左右對照/zoro/node_modules/.pnpm/@tauri-apps+api@2.10.1/node_modules/@tauri-apps/api/window.js, dynamic import will not
+move module into another chunk.
+
+[plugin vite:reporter]
+(!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-dialog@2.6.0/node_modules/@t
+auri-apps/plugin-dialog/dist-js/index.js is dynamically imported by <WORKSPACE>/ap
+ps/desktop/src/components/library/ZoteroImportDialog.tsx, <WORKSPACE>/apps/desktop
+/src/components/reader/NoteEditor.tsx, <WORKSPACE>/apps/desktop/src/lib/utils.ts,
+<WORKSPACE>/apps/desktop/src/routes/settings.tsx, <USER_HOME>/Documents/自創
+程式/論文翻譯左右對照/zoro/apps/desktop/src/routes/settings.tsx, <WORKSPACE>/apps/desktop/sr
+c/routes/settings.tsx but also statically imported by <WORKSPACE>/apps/desktop/src
+/components/reader/OfflineTranslationToolbar.tsx, <WORKSPACE>/apps/desktop/src/lib
+/commands.ts, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-fs@2.4.5/node_modules/@tauri
+-apps/plugin-fs/dist-js/index.js is dynamically imported by <WORKSPACE>/apps/deskt
+op/src/components/reader/NoteEditor.tsx but also statically imported by <USER_HOME>/Documents/自創程式/論文翻譯左右對照/zor
+o/apps/desktop/src/components/reader/OfflineTranslationToolbar.tsx, <WORKSPACE>/ap
+ps/desktop/src/components/reader/PdfAnnotationViewer.tsx, <WORKSPACE>/apps/desktop
+/src/lib/commands.ts, <WORKSPACE>/apps/desktop/src/plugins/PluginManager.ts, C:/Us
+ers/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/routes/reader.tsx, dynamic import will not move module int
+o another chunk.
+
+[plugin vite:reporter]
+(!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-shell@2.3.5/node_modules/@ta
+uri-apps/plugin-shell/dist-js/index.js is dynamically imported by <WORKSPACE>/apps
+/desktop/src/plugins/PluginManager.ts, <WORKSPACE>/apps/desktop/src/routes/reader.
+tsx but also statically imported by <WORKSPACE>/apps/desktop/src/components/browse
+r/BrowserPanel.tsx, <WORKSPACE>/apps/desktop/src/hooks/useMenuEvents.ts, C:/Users/
+linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/lib/commands.ts, <USER_HOME>/Documents/自創程式/論文翻譯左右對照/z
+oro/apps/desktop/src/routes/webview.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) <WORKSPACE>/apps/desktop/src/lib/commands.ts is dynamically imported by C:/Use
+rs/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/reader/SidebarTabPanel.tsx but also statically i
+mported by <WORKSPACE>/apps/desktop/src/App.tsx, <USER_HOME>/Documents/自創程
+式/論文翻譯左右對照/zoro/apps/desktop/src/components/LogPanel.tsx, <WORKSPACE>/apps/desktop
+/src/components/OnboardingOverlay.tsx, <WORKSPACE>/apps/desktop/src/components/bro
+wser/BrowserPanel.tsx, <WORKSPACE>/apps/desktop/src/components/library/CollectionT
+ree.tsx, <WORKSPACE>/apps/desktop/src/components/library/ImportDialog.tsx, C:/User
+s/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/library/MetadataSearchDialog.tsx, <USER_HOME>
+1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/library/MultiSelectContextMenu.tsx, <USER_HOME>/D
+ocuments/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/library/PaperContextMenu.tsx, <USER_HOME>/Documents/自創程
+式/論文翻譯左右對照/zoro/apps/desktop/src/components/library/PaperDetail.tsx, <WORKSPACE>/a
+pps/desktop/src/components/library/PaperTable.tsx, <WORKSPACE>/apps/desktop/src/co
+mponents/library/ZoteroImportDialog.tsx, <WORKSPACE>/apps/desktop/src/components/r
+eader/AlignmentDiagnostics.tsx, <WORKSPACE>/apps/desktop/src/components/reader/Ann
+otationToolbar.tsx, <WORKSPACE>/apps/desktop/src/components/reader/BilingualTextVi
+ewer.tsx, <WORKSPACE>/apps/desktop/src/components/reader/InfoPanel.tsx, <USER_HOME>
+inuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/reader/NoteEditor.tsx, <USER_HOME>/Documents
+/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/reader/OfflineTranslationToolbar.tsx, <USER_HOME>/Documents/自創程
+式/論文翻譯左右對照/zoro/apps/desktop/src/components/reader/PdfAnnotationViewer.tsx, <USER_HOME>/Documents/自創程式/論文翻譯左右對照
+/zoro/apps/desktop/src/components/reader/TerminalPanel.tsx, <WORKSPACE>/apps/deskt
+op/src/hooks/useLocalAnnotations.ts, <WORKSPACE>/apps/desktop/src/hooks/useMenuEve
+nts.ts, <WORKSPACE>/apps/desktop/src/plugins/PluginManager.ts, <USER_HOME>
+/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/plugins/pluginStore.ts, <WORKSPACE>
+/apps/desktop/src/routes/noteEditor.tsx, <WORKSPACE>/apps/desktop/src/routes/paper
+sCool.tsx, <WORKSPACE>/apps/desktop/src/routes/reader.tsx, <USER_HOME>/Doc
+uments/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/routes/settings.tsx, <WORKSPACE>/apps/d
+esktop/src/routes/webview.tsx, <WORKSPACE>/apps/desktop/src/stores/acpProxyStore.t
+s, <WORKSPACE>/apps/desktop/src/stores/agentStore.ts, <USER_HOME>/Document
+s/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/stores/annotationStore.ts, <WORKSPACE>/apps/
+desktop/src/stores/libraryStore.ts, <WORKSPACE>/apps/desktop/src/stores/noteStore.
+ts, <WORKSPACE>/apps/desktop/src/stores/offlineTranslationStore.ts, <USER_HOME>
+n1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/stores/paperLinksStore.ts, <USER_HOME>/Documents/自創程式/論文翻譯左
+右對照/zoro/apps/desktop/src/stores/papersCoolStore.ts, <WORKSPACE>/apps/desktop/src/
+stores/translationStore.ts, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) <WORKSPACE>/node_modules/.pnpm/@tauri-apps+plugin-clipboard-manager@2.3.2/node
+_modules/@tauri-apps/plugin-clipboard-manager/dist-js/index.js is dynamically imported by <USER_HOME>/Documents
+/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/plugins/PluginManager.ts but also statically imported by <USER_HOME>/Docum
+ents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/library/MultiSelectContextMenu.tsx, <USER_HOME>/Documents/自
+創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/library/PaperContextMenu.tsx, <USER_HOME>/Documents/自創程式/論文翻譯左右對照
+/zoro/apps/desktop/src/components/library/PaperDetail.tsx, <WORKSPACE>/apps/deskto
+p/src/components/library/PaperTable.tsx, <WORKSPACE>/apps/desktop/src/components/r
+eader/AnnotationToolbar.tsx, <WORKSPACE>/apps/desktop/src/components/reader/Highli
+ghtPopup.tsx, <WORKSPACE>/apps/desktop/src/components/reader/InfoPanel.tsx, C:/Use
+rs/linuan1026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/components/reader/PdfAnnotationViewer.tsx, <USER_HOME>
+026/Documents/自創程式/論文翻譯左右對照/zoro/apps/desktop/src/hooks/useMenuEvents.ts, <USER_HOME>/Documents/自創程式/論文翻譯左右對照/z
+oro/apps/desktop/src/routes/reader.tsx, dynamic import will not move module into another chunk.
+
+computing gzip size...
+dist/index.html                                           0.76 kB │ gzip:     0.46 kB
+dist/assets/KaTeX_Size3-Regular-CTq5MqoE.woff             4.42 kB
+dist/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2            4.93 kB
+dist/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2            5.21 kB
+dist/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2            5.47 kB
+dist/assets/KaTeX_Size4-Regular-BF-4gkZK.woff             5.98 kB
+dist/assets/KaTeX_Size2-Regular-oD1tc_U0.woff             6.19 kB
+dist/assets/KaTeX_Size1-Regular-C195tn64.woff             6.50 kB
+dist/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2      6.91 kB
+dist/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2         6.91 kB
+dist/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf              7.59 kB
+dist/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff       7.66 kB
+dist/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff          7.72 kB
+dist/assets/KaTeX_Script-Regular-D3wIWfF6.woff2           9.64 kB
+dist/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2       10.34 kB
+dist/assets/KaTeX_Size4-Regular-DWFBv043.ttf             10.36 kB
+dist/assets/KaTeX_Script-Regular-D5yQViql.woff           10.59 kB
+dist/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2         11.32 kB
+dist/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2            11.35 kB
+dist/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf             11.51 kB
+dist/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2        12.03 kB
+dist/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2          12.22 kB
+dist/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf             12.23 kB
+dist/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff        12.32 kB
+dist/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf       12.34 kB
+dist/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf          12.37 kB
+dist/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff          13.21 kB
+dist/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff             13.30 kB
+dist/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2      13.57 kB
+dist/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff         14.11 kB
+dist/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff           14.41 kB
+dist/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff       16.03 kB
+dist/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2         16.40 kB
+dist/assets/KaTeX_Math-Italic-t53AETM-.woff2             16.44 kB
+dist/assets/KaTeX_Script-Regular-C5JkGWo-.ttf            16.65 kB
+dist/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2         16.78 kB
+dist/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2             16.99 kB
+dist/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff          18.67 kB
+dist/assets/KaTeX_Math-Italic-DA0__PXp.woff              18.75 kB
+dist/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff          19.41 kB
+dist/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf         19.44 kB
+dist/assets/KaTeX_Fraktur-Regular-CB_wures.ttf           19.57 kB
+dist/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf              19.58 kB
+dist/assets/KaTeX_Main-Italic-BMLOBm91.woff              19.68 kB
+dist/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf          22.36 kB
+dist/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf            24.50 kB
+dist/assets/KaTeX_Main-Bold-Cx986IdX.woff2               25.32 kB
+dist/assets/KaTeX_Main-Regular-B22Nviop.woff2            26.27 kB
+dist/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf        27.56 kB
+dist/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2             28.08 kB
+dist/assets/KaTeX_Main-Bold-Jm3AIy58.woff                29.91 kB
+dist/assets/KaTeX_Main-Regular-Dr94JaBh.woff             30.77 kB
+dist/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf           31.20 kB
+dist/assets/KaTeX_Math-Italic-flOr_0UB.ttf               31.31 kB
+dist/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf           32.97 kB
+dist/assets/KaTeX_AMS-Regular-DMm9YOAa.woff              33.52 kB
+dist/assets/KaTeX_Main-Italic-3WenGoN9.ttf               33.58 kB
+dist/assets/KaTeX_Main-Bold-waoOVXN0.ttf                 51.34 kB
+dist/assets/KaTeX_Main-Regular-ypZvNtVU.ttf              53.58 kB
+dist/assets/KaTeX_AMS-Regular-DRggAlZN.ttf               63.63 kB
+dist/assets/pdf.worker.min-DGf6LXVo.mjs               1,360.96 kB
+dist/assets/index-NWnFyaTI.css                          198.38 kB │ gzip:    41.08 kB
+dist/assets/__vite-browser-external-BIHI7g3E.js           0.03 kB │ gzip:     0.05 kB
+dist/assets/pdf_viewer-BqL-GwnH.js                      139.78 kB │ gzip:    44.37 kB
+dist/assets/pdf_viewer-CGggc5PP.js                      139.92 kB │ gzip:    44.39 kB
+dist/assets/index-DTRiUlL-.js                         4,290.65 kB │ gzip: 1,196.47 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-m
+anualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 30.57s
+
+
+================================================================================
+overlap-lint-fix.txt
+================================================================================
+
+> @zoro/desktop@0.1.0 lint <WORKSPACE>\apps\desktop
+> biome check src/ "--fix"
+
+node : src/components\HighlightedText.tsx:45:12 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+位於 線路:2 字元:179
++ ... name-only); node '<USER_HOME>/AppData/Local/JetBrains/PyCharm ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (src/components\...━━━━━━━━━━━━━━━:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+
+  × Avoid using the index of an array as key property in an element.
+
+    43 │ 				words.includes(part.toLowerCase()) ? (
+    44 │ 					<mark
+  > 45 │ 						key={i}
+       │ 						     ^
+    46 │ 						className="bg-yellow-200 dark:bg-yellow-700/60 text-inherit rounded-sm px-0.5"
+    47 │ 					>
+
+  i This is the source of the key value.
+
+    40 │ 	return (
+    41 │ 		<span className={className}>
+  > 42 │ 			{parts.map((part, i) =>
+       │ 			                  ^
+    43 │ 				words.includes(part.toLowerCase()) ? (
+    44 │ 					<mark
+
+  i The order of the items may change, and this also affects performances and component state.
+
+  i Check the React documentation.
+
+
+src/components\browser\BrandIcons.tsx:15:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+    13 │ 	const id = `gemini-${Math.random().toString(36).slice(2, 8)}`;
+    14 │ 	return (
+  > 15 │ 		<svg
+       │ 		^^^^
+  > 16 │ 			height={size}
+        ...
+  > 20 │ 			className={className}
+  > 21 │ 		>
+       │ 		^
+    22 │ 			<path
+    23 │ 				d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134
+14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397
+ 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a
+14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z"
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/components\browser\BrandIcons.tsx:79:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+    77 │ export function ChatGPTIcon({ size = 20, className }: IconProps) {
+    78 │ 	return (
+  > 79 │ 		<svg
+       │ 		^^^^
+  > 80 │ 			fill="currentColor"
+        ...
+  > 86 │ 			className={className}
+  > 87 │ 		>
+       │ 		^
+    88 │ 			<path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.6
+62 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-
+.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.47
+3-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.33
+3 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.12
+8zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.23
+8.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482
+0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021
+-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.61
+6c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3
+.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205
+ 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.40
+1 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z" />
+    89 │ 		</svg>
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/components\browser\BrandIcons.tsx:95:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+     93 │ export function ClaudeIcon({ size = 20, className }: IconProps) {
+     94 │ 	return (
+   > 95 │ 		<svg
+        │ 		^^^^
+   > 96 │ 			height={size}
+         ...
+  > 100 │ 			className={className}
+  > 101 │ 		>
+        │ 		^
+    102 │ 			<path
+    103 │ 				d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11
+.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.5
+52-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-
+.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.
+42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.7
+47-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547
+-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.31
+5.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.63
+8-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.04
+9-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415
+-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.
+012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086
+-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/components\browser\BrandIcons.tsx:113:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+    111 │ export function KimiIcon({ size = 20, className }: IconProps) {
+    112 │ 	return (
+  > 113 │ 		<svg
+        │ 		^^^^
+  > 114 │ 			height={size}
+         ...
+  > 118 │ 			className={className}
+  > 119 │ 		>
+        │ 		^
+    120 │ 			<rect width="24" height="24" rx="4" fill="#000" />
+    121 │ 			<path
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/components\browser\BrandIcons.tsx:135:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+    133 │ export function DeepSeekIcon({ size = 20, className }: IconProps) {
+    134 │ 	return (
+  > 135 │ 		<svg
+        │ 		^^^^
+  > 136 │ 			height={size}
+         ...
+  > 140 │ 			className={className}
+  > 141 │ 		>
+        │ 		^
+    142 │ 			<path
+    143 │ 				d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.372.397-.806.657-1.373.626-.829-
+.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.156-.708-.311-.955-.65-.172-.241-.219-.51-.305-.774-.05
+5-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.093.
+172.187.129.323-.082.28-.18.552-.266.833-.055.179-.137.217-.329.14a5.526 5.526 0 01-1.736-1.18c-.857-.828-1.631-1.742-2
+.597-2.458a11.365 11.365 0 00-.689-.471c-.985-.957.13-1.743.388-1.836.27-.098.093-.432-.779-.428-.872.004-1.67.295-2.68
+7.684a3.055 3.055 0 01-.465.137 9.597 9.597 0 00-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152
+ 12.85c.403 2.284 1.569 4.175 3.36 5.653 1.858 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.133-.284 4.994-1.86.47.234.962
+.327 1.78.397.63.059 1.236-.03 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.74
+6-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.96-2.015
+2.093-3.517.02-.23-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.52-2.16-.392.024-.321.471-.235.763.09.288.
+207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.224
+-2.887-1.298-4.482-.02-.386.093-.522.477-.592a4.696 4.696 0 011.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.86 1.525
+ 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306
+0 01.415-.287.302.302 0 01.2.288.306.306 0 01-.31.307.303.303 0 01-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245
+1.245 0 01-.798-.254c-.274-.23-.47-.358-.552-.758a1.73 1.73 0 01.016-.588c.07-.327-.008-.537-.239-.727-.187-.156-.426-.
+199-.688-.199a.559.559 0 01-.254-.078c-.11-.054-.2-.19-.114-.358.028-.054.16-.186.192-.21.356-.202.767-.136 1.146.016.3
+52.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.25.452z"
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/components\browser\BrandIcons.tsx:153:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+    151 │ 	const id = `wenxin-${Math.random().toString(36).slice(2, 8)}`;
+    152 │ 	return (
+  > 153 │ 		<svg
+        │ 		^^^^
+  > 154 │ 			height={size}
+         ...
+  > 158 │ 			className={className}
+  > 159 │ 		>
+        │ 		^
+    160 │ 			<path
+    161 │ 				d="M11.32 1.176a1.4 1.4 0 011.36 0l8.64 4.843c.421.234.68.67.68 1.141v9.68c0 .472-.259.908-.68 1.143l-8.6
+4 4.84a1.4 1.4 0 01-1.36 0l-8.64-4.84A1.31 1.31 0 012 16.84V7.159c0-.471.259-.907.68-1.142l8.64-4.84zm7.42 13.839V8.227
+L12.002 12 12 19.551l6.059-3.394a1.31 1.31 0 00.68-1.142zM12.68 4.833a1.393 1.393 0 00-1.36 0L5.944 7.846c-.421.235-.68
+.67-.68 1.142v6.027c0 .47.259.905.68 1.142l2.795 1.566V11.09a1.546 1.546 0 00.221.79 1.527 1.527 0 01-.216-.834l.004-.0
+94.02-.15.018-.084.017-.062.039-.117.062-.142.035-.065.081-.13.094-.122.084-.091.08-.075.125-.1.071-.048.134-.076 5.87-
+3.29-2.796-1.566z"
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/components\browser\BrandIcons.tsx:180:3 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+    178 │ export function DoubaoIcon({ size = 20, className }: IconProps) {
+    179 │ 	return (
+  > 180 │ 		<svg
+        │ 		^^^^
+  > 181 │ 			height={size}
+         ...
+  > 185 │ 			className={className}
+  > 186 │ 		>
+        │ 		^
+    187 │ 			<path
+    188 │ 				d="M5.31 15.756c.172-3.75 1.883-5.999 2.549-6.739-3.26 2.058-5.425 5.658-6.358 8.308v1.12C1.501 21.513 4.
+226 24 7.59 24a6.59 6.59 0 002.2-.375c.353-.12.7-.248 1.039-.378.913-.899 1.65-1.91 2.243-2.992-4.877 2.431-7.974.072-7
+.763-4.5l.002.001z"
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/components\CollapsibleAuthors.tsx:39:2 lint/correctness/useExhaustiveDependencies ━━━━━━━━━━━━━━
+
+  × This hook specifies more dependencies than necessary: authors
+
+    38 │ 	// Reset state when authors change
+  > 39 │ 	useEffect(() => {
+       │ 	^^^^^^^^^
+    40 │ 		setExpanded(false);
+    41 │ 	}, [authors]);
+
+  i Outer scope values aren't valid dependencies because mutating them doesn't re-render the component.
+
+    39 │ 	useEffect(() => {
+    40 │ 		setExpanded(false);
+  > 41 │ 	}, [authors]);
+       │ 	    ^^^^^^^
+    42 │
+    43 │ 	// Measure after mount to determine if collapse is needed, and compute
+
+
+src/components\CollapsibleAuthors.tsx:45:2 lint/correctness/useExhaustiveDependencies ━━━━━━━━━━━━━━
+
+  × This hook specifies more dependencies than necessary: fullText
+
+    43 │ 	// Measure after mount to determine if collapse is needed, and compute
+    44 │ 	// how many head/tail authors to keep
+  > 45 │ 	useEffect(() => {
+       │ 	^^^^^^^^^
+    46 │ 		const el = measureRef.current;
+    47 │ 		if (!el || authors.length === 0) {
+
+  i This dependency can be removed from the list.
+
+    102 │ 		setVisibleHead(bestHead);
+    103 │ 		setVisibleTail(tailCount);
+  > 104 │ 	}, [authors, maxLines, fullText]);
+        │ 	                       ^^^^^^^^
+    105 │
+    106 │ 	const handleToggle = useCallback((e: React.MouseEvent) => {
+
+
+src/components\LogPanel.tsx:99:2 lint/correctness/useExhaustiveDependencies ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This hook specifies more dependencies than necessary: logs
+
+     98 │ 	// Auto-scroll to bottom when new logs arrive
+   > 99 │ 	useEffect(() => {
+        │ 	^^^^^^^^^
+    100 │ 		if (autoScrollRef.current && scrollRef.current) {
+    101 │ 			scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+
+  i This dependency can be removed from the list.
+
+    101 │ 			scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    102 │ 		}
+  > 103 │ 	}, [logs]);
+        │ 	    ^^^^
+    104 │
+    105 │ 	const handleScroll = () => {
+
+
+src/components\BilingualText.tsx:92:22 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Avoid using the index of an array as key property in an element.
+
+    90 │ 					<div className="text-sm text-foreground/80 leading-relaxed space-y-2">
+    91 │ 						{splitParagraphs(text).map((p, i) => (
+  > 92 │ 							<p key={`to-${i}`}>{p}</p>
+       │ 							              ^
+    93 │ 						))}
+    94 │ 					</div>
+
+  i This is the source of the key value.
+
+    89 │ 				{variant === "abstract" && (
+    90 │ 					<div className="text-sm text-foreground/80 leading-relaxed space-y-2">
+  > 91 │ 						{splitParagraphs(text).map((p, i) => (
+       │ 						                               ^
+    92 │ 							<p key={`to-${i}`}>{p}</p>
+    93 │ 						))}
+
+  i The order of the items may change, and this also affects performances and component state.
+
+  i Check the React documentation.
+
+
+src/components\BilingualText.tsx:160:20 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Avoid using the index of an array as key property in an element.
+
+    158 │ 		<div className={cn("space-y-3", className)}>
+    159 │ 			{pairs.map((pair, i) => (
+  > 160 │ 				<div key={`p-${i}`} className="space-y-0.5">
+        │ 				               ^
+    161 │ 					<p className="text-sm text-foreground/80 leading-relaxed">
+    162 │ 						{pair.translated}
+
+  i This is the source of the key value.
+
+    157 │ 	return (
+    158 │ 		<div className={cn("space-y-3", className)}>
+  > 159 │ 			{pairs.map((pair, i) => (
+        │ 			                  ^
+    160 │ 				<div key={`p-${i}`} className="space-y-0.5">
+    161 │ 					<p className="text-sm text-foreground/80 leading-relaxed">
+
+  i The order of the items may change, and this also affects performances and component state.
+
+  i Check the React documentation.
+
+
+src/components\BilingualText.tsx:368:25 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Avoid using the index of an array as key property in an element.
+
+    366 │ 		<div className={cn("mt-1.5 space-y-2", className)}>
+    367 │ 			{pairs.map((pair, i) => (
+  > 368 │ 				<div key={`card-p-${i}`} className="space-y-0.5">
+        │ 				                    ^
+    369 │ 					<p className="text-xs text-muted-foreground leading-relaxed">
+    370 │ 						{pair.translated}
+
+  i This is the source of the key value.
+
+    365 │ 	return (
+    366 │ 		<div className={cn("mt-1.5 space-y-2", className)}>
+  > 367 │ 			{pairs.map((pair, i) => (
+        │ 			                  ^
+    368 │ 				<div key={`card-p-${i}`} className="space-y-0.5">
+    369 │ 					<p className="text-xs text-muted-foreground leading-relaxed">
+
+  i The order of the items may change, and this also affects performances and component state.
+
+  i Check the React documentation.
+
+
+src/components\BilingualText.tsx:401:18 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Avoid using the index of an array as key property in an element.
+
+    399 │ 				{paragraphs.map((p, i) => (
+    400 │ 					<p
+  > 401 │ 						key={`pp-${i}`}
+        │ 						           ^
+    402 │ 						className="text-xs text-muted-foreground leading-relaxed"
+    403 │ 					>
+
+  i This is the source of the key value.
+
+    397 │ 		return (
+    398 │ 			<div className={cn("mt-1.5 space-y-2", className)}>
+  > 399 │ 				{paragraphs.map((p, i) => (
+        │ 				                    ^
+    400 │ 					<p
+    401 │ 						key={`pp-${i}`}
+
+  i The order of the items may change, and this also affects performances and component state.
+
+  i Check the React documentation.
+
+
+src/components\BilingualText.tsx:419:18 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Avoid using the index of an array as key property in an element.
+
+    417 │ 				{chunks.map((c, i) => (
+    418 │ 					<p
+  > 419 │ 						key={`pc-${i}`}
+        │ 						           ^
+    420 │ 						className="text-xs text-muted-foreground leading-relaxed"
+    421 │ 					>
+
+  i This is the source of the key value.
+
+    415 │ 		return (
+    416 │ 			<div className={cn("mt-1.5 space-y-2", className)}>
+  > 417 │ 				{chunks.map((c, i) => (
+        │ 				                ^
+    418 │ 					<p
+    419 │ 						key={`pc-${i}`}
+
+  i The order of the items may change, and this also affects performances and component state.
+
+  i Check the React documentation.
+
+
+src/App.tsx:412:8 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+
+    410 │ 							className="text-muted-foreground hover:text-foreground shrink-0"
+    411 │ 						>
+  > 412 │ 							<svg
+        │ 							^^^^
+  > 413 │ 								xmlns="http://www.w3.org/2000/svg"
+         ...
+  > 421 │ 								strokeLinejoin="round"
+  > 422 │ 							>
+        │ 							^
+    423 │ 								<path d="M18 6 6 18" />
+    424 │ 								<path d="m6 6 12 12" />
+
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element ha
+s role="img", you should add the aria-label or aria-labelledby attribute.
+
+
+src/App.tsx:210:2 lint/correctness/useExhaustiveDependencies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This hook does not specify all of its dependencies: debugMode
+
+    208 │ 	}, []);
+    209 │
+  > 210 │ 	useEffect(() => {
+        │ 	^^^^^^^^^
+    211 │ 		fetchPapers();
+    212 │ 		fetchCollections();
+
+  i This dependency is not specified in the hook dependency list.
+
+    216 │ 		// Initialize plugin system
+    217 │ 		fetchPlugins().then(() => loadAllEnabled());
+  > 218 │ 		if (debugMode) {
+        │ 		    ^^^^^^^^^
+    219 │ 			commands.setDebugMode(true).catch(() => {});
+    220 │ 		}
+
+
+src/App.tsx:290:2 lint/correctness/useExhaustiveDependencies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × This hook specifies more dependencies than necessary: activeTabId
+
+    288 │ 	// Each active component (Webview / BrowserPanel) will then re-show its own.
+    289 │ 	// This guarantees no stale webview stays visible due to timing issues.
+  > 290 │ 	useEffect(() => {
+        │ 	^^^^^^^^^
+    291 │ 		commands.hideAllBrowserWebviews().catch(() => {});
+    292 │ 	}, [activeTabId]);
+
+  i This dependency can be removed from the list.
+
+    290 │ 	useEffect(() => {
+    291 │ 		commands.hideAllBrowserWebviews().catch(() => {});
+  > 292 │ 	}, [activeTabId]);
+        │ 	    ^^^^^^^^^^^
+    293 │
+    294 │ 	return (
+
+
+src/components\layout\TabBar.tsx:304:3 lint/a11y/useFocusableInteractive ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The HTML element with the interactive role "tab" is not focusable.
+
+    303 │ 	return (
+  > 304 │ 		<div
+        │ 		^^^^
+  > 305 │ 			role="tab"
+         ...
+  > 314 │ 			title={tab.title}
+  > 315 │ 		>
+        │ 		^
+    316 │ 			{/* Icon */}
+    317 │ 			{isHome ? (
+
+  i A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigatio
+n, even with an added role like "tab".
+
+  i Add a tabIndex attribute to make this element focusable.
+
+
+Skipped 20 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --fix --unsafe
+
+The number of diagnostics exceeds the number allowed by Biome.
+Diagnostics not shown: 145.
+Checked 135 files in 431ms. Fixed 35 files.
+Found 148 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+
+
+<WORKSPACE>\apps\desktop:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @zoro/desktop@0.1.0 lint: `biome check src/ "--fix"`
+Exit status 1
+
+
+================================================================================
+overlap-typecheck.txt
+================================================================================
+
+> @zoro/desktop@0.1.0 type-check <WORKSPACE>\apps\desktop
+> tsc --noEmit

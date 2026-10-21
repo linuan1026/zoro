@@ -94,6 +94,8 @@ test("missing page/layer, empty layer, empty region, exact text absence and ambi
   assert.equal(resolvePdfQuote(page(fragments.join("")), { text: source, region: [0.8, 0.8, 0.1, 0.1] }).status, "region-empty");
   const ambiguous = page(span("Start", 20, 10, 100, 20) + span("left", 0, 40, 25) + span("right", 55, 40, 25));
   assert.equal(resolvePdfQuote(ambiguous, { text: "Start left" }).status, "order-unresolved");
+  const overlapping = page(span("Fulves", 10, 10, 50) + span("trant.", 10, 10, 50));
+  assert.equal(resolvePdfQuote(overlapping, { text: "Fulvestrant." }).status, "order-unresolved");
 });
 
 test("partial selectors highlight only supplied text; completeness declarations are unverified and old selectors remain valid", () => {
