@@ -2,6 +2,7 @@ export interface SentenceQuote {
 	text: string;
 	prefix?: string;
 	suffix?: string;
+	completeness?: "full-sentence" | "fragment" | "unknown";
 }
 
 export interface SourceQuote extends SentenceQuote {
@@ -43,6 +44,12 @@ export function validatePairs(value: unknown): SentencePair[] {
 			)
 				throw new Error("alignment.side");
 			for (const quote of pair[side]) {
+				if (
+					quote &&
+					quote.completeness !== undefined &&
+					!["full-sentence", "fragment", "unknown"].includes(quote.completeness)
+				)
+					throw new Error("alignment.completeness");
 				if (
 					!quote ||
 					typeof quote.text !== "string" ||
@@ -175,9 +182,17 @@ export function locateQuote(
 	value: string,
 	quote: SentenceQuote,
 ): { start: number; end: number } | null {
+	const matches = quoteMatches(value, quote);
+	return matches.length === 1 ? matches[0] : null;
+}
+
+export function quoteMatches(
+	value: string,
+	quote: SentenceQuote,
+): { start: number; end: number }[] {
 	const normalized = normalizedText(value);
 	const needle = normalizedText(quote.text).text;
-	if (!needle) return null;
+	if (!needle) return [];
 	const matches: { start: number; end: number }[] = [];
 	for (
 		let index = normalized.text.indexOf(needle);
@@ -205,7 +220,15 @@ export function locateQuote(
 			end: normalized.positions[index + needle.length - 1].end,
 		});
 	}
-	return matches.length === 1 ? matches[0] : null;
+	return matches;
+}
+
+export function quoteCompleteness(quote: SentenceQuote) {
+	if (quote.completeness === "fragment") return "declared-fragment";
+	if (quote.completeness === "full-sentence") return "declared-full-unverified";
+	return /[.!?。！？]["'”’）)]*$/.test(quote.text.trim())
+		? "ending-present-unverified"
+		: "possible-fragment";
 }
 
 interface AlignmentNode {
@@ -263,12 +286,11 @@ export function rehypeSentenceAlignment({
 		};
 		collect(tree);
 		const ranges = pairs.flatMap((pair) =>
-			pair.target
-				.filter((quote) => quote.section === section)
-				.flatMap((quote) => {
-					const range = locateQuote(text, quote);
-					return range ? [{ ...range, id: pair.id }] : [];
-				}),
+			pair.target.flatMap((quote, targetIndex) => {
+				if (quote.section !== section) return [];
+				const range = locateQuote(text, quote);
+				return range ? [{ ...range, id: pair.id, targetIndex }] : [];
+			}),
 		);
 		if (!ranges.length) return;
 		for (const leaf of leaves) {
@@ -298,6 +320,15 @@ export function rehypeSentenceAlignment({
 								tagName: "span",
 								properties: {
 									"data-alignment": ids[0],
+									"data-alignment-targets": ranges
+										.filter(
+											(range) =>
+												range.start <= start &&
+												range.end >= end &&
+												range.id === ids[0],
+										)
+										.map((range) => `${range.id}:${range.targetIndex}`)
+										.join(" "),
 									className:
 										activeId === ids[0]
 											? [

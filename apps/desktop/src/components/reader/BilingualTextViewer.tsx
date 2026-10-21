@@ -13,6 +13,7 @@ import { splitTranslation } from "@/lib/offlineTranslation";
 import { readAlignedDocument } from "@/lib/sentenceAlignment";
 import { bindTranslationScroll } from "@/lib/translationScroll";
 import { useAnnotationStore } from "@/stores/annotationStore";
+import { AlignmentDiagnostics } from "./AlignmentDiagnostics";
 import { PdfAnnotationViewer } from "./PdfAnnotationViewer";
 import {
 	TranslationMarkdown,
@@ -49,6 +50,18 @@ export function BilingualTextViewer({
 		[document.content],
 	);
 	const [sentenceEnabled, setSentenceEnabled] = useState(true);
+	const [diagnosticsEnabled, setDiagnosticsEnabled] = useState(false);
+	const suppliedPages = useMemo(
+		() =>
+			[
+				...new Set(
+					aligned.pairs.flatMap((pair) =>
+						pair.source.map((quote) => quote.page),
+					),
+				),
+			].sort((left, right) => left - right),
+		[aligned.pairs],
+	);
 	const [autoFollow, setAutoFollow] = useState(false);
 	const [hoverId, setHoverId] = useState<string | null>(null);
 	const [pinnedId, setPinnedId] = useState<string | null>(null);
@@ -198,7 +211,11 @@ export function BilingualTextViewer({
 	}, [query, matchIndex, isActive]);
 
 	return (
-		<div ref={rootRef} className="relative h-full w-full overflow-hidden">
+		<div
+			ref={rootRef}
+			data-total-pdf-pages={totalPages}
+			className="relative h-full w-full overflow-hidden"
+		>
 			{sentenceEnabled &&
 				isActive &&
 				boxes.map((box, index) => (
@@ -226,8 +243,24 @@ export function BilingualTextViewer({
 				<ResizablePanel id="translation" defaultSize="50%" minSize="20%">
 					<div className="flex h-full min-w-0 flex-col bg-background text-foreground">
 						<div className="flex flex-wrap items-center gap-2 border-b px-3 py-2 text-xs">
+							<label>
+								<input
+									type="checkbox"
+									checked={diagnosticsEnabled}
+									onChange={(event) =>
+										setDiagnosticsEnabled(event.target.checked)
+									}
+								/>{" "}
+								{t("alignmentDiagnostics.toggle")}
+							</label>
 							{aligned.pairs.length > 0 && (
 								<>
+									<span className="text-muted-foreground">
+										{t("alignmentDiagnostics.summary", {
+											groups: aligned.pairs.length,
+											pages: suppliedPages.join(", "),
+										})}
+									</span>
 									<label>
 										<input
 											type="checkbox"
@@ -343,6 +376,16 @@ export function BilingualTextViewer({
 								</form>
 							)}
 						</div>
+						{diagnosticsEnabled && (
+							<AlignmentDiagnostics
+								rootRef={rootRef}
+								textRef={textRef}
+								pairs={aligned.pairs}
+								currentPage={currentPage}
+								hoverId={hoverId}
+								isActive={isActive}
+							/>
+						)}
 						<div className="flex items-center gap-2 border-b px-3 py-1 text-xs">
 							<input
 								className="min-w-0 flex-1 rounded border bg-background px-2 py-1 text-foreground"

@@ -6,6 +6,10 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
+import {
+	diagnosticEnglish,
+	diagnosticTraditionalChinese,
+} from "@/locales/alignmentDiagnostics";
 import de from "@/locales/de.json";
 import en from "@/locales/en.json";
 import es from "@/locales/es.json";
@@ -39,16 +43,76 @@ i18n
 	.use(initReactI18next)
 	.init({
 		resources: {
-			en: { translation: { ...en, offline: offlineEnglish } },
-			"zh-TW": { translation: { ...zhTW, offline: offlineTraditionalChinese } },
-			"zh-CN": { translation: { ...zhCN, offline: offlineTraditionalChinese } },
-			ja: { translation: { ...ja, offline: offlineEnglish } },
-			ko: { translation: { ...ko, offline: offlineEnglish } },
-			es: { translation: { ...es, offline: offlineEnglish } },
-			fr: { translation: { ...fr, offline: offlineEnglish } },
-			de: { translation: { ...de, offline: offlineEnglish } },
-			pt: { translation: { ...pt, offline: offlineEnglish } },
-			ru: { translation: { ...ru, offline: offlineEnglish } },
+			en: {
+				translation: {
+					...en,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
+			"zh-TW": {
+				translation: {
+					...zhTW,
+					alignmentDiagnostics: diagnosticTraditionalChinese,
+					offline: offlineTraditionalChinese,
+				},
+			},
+			"zh-CN": {
+				translation: {
+					...zhCN,
+					alignmentDiagnostics: diagnosticTraditionalChinese,
+					offline: offlineTraditionalChinese,
+				},
+			},
+			ja: {
+				translation: {
+					...ja,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
+			ko: {
+				translation: {
+					...ko,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
+			es: {
+				translation: {
+					...es,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
+			fr: {
+				translation: {
+					...fr,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
+			de: {
+				translation: {
+					...de,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
+			pt: {
+				translation: {
+					...pt,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
+			ru: {
+				translation: {
+					...ru,
+					alignmentDiagnostics: diagnosticEnglish,
+					offline: offlineEnglish,
+				},
+			},
 		},
 		fallbackLng: "en",
 		interpolation: {

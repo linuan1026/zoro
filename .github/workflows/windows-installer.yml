@@ -27,9 +27,10 @@ jobs:
       - run: node --test apps/desktop/tests/offline-translations.test.mjs
       - run: node --test apps/desktop/tests/offline-reliability.test.mjs
       - run: node --test apps/desktop/tests/v3.test.mjs
+      - run: node --test apps/desktop/tests/v31.test.mjs
       - run: cargo fmt --all -- --check
       - name: Lint modified reader files
-        run: pnpm --filter @zoro/desktop exec biome check src/components/reader/BilingualTextViewer.tsx src/components/reader/TranslationMarkdown.tsx src/components/reader/OfflineTranslationToolbar.tsx src/components/reader/useSentenceAlignment.ts src/lib/commands.ts src/lib/offlineTranslation.ts src/lib/translationContent.ts src/lib/translationScroll.ts src/lib/sentenceAlignment.ts src/lib/uiPreferences.ts src/lib/i18n.ts src/locales/offline.ts src/locales/zh-TW.json src/stores/uiStore.ts
+        run: pnpm --filter @zoro/desktop exec biome check src/components/reader/BilingualTextViewer.tsx src/components/reader/TranslationMarkdown.tsx src/components/reader/OfflineTranslationToolbar.tsx src/components/reader/useSentenceAlignment.ts src/lib/commands.ts src/lib/offlineTranslation.ts src/lib/translationContent.ts src/lib/translationScroll.ts src/lib/sentenceAlignment.ts src/lib/uiPreferences.ts src/lib/i18n.ts src/locales/offline.ts src/locales/zh-TW.json src/stores/uiStore.ts src/components/reader/AlignmentDiagnostics.tsx src/lib/pdfSentenceLocator.ts src/lib/alignmentDiagnostics.ts src/locales/alignmentDiagnostics.ts
       - name: Build MCP sidecar
         shell: bash
         run: bash scripts/build-mcp-sidecar.sh --release --target x86_64-pc-windows-msvc
@@ -58,13 +59,13 @@ jobs:
       - name: Assemble complete review source and build evidence
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: node scripts/export-v3-review.mjs "$env:RUNNER_TEMP/review-package"
+        run: node scripts/export-v31-review.mjs "$env:RUNNER_TEMP/review-package"
       - name: Create ZIP, extract and verify every manifest entry
         shell: pwsh
         run: |
           Add-Type -AssemblyName System.IO.Compression.FileSystem
           $root = "$env:RUNNER_TEMP/review-package"
-          $zip = "$env:RUNNER_TEMP/zoro-v3-review.zip"
+          $zip = "$env:RUNNER_TEMP/zoro-v3.1-review.zip"
           $archive = [System.IO.Compression.ZipFile]::Open($zip, 'Create')
           try {
             foreach ($file in Get-ChildItem -LiteralPath $root -Recurse -File -Force) {
@@ -83,7 +84,7 @@ jobs:
           Write-Output "Verified $($manifest.files.Count) files; ZIP bytes: $((Get-Item $zip).Length)"
       - uses: actions/upload-artifact@v4
         with:
-          name: zoro-v3-review
+          name: zoro-v3.1-review
           path: ${{ runner.temp }}/review-verified/
           include-hidden-files: true
           if-no-files-found: error

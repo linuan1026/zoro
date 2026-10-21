@@ -175,7 +175,7 @@ test("Taiwan system language is detected without overriding explicit preferences
   assert.equal(next.language, "en");
   assert.equal(normalizeUiLanguage("zh-Hant-TW"), "zh-TW"); assert.equal(normalizeUiLanguage("zh-CN"), "zh-CN");
   const source = fs.readFileSync(new URL("../src/lib/i18n.ts", import.meta.url), "utf8");
-  assert.match(source, /"zh-TW":\s*\{ translation: \{ \.\.\.zhTW/);
+  assert.match(source, /"zh-TW":\s*\{\s*translation:\s*\{\s*\.\.\.zhTW/);
 });
 
 test("fresh, returning and second startup never auto-open onboarding; normal initialization and manual help remain intact", () => {

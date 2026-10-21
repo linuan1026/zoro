@@ -1,9 +1,7 @@
 import { type RefObject, useEffect, useState } from "react";
-import {
-	type SentencePair,
-	type SourceQuote,
-	locateQuote,
-} from "../../lib/sentenceAlignment";
+import type { SentencePair, SourceQuote } from "../../lib/sentenceAlignment";
+
+import { resolvePdfQuote } from "../../lib/pdfSentenceLocator";
 
 interface HighlightBox {
 	left: number;
@@ -13,70 +11,7 @@ interface HighlightBox {
 }
 
 export function pdfQuoteRanges(page: HTMLElement, quote: SourceQuote): Range[] {
-	const layer = page.querySelector<HTMLElement>(".textLayer");
-	if (!layer) return [];
-	const bounds = page.getBoundingClientRect();
-	const walker = page.ownerDocument.createTreeWalker(
-		layer,
-		NodeFilter.SHOW_TEXT,
-	);
-	const leaves: { node: Text; start: number; end: number }[] = [];
-	let value = "";
-	let previous: DOMRect | null = null;
-	while (walker.nextNode()) {
-		const node = walker.currentNode as Text;
-		if (
-			!node.textContent ||
-			node.parentElement?.closest("[role='presentation'].endOfContent")
-		)
-			continue;
-		const range = page.ownerDocument.createRange();
-		range.selectNodeContents(node);
-		const rect = range.getBoundingClientRect();
-		if (!rect.width || !rect.height) continue;
-		if (quote.region) {
-			const [left, top, width, height] = quote.region;
-			const centerX = (rect.left + rect.width / 2 - bounds.left) / bounds.width;
-			const centerY = (rect.top + rect.height / 2 - bounds.top) / bounds.height;
-			if (
-				centerX < left ||
-				centerX > left + width ||
-				centerY < top ||
-				centerY > top + height
-			)
-				continue;
-		}
-		if (previous) {
-			const changesColumn =
-				rect.left - previous.right > bounds.width * 0.2 ||
-				previous.top - rect.top > Math.max(rect.height, previous.height) * 3;
-			const sameLine =
-				Math.abs(rect.top - previous.top) <
-				Math.max(rect.height, previous.height) * 0.65;
-			value += changesColumn
-				? "\n\uFFFC\n"
-				: sameLine
-					? rect.left - previous.right >
-						Math.min(rect.height, previous.height) * 0.15
-						? " "
-						: ""
-					: "\n";
-		}
-		const start = value.length;
-		value += node.textContent;
-		leaves.push({ node, start, end: value.length });
-		previous = rect;
-	}
-	const match = locateQuote(value, quote);
-	if (!match) return [];
-	return leaves
-		.filter((leaf) => leaf.start < match.end && leaf.end > match.start)
-		.map((leaf) => {
-			const range = page.ownerDocument.createRange();
-			range.setStart(leaf.node, Math.max(0, match.start - leaf.start));
-			range.setEnd(leaf.node, Math.min(leaf.end, match.end) - leaf.start);
-			return range;
-		});
+	return resolvePdfQuote(page, quote).ranges;
 }
 
 export function useSentenceAlignment({
@@ -172,9 +107,20 @@ export function useSentenceAlignment({
 						.alignment;
 				return pairs.some((pair) => pair.id === id) ? (id ?? null) : null;
 			}
-			const page = pointer.target?.closest<HTMLElement>(
-				".page[data-page-number]",
-			);
+			const point = pointer;
+			const page =
+				pointer.target?.closest<HTMLElement>(".page[data-page-number]") ??
+				Array.from(
+					pdf.querySelectorAll<HTMLElement>(".page[data-page-number]"),
+				).find((candidate) => {
+					const rect = candidate.getBoundingClientRect();
+					return (
+						point.x >= rect.left &&
+						point.x <= rect.right &&
+						point.y >= rect.top &&
+						point.y <= rect.bottom
+					);
+				});
 			if (!page || !pdf.contains(page)) return null;
 			const pageNumber = Number(page.dataset.pageNumber);
 			const hits = pairs.filter((pair) =>
@@ -192,6 +138,11 @@ export function useSentenceAlignment({
 			return hits.length === 1 ? hits[0].id : null;
 		};
 		const move = (event: PointerEvent) => {
+			if (
+				event.target instanceof Element &&
+				event.target.closest("button, a, input, select, [role='toolbar']")
+			)
+				return;
 			pointer = {
 				x: event.clientX,
 				y: event.clientY,
@@ -210,7 +161,7 @@ export function useSentenceAlignment({
 		const click = (event: MouseEvent) => {
 			if (
 				event.target instanceof Element &&
-				event.target.closest("button, a, input, select")
+				event.target.closest("button, a, input, select, [role='toolbar']")
 			)
 				return;
 			if (!window.getSelection()?.isCollapsed) return;
@@ -237,7 +188,10 @@ export function useSentenceAlignment({
 		const resize = new ResizeObserver(refresh);
 		resize.observe(pdf);
 		for (const element of [pdf, text]) {
-			element.addEventListener("pointermove", move);
+			element.addEventListener("pointermove", move, {
+				capture: true,
+				passive: true,
+			});
 			element.addEventListener("pointerleave", leave);
 			element.addEventListener("click", click);
 		}
@@ -250,7 +204,7 @@ export function useSentenceAlignment({
 			mutation.disconnect();
 			resize.disconnect();
 			for (const element of [pdf, text]) {
-				element.removeEventListener("pointermove", move);
+				element.removeEventListener("pointermove", move, true);
 				element.removeEventListener("pointerleave", leave);
 				element.removeEventListener("click", click);
 			}

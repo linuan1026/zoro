@@ -30,6 +30,8 @@ synthetic example in `docs/examples/sentence-bundle.zoro.json`.
 - Optional `prefix` / `suffix` on every source or target quote specify immediately adjacent
   normalized visible context (whitespace around the quote boundary is ignored). Include
   enough context to distinguish repeated sentences; do not guess an occurrence number.
+- Optional `completeness` on either quote: `full-sentence`, `fragment`, or `unknown`.
+  This is an author declaration, not independently verified quality. Old bundles need no changes.
 - Optional source `region`: `[left, top, width, height]` in 0–1 fractions of the displayed
   physical page bounding box, top-left origin, after PDF rotation. It limits text to the
   rectangle using text-fragment centers. Use accurate column/figure bounds to disambiguate
@@ -61,9 +63,14 @@ filtering. Ambiguous, absent or conflicting selectors produce no highlight.
 
 `useSentenceAlignment.ts` reads existing PDF.js text-layer DOM without rewriting it,
 maps normalized offsets back to multiple Text/Range fragments and hit-tests their live
-rectangles. Large column jumps introduce a barrier instead of concatenating unrelated
-columns. DOM reading order is preserved rather than guessed. A PDF with missing, scrambled
-or image-only text layers may remain unmapped; no OCR or approximate semantic matching is used.
+rectangles. `pdfSentenceLocator.ts` clusters measurable fragments into horizontal lines,
+orders fragments geometrically, separates large gutters, then follows the nearest unique
+vertically adjacent, overlapping, similarly indented line. Small adjacent scripts may join
+their body line. It never interleaves left/right columns by DOM order. Ambiguous continuation
+is stopped; disconnected columns/cross-page sentences need explicit source fragments.
+This is conservative geometric flow reconstruction, not a universal PDF reading-order engine.
+A PDF with missing, unusually rotated, overlapping or image-only text layers may remain
+unmapped; no OCR, fuzzy sentence similarity or approximate semantic matching is used.
 Text layers sometimes split chemical names without recoverable geometry; not matching is
 preferred over falsely claiming alignment. Zoom/lazy rendering/layout changes invalidate
 cached ranges. Pointer events are rAF-coalesced; inactive tabs/version unmount dispose listeners.
@@ -88,7 +95,52 @@ rendering, validates it again on load, and disables bad metadata without discard
 Markdown. Do not author the internal comment manually; use the importable JSON format.
 
 The existing Rust atomic JSON storage / UUID paths / source-PDF relation / corruption
-isolation / delete semantics are unchanged. No database migration, new Rust command,
-Tauri permission or broad filesystem capability is needed. Old Markdown/TXT remains usable.
+isolation / delete semantics are unchanged. No database migration, new Rust command
+or broad filesystem scope is needed. Diagnostic export adds only
+`fs:allow-write-text-file`: a native Save dialog grants the selected output path at runtime.
+It does not grant arbitrary paper/resource directory access. Old Markdown/TXT remains usable.
 External-link confirmation and image blocking are unchanged. Data is still under the
 configured user data directory, not the installation directory; there are no new AI calls.
+
+## V3.1: full sentences, coverage and diagnostics
+
+For ChatGPT: supply the **entire English sentence and all translated sentences**, retaining
+Greek letters, compounds, references and final punctuation. Do not select a convenient
+substring just to make a match. One sentence wrapping three lines should normally be one
+source quote, not three unrelated groups. For a cross-page or physically separated sentence,
+use multiple source quotes under one ID. If its translation is split, use multiple targets
+with their exact visible text and correct sections. Never omit the rest of the translated
+sentence from the targets. Prefer `completeness: "full-sentence"` only after checking both
+ends against the PDF; label deliberately incomplete material `fragment`.
+
+Example: the synthetic `er-alpha-1` above already supplies a complete English/Chinese pair.
+For one-to-many, replace its target with two complete quotes such as
+`[{"section":1,"text":"Fulvestrant 會與雌二醇競爭。","completeness":"full-sentence"},
+{"section":1,"text":"它會結合 ERα。","completeness":"full-sentence"}]`, and include both
+sentences in the bundle's Markdown. These are illustrative sentences, not a real-paper translation.
+
+The reader always shows imported group count and supplied physical pages. Enable **Sentence
+diagnostics / coverage** for per-ID source/target results, physical current page, loaded text
+layer, exact candidate count, matched fragment/line counts, completeness hints and uncovered
+loaded-text areas. An ID inspection distinguishes an entry absent from JSON from an existing
+entry that fails PDF location. No hover ID alone cannot identify which of those occurred.
+The tool does not invent an ID for sentences not supplied in the bundle.
+
+Source states distinguish not-rendered page, absent/empty text layer, empty supplied region,
+exact text/context absent, duplicate and ambiguous geometric continuation. Target states
+also report missing section and overlapping/partially conflicting selectors. `matched` means
+a unique normalized literal selector, **not proof of a complete sentence or correct translation**.
+Punctuation and declarations are clearly unverified; a punctuated substring can still be partial.
+
+Refresh checks rendered layers every two seconds only while this optional panel and its tab
+are active. Scroll to a page and refresh if it is not loaded. Export JSON (also readable as
+TXT) using the native Save dialog. It contains IDs, counts, pages, statuses and normalized
+rectangles for incompletely covered text fragments, not English/Chinese text, excerpts,
+original filenames or paths. IDs should therefore be short opaque identifiers, not sentences.
+Loaded-character coverage excludes images and unloaded pages and is not semantic coverage:
+**44 groups on pages 1–3 do not mean the whole paper is translated or aligned**.
+
+Hovering any located fragment activates all located fragments and all supplied targets of
+that ID. A half-sentence selector highlights only that half. Selection is left untouched;
+noncollapsed selection cannot pin, and toolbar pointer/click events do not replace a sentence
+preview. Real WebView2 selection-toolbar behavior still requires Windows GUI acceptance.

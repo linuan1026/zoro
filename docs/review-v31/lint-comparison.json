@@ -1,0 +1,2686 @@
+{
+  "baseline": {
+    "command": "biome lint <BASELINE V3 9b73ae5>/apps/desktop/src --reporter=json --max-diagnostics=10000",
+    "exitCode": 1,
+    "byCategory": {
+      "lint/correctness/useExhaustiveDependencies": 44,
+      "lint/a11y/noSvgWithoutTitle": 12,
+      "lint/suspicious/noArrayIndexKey": 8,
+      "lint/a11y/noLabelWithoutControl": 35,
+      "lint/a11y/useFocusableInteractive": 1,
+      "lint/a11y/useKeyWithClickEvents": 16,
+      "lint/style/noNonNullAssertion": 11,
+      "lint/a11y/useSemanticElements": 2,
+      "lint/a11y/noAutofocus": 11,
+      "lint/complexity/useOptionalChain": 5,
+      "lint/suspicious/noConfusingVoidType": 1,
+      "lint/suspicious/noExplicitAny": 9,
+      "lint/suspicious/noDuplicateObjectKeys": 9,
+      "lint/complexity/noForEach": 1
+    },
+    "diagnostics": [
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\CollapsibleAuthors.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: authors"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\CollapsibleAuthors.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: fullText"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\LogPanel.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: logs"
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\HighlightedText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\App.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\App.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: debugMode"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\App.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: activeTabId"
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/useFocusableInteractive",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\layout\\TabBar.tsx"
+        },
+        "description": "The HTML element with the interactive role \"tab\" is not focusable."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\layout\\TabBar.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperCardGrid.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperCardGrid.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\CollectionTree.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\CollectionTree.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/a11y/useSemanticElements",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\CollectionTree.tsx"
+        },
+        "description": "The elements with the following roles can be changed to the following elements:\n<button>\n<input type=\"button\">\n"
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\MetadataSearchDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\MetadataSearchDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperContextMenu.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\ZoteroImportDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\ZoteroImportDialog.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: progress"
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\ZoteroImportDialog.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\HighlightPopup.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\HighlightPopup.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\HighlightPopup.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\AnnotationToolbar.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrowserPanel.tsx"
+        },
+        "description": "This hook specifies a dependency more specific that its captures: activeTab?.id"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrowserPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: activeTab"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\browser\\BrowserPanel.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: url"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperDetail.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\StickyNoteIcon.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\StickyNoteIcon.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: paperIdsKey"
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/a11y/useSemanticElements",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\layout\\Sidebar.tsx"
+        },
+        "description": "The elements with the following roles can be changed to the following elements:\n<button>\n<input type=\"button\">\n"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: startChat"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: activeAgentName"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: connecting"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: paperId"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: startChat"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: isGlobal"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: chatPaperId"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: cwd"
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfSearchBar.tsx"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfSearchBar.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: caseSensitive, entireWord, highlightAll"
+      },
+      {
+        "category": "lint/suspicious/noConfusingVoidType",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\hooks\\useKeybindings.ts"
+        },
+        "description": "void is confusing inside a union type."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\hooks\\useKeybindings.ts"
+        },
+        "description": "This hook specifies more dependencies than necessary: version"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: t"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: t"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: t"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\ja.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\pt.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\ko.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\de.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\zh-CN.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\en.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\ru.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\es.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\locales\\fr.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\noteEditor.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/complexity/noForEach",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Prefer for...of instead of forEach."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: highlightBump"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfBlobUrl"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: isolated"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfBlobUrl"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfBlobUrl"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\plugins\\PluginManager.ts"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\plugins\\PluginManager.ts"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\plugins\\PluginManager.ts"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\feed.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\feed.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\feed.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\papersCool.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\papersCool.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\papersCool.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: paperId"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: activeTool"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: version"
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: loadCliStatus"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handleAiSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: aiNativeLang, customNativeLang, aiAutoTranslate, globalDefaultModel, taskQuickModel, taskNormalModel, taskHeavyModel, taskGlossaryModel, promptTitleSystem, promptTitleUser, promptAbstractSystem, promptAbstractUser, htmlConcurrency, aiProviders, glossaryEnabled, glossaryThreshold"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handlePdfTranslationSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfEnabled, pdfBabeldocCmd, pdfUseAiConfig, pdfCustomApiKey, pdfCustomBaseUrl, pdfCustomModel, pdfQps, pdfExtraArgs"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handleMcpSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: mcpTransport, mcpPort"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handleRetentionSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\v31-work\\baseline\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: retentionDays"
+      }
+    ]
+  },
+  "current": {
+    "command": "biome lint apps/desktop/src --reporter=json --max-diagnostics=10000",
+    "exitCode": 1,
+    "byCategory": {
+      "lint/suspicious/noArrayIndexKey": 8,
+      "lint/a11y/noSvgWithoutTitle": 12,
+      "lint/correctness/useExhaustiveDependencies": 44,
+      "lint/a11y/noLabelWithoutControl": 35,
+      "lint/a11y/useSemanticElements": 2,
+      "lint/a11y/useFocusableInteractive": 1,
+      "lint/a11y/useKeyWithClickEvents": 16,
+      "lint/style/noNonNullAssertion": 11,
+      "lint/a11y/noAutofocus": 11,
+      "lint/complexity/useOptionalChain": 5,
+      "lint/suspicious/noConfusingVoidType": 1,
+      "lint/suspicious/noExplicitAny": 9,
+      "lint/suspicious/noDuplicateObjectKeys": 9,
+      "lint/complexity/noForEach": 1
+    },
+    "diagnostics": [
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\HighlightedText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrandIcons.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\CollapsibleAuthors.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: authors"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\CollapsibleAuthors.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: fullText"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\LogPanel.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: logs"
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\NewTabPage.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\BilingualText.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/a11y/useSemanticElements",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\layout\\Sidebar.tsx"
+        },
+        "description": "The elements with the following roles can be changed to the following elements:\n<button>\n<input type=\"button\">\n"
+      },
+      {
+        "category": "lint/a11y/useFocusableInteractive",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\layout\\TabBar.tsx"
+        },
+        "description": "The HTML element with the interactive role \"tab\" is not focusable."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\layout\\TabBar.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\AddPaperDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrowserPanel.tsx"
+        },
+        "description": "This hook specifies a dependency more specific that its captures: activeTab?.id"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrowserPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: activeTab"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\browser\\BrowserPanel.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: url"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\CollectionTree.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\CollectionTree.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/a11y/useSemanticElements",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\CollectionTree.tsx"
+        },
+        "description": "The elements with the following roles can be changed to the following elements:\n<button>\n<input type=\"button\">\n"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperCardGrid.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperCardGrid.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\App.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\App.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: debugMode"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\App.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: activeTabId"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperContextMenu.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\MetadataSearchDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\MetadataSearchDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\AnnotationToolbar.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\HighlightPopup.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\HighlightPopup.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\HighlightPopup.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\ZoteroImportDialog.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\ZoteroImportDialog.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: progress"
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\ZoteroImportDialog.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\AnnotationSidePanel.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperDetail.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\StickyNoteIcon.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\StickyNoteIcon.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: paperIdsKey"
+      },
+      {
+        "category": "lint/suspicious/noArrayIndexKey",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\library\\PaperTable.tsx"
+        },
+        "description": "Avoid using the index of an array as key property in an element."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfSearchBar.tsx"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfSearchBar.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: caseSensitive, entireWord, highlightAll"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: t"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: t"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\NoteEditor.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: t"
+      },
+      {
+        "category": "lint/suspicious/noConfusingVoidType",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\hooks\\useKeybindings.ts"
+        },
+        "description": "void is confusing inside a union type."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\hooks\\useKeybindings.ts"
+        },
+        "description": "This hook specifies more dependencies than necessary: version"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\lib\\tiptapKeybindings.ts"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\en.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\de.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\fr.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\es.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\ja.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: startChat"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: activeAgentName"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: connecting"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: paperId"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: startChat"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: isGlobal"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: chatPaperId"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\agent\\AgentPanel.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: cwd"
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\zh-CN.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\ru.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\ko.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/suspicious/noDuplicateObjectKeys",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\locales\\pt.json"
+        },
+        "description": "The key testConnection was already declared."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\noteEditor.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/complexity/noForEach",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Prefer for...of instead of forEach."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: highlightBump"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfBlobUrl"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: isolated"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfBlobUrl"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\components\\reader\\PdfAnnotationViewer.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfBlobUrl"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\feed.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\feed.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\feed.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\papersCool.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\papersCool.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\papersCool.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: displayMode"
+      },
+      {
+        "category": "lint/style/noNonNullAssertion",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\plugins\\PluginManager.ts"
+        },
+        "description": "Forbidden non-null assertion."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\plugins\\PluginManager.ts"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/complexity/useOptionalChain",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\plugins\\PluginManager.ts"
+        },
+        "description": "Change to an optional chain."
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/a11y/useKeyWithClickEvents",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Enforce to have the onClick mouse event with the onKeyUp, the onKeyDown, or the onKeyPress keyboard event."
+      },
+      {
+        "category": "lint/a11y/noSvgWithoutTitle",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "Alternative text title element cannot be empty"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: paperId"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: activeTool"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\reader.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: version"
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/suspicious/noExplicitAny",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Unexpected any. Specify a different type."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noAutofocus",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "Avoid the autoFocus attribute."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/a11y/noLabelWithoutControl",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "A form label must be associated with an input."
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: loadCliStatus"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handleAiSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: aiNativeLang, customNativeLang, aiAutoTranslate, globalDefaultModel, taskQuickModel, taskNormalModel, taskHeavyModel, taskGlossaryModel, promptTitleSystem, promptTitleUser, promptAbstractSystem, promptAbstractUser, htmlConcurrency, aiProviders, glossaryEnabled, glossaryThreshold"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handlePdfTranslationSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: pdfEnabled, pdfBabeldocCmd, pdfUseAiConfig, pdfCustomApiKey, pdfCustomBaseUrl, pdfCustomModel, pdfQps, pdfExtraArgs"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handleMcpSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: mcpTransport, mcpPort"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook does not specify all of its dependencies: handleRetentionSave"
+      },
+      {
+        "category": "lint/correctness/useExhaustiveDependencies",
+        "severity": "error",
+        "path": {
+          "file": "<USER_HOME>\\Documents\\自創程式\\論文翻譯左右對照\\zoro\\apps\\desktop\\src\\routes\\settings.tsx"
+        },
+        "description": "This hook specifies more dependencies than necessary: retentionDays"
+      }
+    ]
+  }
+}
