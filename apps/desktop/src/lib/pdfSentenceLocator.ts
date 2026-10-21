@@ -119,8 +119,8 @@ function readingLines(fragments: Fragment[], pageWidth: number): Line[] {
 				previous &&
 				fragment.rect.left - previous.rect.right >
 					Math.max(
-						pageWidth * 0.025,
-						Math.max(fragment.rect.height, previous.rect.height) * 2.5,
+						pageWidth * 0.015,
+						Math.max(fragment.rect.height, previous.rect.height) * 1.25,
 					)
 			)
 				append();

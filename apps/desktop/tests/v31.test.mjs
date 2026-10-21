@@ -73,6 +73,8 @@ test("two columns are not interleaved; adjacent unrelated captions are not joine
   assert.equal(resolvePdfQuote(repeated, { text: source, region: [0.5, 0, 0.5, 1] }).status, "matched");
   const contextual = page(span(`A. ${source} B. ${source}`, 10, 10, 600));
   assert.equal(resolvePdfQuote(contextual, { text: source, prefix: "B." }).matchCount, 1);
+  const narrowGutter = page([span("A complete", 10, 10, 250), span("Unrelated column", 280, 10, 250), span("sentence spans", 10, 30, 250), span("Other content", 280, 30, 250), span("three lines.", 10, 50, 250), span("More text", 280, 50, 250)].join(""));
+  assert.equal(resolvePdfQuote(narrowGutter, { text: "A complete sentence spans three lines." }).status, "matched");
 });
 
 test("Greek identity, Unicode compatibility scripts and adjacent superscripts retain exact node/Range offsets", () => {
