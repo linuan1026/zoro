@@ -1,0 +1,93 @@
+windows	Run node --test apps/desktop/tests/v3.test.mjs	﻿2026-10-20T21:57:12.9535745Z ##[group]Run node --test apps/desktop/tests/v3.test.mjs
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9536161Z ^[[36;1mnode --test apps/desktop/tests/v3.test.mjs^[[0m
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9593803Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9594107Z env:
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9594347Z   PNPM_HOME: C:\Users\runneradmin\setup-pnpm\node_modules\.bin
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9594638Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9594862Z   CARGO_INCREMENTAL: 0
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9595084Z   CARGO_TERM_COLOR: always
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9595337Z   CACHE_ON_FAILURE: false
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:12.9595514Z ##[endgroup]
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:13.2440645Z TAP version 13
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.8049935Z # react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: 'NO_I18NEXT_INSTANCE' }
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9075981Z # Subtest: bundle roundtrip persists explicit many-to-many/cross-page quotes without changing Markdown or legacy documents
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9082235Z ok 1 - bundle roundtrip persists explicit many-to-many/cross-page quotes without changing Markdown or legacy documents
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9082810Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9083182Z   duration_ms: 2.4768
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9083439Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9083661Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9088174Z # Subtest: invalid IDs, duplicates, missing text, pages, sections, regions, schema, oversized and incomplete data fail closed
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9089639Z ok 2 - invalid IDs, duplicates, missing text, pages, sections, regions, schema, oversized and incomplete data fail closed
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9090126Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9090365Z   duration_ms: 74.0759
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9090636Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9090862Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9093425Z # Subtest: normalization retains chemical symbols, matches across line hyphenation and ligatures, and rejects ambiguous repetitions
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9095919Z ok 3 - normalization retains chemical symbols, matches across line hyphenation and ligatures, and rejects ambiguous repetitions
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9096838Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9097150Z   duration_ms: 1.6691
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9097494Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9097794Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9098668Z # Subtest: React sentence marks cover multiple formatting nodes, tables, one-to-many targets, and coexist with search/KaTeX safely
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9100054Z ok 4 - React sentence marks cover multiple formatting nodes, tables, one-to-many targets, and coexist with search/KaTeX safely
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9100856Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9101163Z   duration_ms: 62.8755
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9101498Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9101798Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9102621Z # Subtest: PDF range locator crosses multiple spans and lines, supports regions for duplicate two-column text, and recalculates zoom
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9109297Z ok 5 - PDF range locator crosses multiple spans and lines, supports regions for duplicate two-column text, and recalculates zoom
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9110147Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9110445Z   duration_ms: 19.9809
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9110734Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:14.9111097Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0899514Z # 🌐 i18next is made possible by our own product, Locize — consider powering your project with managed localization (AI, CDN, integrations): https://locize.com 💙
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0953778Z # Subtest: mounted React hover, reverse hover, rapid moves, pin/unpin, zoom, inactive tabs, version switch and cleanup
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0955486Z ok 6 - mounted React hover, reverse hover, rapid moves, pin/unpin, zoom, inactive tabs, version switch and cleanup
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0956271Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0956697Z   duration_ms: 189.6854
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0957144Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0957513Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0958331Z # Subtest: all 1151 zh-TW keys, plural suffixes and interpolation names match English; Taiwan vocabulary and no common simplified remnants
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0962056Z ok 7 - all 1151 zh-TW keys, plural suffixes and interpolation names match English; Taiwan vocabulary and no common simplified remnants
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0962764Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0963001Z   duration_ms: 14.4448
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0963248Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0963467Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0967495Z # Subtest: Taiwan system language is detected without overriding explicit preferences; switching locale rerenders actual React controls
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0973050Z not ok 8 - Taiwan system language is detected without overriding explicit preferences; switching locale rerenders actual React controls
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0973833Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0974075Z   duration_ms: 6.5604
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0974343Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0974760Z   location: 'D:\\a\\zoro\\zoro\\apps\\desktop\\tests\\v3.test.mjs:156:1'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0975268Z   failureType: 'testCodeFailure'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0975915Z   error: |-
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0987168Z     Expected values to be strictly equal:
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0987562Z
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0987810Z     'en' !== 'zh-TW'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0988050Z
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0988269Z   code: 'ERR_ASSERTION'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0988530Z   name: 'AssertionError'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0988805Z   expected: 'zh-TW'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0989264Z   actual: 'en'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0989525Z   operator: 'strictEqual'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0989794Z   stack: |-
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0990290Z     TestContext.<anonymous> (file:///D:/a/zoro/zoro/apps/desktop/tests/v3.test.mjs:162:10)
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0990967Z     async Test.run (node:internal/test_runner/test:1054:7)
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0991580Z     async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0992114Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0992894Z # Subtest: fresh, returning and second startup never auto-open onboarding; normal initialization and manual help remain intact
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0994102Z ok 9 - fresh, returning and second startup never auto-open onboarding; normal initialization and manual help remain intact
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0994748Z   ---
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0994914Z   duration_ms: 0.9553
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0995137Z   type: 'test'
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.0995374Z   ...
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1596009Z 1..9
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1596386Z # tests 9
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1596633Z # suites 0
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1596871Z # pass 8
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1597166Z # fail 1
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1597405Z # cancelled 0
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1597940Z # skipped 0
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1598361Z # todo 0
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.1598892Z # duration_ms 1931.093
+windows	Run node --test apps/desktop/tests/v3.test.mjs	2026-10-20T21:57:15.2585845Z ##[error]Process completed with exit code 1.

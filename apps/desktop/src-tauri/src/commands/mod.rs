@@ -18,6 +18,7 @@ pub mod lab_acp;
 pub mod library;
 pub mod mcp;
 pub mod notes;
+pub mod offline_translation;
 pub mod paper_links;
 pub mod papers_cool;
 pub mod plugins;

@@ -1,0 +1,235 @@
+{
+  "before": [
+    {
+      "autocrlf": "true",
+      "biomeExitCode": 1,
+      "diagnostics": [
+        {
+          "category": "format",
+          "description": "Formatter would have printed the following content:"
+        },
+        {
+          "category": "format",
+          "description": "Formatter would have printed the following content:"
+        },
+        {
+          "category": "format",
+          "description": "Formatter would have printed the following content:"
+        },
+        {
+          "category": "format",
+          "description": "Formatter would have printed the following content:"
+        },
+        {
+          "category": "format",
+          "description": "Formatter would have printed the following content:"
+        },
+        {
+          "category": "format",
+          "description": "Formatter would have printed the following content:"
+        },
+        {
+          "category": "format",
+          "description": "Formatter would have printed the following content:"
+        }
+      ],
+      "counts": [
+        {
+          "file": "apps/desktop/src/components/reader/BilingualTextViewer.tsx",
+          "crlf": 338,
+          "lf": 338,
+          "matchesGitBlob": false
+        },
+        {
+          "file": "apps/desktop/src/components/reader/TranslationMarkdown.tsx",
+          "crlf": 87,
+          "lf": 87,
+          "matchesGitBlob": false
+        },
+        {
+          "file": "apps/desktop/src/lib/commands.ts",
+          "crlf": 1778,
+          "lf": 1778,
+          "matchesGitBlob": false
+        },
+        {
+          "file": "apps/desktop/src/lib/offlineTranslation.ts",
+          "crlf": 121,
+          "lf": 121,
+          "matchesGitBlob": false
+        },
+        {
+          "file": "apps/desktop/src/lib/translationContent.ts",
+          "crlf": 97,
+          "lf": 97,
+          "matchesGitBlob": false
+        },
+        {
+          "file": "apps/desktop/src/lib/translationScroll.ts",
+          "crlf": 76,
+          "lf": 76,
+          "matchesGitBlob": false
+        },
+        {
+          "file": "apps/desktop/src/locales/offline.ts",
+          "crlf": 62,
+          "lf": 62,
+          "matchesGitBlob": false
+        }
+      ],
+      "binaryUnchanged": true
+    },
+    {
+      "autocrlf": "false",
+      "biomeExitCode": 0,
+      "diagnostics": [],
+      "counts": [
+        {
+          "file": "apps/desktop/src/components/reader/BilingualTextViewer.tsx",
+          "crlf": 0,
+          "lf": 338,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/components/reader/TranslationMarkdown.tsx",
+          "crlf": 0,
+          "lf": 87,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/commands.ts",
+          "crlf": 0,
+          "lf": 1778,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/offlineTranslation.ts",
+          "crlf": 0,
+          "lf": 121,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/translationContent.ts",
+          "crlf": 0,
+          "lf": 97,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/translationScroll.ts",
+          "crlf": 0,
+          "lf": 76,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/locales/offline.ts",
+          "crlf": 0,
+          "lf": 62,
+          "matchesGitBlob": true
+        }
+      ],
+      "binaryUnchanged": true
+    }
+  ],
+  "after": [
+    {
+      "autocrlf": "true",
+      "biomeExitCode": 0,
+      "diagnostics": [],
+      "counts": [
+        {
+          "file": "apps/desktop/src/components/reader/BilingualTextViewer.tsx",
+          "crlf": 0,
+          "lf": 338,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/components/reader/TranslationMarkdown.tsx",
+          "crlf": 0,
+          "lf": 87,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/commands.ts",
+          "crlf": 0,
+          "lf": 1778,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/offlineTranslation.ts",
+          "crlf": 0,
+          "lf": 121,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/translationContent.ts",
+          "crlf": 0,
+          "lf": 97,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/translationScroll.ts",
+          "crlf": 0,
+          "lf": 76,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/locales/offline.ts",
+          "crlf": 0,
+          "lf": 62,
+          "matchesGitBlob": true
+        }
+      ],
+      "binaryUnchanged": true
+    },
+    {
+      "autocrlf": "false",
+      "biomeExitCode": 0,
+      "diagnostics": [],
+      "counts": [
+        {
+          "file": "apps/desktop/src/components/reader/BilingualTextViewer.tsx",
+          "crlf": 0,
+          "lf": 338,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/components/reader/TranslationMarkdown.tsx",
+          "crlf": 0,
+          "lf": 87,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/commands.ts",
+          "crlf": 0,
+          "lf": 1778,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/offlineTranslation.ts",
+          "crlf": 0,
+          "lf": 121,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/translationContent.ts",
+          "crlf": 0,
+          "lf": 97,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/lib/translationScroll.ts",
+          "crlf": 0,
+          "lf": 76,
+          "matchesGitBlob": true
+        },
+        {
+          "file": "apps/desktop/src/locales/offline.ts",
+          "crlf": 0,
+          "lf": 62,
+          "matchesGitBlob": true
+        }
+      ],
+      "binaryUnchanged": true
+    }
+  ]
+}

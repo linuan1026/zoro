@@ -255,6 +255,15 @@ Step-by-step release process:
 
 ## See Also
 
+### Windows checkout line endings
+
+The root `.gitattributes` keeps `.ts`, `.tsx` and `.json` files as LF in every checkout,
+including Windows hosts with `core.autocrlf=true`. This matches Biome's default
+formatter without disabling formatting, lint or tests. The rule does not affect
+binary assets, PowerShell files or application behavior. No bulk renormalization
+is needed: existing TypeScript Git blobs already contain LF. Keep this attributes
+file in branch builds and source review exports.
+
 - [Development Guide](development.md) -- Local development setup
 - [Contributing Guide](contributing.md) -- How to contribute
 - [Architecture Overview](architecture.md) -- System design

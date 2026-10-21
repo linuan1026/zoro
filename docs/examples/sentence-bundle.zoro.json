@@ -1,0 +1,31 @@
+{
+  "schema": "zoro.bilingual.v1",
+  "markdown": "# 合成示範：雌激素受體研究\n\n這是格式範例，不是實際論文。\n\n<!-- zoro-page: 1 -->\n## 受體結合\n\nFulvestrant 會與雌二醇競爭結合 ERα。\n\n藥物降低受體活性。這會抑制下游訊號傳遞。\n\n| 藥物 | 觀察 |\n| --- | --- |\n| Fulvestrant | 濃度為 10 μM。 |\n\n能量關係為 $E=mc^2$。\n\n<!-- zoro-page: 2 -->\n## 延伸觀察\n\n這個跨頁句子合併描述兩頁中的結果。\n\n方法：此結果可重複。\n\n討論：此結果可重複。",
+  "alignments": [
+    {
+      "id": "er-alpha",
+      "source": [{ "page": 1, "text": "Fulvestrant competes with estradiol to bind to ERα." }],
+      "target": [{ "section": 1, "text": "Fulvestrant 會與雌二醇競爭結合 ERα。" }]
+    },
+    {
+      "id": "one-to-many",
+      "source": [{ "page": 1, "text": "The drug reduces receptor activity and inhibits downstream signaling." }],
+      "target": [{ "section": 1, "text": "藥物降低受體活性。" }, { "section": 1, "text": "這會抑制下游訊號傳遞。" }]
+    },
+    {
+      "id": "table-concentration",
+      "source": [{ "page": 1, "text": "The concentration was 10 μM." }],
+      "target": [{ "section": 1, "text": "濃度為 10 μM。" }]
+    },
+    {
+      "id": "cross-page-many-to-one",
+      "source": [{ "page": 1, "text": "These results indicate" }, { "page": 2, "text": "a reproducible response." }],
+      "target": [{ "section": 2, "text": "這個跨頁句子合併描述兩頁中的結果。" }]
+    },
+    {
+      "id": "repeated-with-context",
+      "source": [{ "page": 2, "text": "The result is reproducible.", "prefix": "Discussion:" }],
+      "target": [{ "section": 2, "text": "此結果可重複。", "prefix": "討論：" }]
+    }
+  ]
+}

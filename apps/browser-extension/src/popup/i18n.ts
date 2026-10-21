@@ -10,6 +10,17 @@
 type Translations = Record<string, Record<string, string>>;
 
 const translations: Translations = {
+  "zh-TW": {
+    "appNotRunning": "Zoro 桌面應用程式尚未啟動，請先啟動以儲存論文。",
+    "noPaperDetected": "此頁未偵測到論文，請開啟 ArXiv、DOI 或含文獻資訊的頁面。",
+    "pdfAvailable": "可取得 PDF",
+    "htmlAvailable": "可取得 HTML",
+    "alsoSaveHtml": "同時儲存 HTML 版本",
+    "saveToZoro": "儲存至 Zoro",
+    "saving": "儲存中…",
+    "savedToZoro": "已儲存至 Zoro！",
+    "more": "另有 {{count}} 篇",
+  },
   en: {
     "appNotRunning": "Zoro desktop app is not running. Please start it to save papers.",
     "noPaperDetected": "No paper detected on this page. Navigate to ArXiv, DOI, or a page with citation metadata.",

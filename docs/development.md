@@ -1,5 +1,13 @@
 # Development Guide
 
+V3 UI resources include an independent `apps/desktop/src/locales/zh-TW.json` with
+the same keys/interpolation variables as English and Taiwan terminology. UI language
+uses saved preference before the WebView navigator locale; it does not change AI/PDF
+translation targets. Startup defaults to the normal library, leaving initialization
+intact; onboarding is available only when explicitly requested in Settings.
+Run `node --test apps/desktop/tests/v3.test.mjs` for sentence, locale and startup
+regressions (JSDOM geometry is simulated; real Windows GUI acceptance is separate).
+
 This guide walks you through setting up a local development environment for Zoro.
 
 ## Prerequisites

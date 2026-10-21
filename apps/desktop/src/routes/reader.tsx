@@ -6,8 +6,10 @@ import { BilingualText } from "@/components/BilingualText";
 import { DisplayModeToggle } from "@/components/DisplayModeToggle";
 import { AnnotationToolbar } from "@/components/reader/AnnotationToolbar";
 import { BilingualPdfViewer } from "@/components/reader/BilingualPdfViewer";
+import { BilingualTextViewer } from "@/components/reader/BilingualTextViewer";
 import { FeedAnnotationPlaceholder } from "@/components/reader/FeedAnnotationPlaceholder";
 import { HighlightPopup } from "@/components/reader/HighlightPopup";
+import { OfflineTranslationToolbar } from "@/components/reader/OfflineTranslationToolbar";
 import { PageNavigation } from "@/components/reader/PageNavigation";
 import { PdfAnnotationViewer } from "@/components/reader/PdfAnnotationViewer";
 import { PdfSearchBar } from "@/components/reader/PdfSearchBar";
@@ -15,6 +17,13 @@ import { SidebarTabPanel } from "@/components/reader/SidebarTabPanel";
 import { ZoomControls } from "@/components/reader/ZoomControls";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
 	ResizableHandle,
 	ResizablePanel,
@@ -26,17 +35,11 @@ import { useAutoscroll } from "@/hooks/useAutoscroll";
 import { useKeybindings } from "@/hooks/useKeybindings";
 import { useLocalAnnotations } from "@/hooks/useLocalAnnotations";
 import * as commands from "@/lib/commands";
-import type {
-	FeedItemResponse,
-	PaperResponse,
-} from "@/lib/commands";
+import type { FeedItemResponse, PaperResponse } from "@/lib/commands";
 import { getHtmlAnnotationScript } from "@/lib/htmlAnnotation";
 import { getAllAvailableTabs } from "@/lib/readerTabs";
 import { cn } from "@/lib/utils";
-import {
-	emitParagraphHover,
-	emitTextSelected,
-} from "@/plugins/PluginManager";
+import { emitParagraphHover, emitTextSelected } from "@/plugins/PluginManager";
 import { PluginSlot } from "@/plugins/PluginSlot";
 import { usePluginStore } from "@/plugins/pluginStore";
 import { useAnnotationStore } from "@/stores/annotationStore";
@@ -48,25 +51,26 @@ import type {
 import { ANNOTATION_COLORS } from "@/stores/annotationStore";
 import { useLibraryStore } from "@/stores/libraryStore";
 import { useNoteStore } from "@/stores/noteStore";
+import {
+	offlineTranslationKey,
+	useOfflineTranslationStore,
+} from "@/stores/offlineTranslationStore";
+import {
+	type PromptIndicator,
+	useQuickPromptStore,
+} from "@/stores/quickPromptStore";
 import { useTabStore } from "@/stores/tabStore";
 import {
 	useTranslatedText,
 	useTranslationLoading,
 	useTranslationStore,
 } from "@/stores/translationStore";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useQuickPromptStore, type PromptIndicator } from "@/stores/quickPromptStore";
 import { useIsDarkMode, useUiStore } from "@/stores/uiStore";
 import type {
 	HtmlReaderFontFamily,
 	HtmlReaderTypography,
 } from "@/stores/uiStore";
+import { IconFileTypePdf } from "@tabler/icons-react";
 import { convertFileSrc } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 import { writeText as tauriWriteText } from "@tauri-apps/plugin-clipboard-manager";
@@ -94,7 +98,6 @@ import {
 	Underline,
 	Zap,
 } from "lucide-react";
-import { IconFileTypePdf } from "@tabler/icons-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useGroupRef, usePanelRef } from "react-resizable-panels";
@@ -251,6 +254,7 @@ export function Reader({
 	);
 
 	const handleToggleBilingual = useCallback(() => {
+		updateTab(tabId, { offlineTranslationId: undefined });
 		if (bilingualMode) {
 			updateTab(tabId, { bilingualMode: false });
 			leftPanelRef.current?.expand();
@@ -298,7 +302,10 @@ export function Reader({
 
 	const handleSelectTranslationFile = useCallback(
 		(file: string) => {
-			updateTab(tabId, { bilingualTranslationFile: file });
+			updateTab(tabId, {
+				bilingualTranslationFile: file,
+				offlineTranslationId: undefined,
+			});
 		},
 		[tabId, updateTab],
 	);
@@ -348,6 +355,10 @@ export function Reader({
 		},
 		[tabId, updateTab, setPendingHtmlAnnotationScrollId],
 	);
+	const handleOpenOfflineTranslation = useCallback(() => {
+		leftPanelRef.current?.collapse();
+		rightPanelRef.current?.collapse();
+	}, [leftPanelRef, rightPanelRef]);
 
 	return (
 		<div className="flex h-full w-full flex-col bg-background">
@@ -372,6 +383,14 @@ export function Reader({
 				onSelectTranslationFile={handleSelectTranslationFile}
 			/>
 
+			{readerMode === "pdf" && paperId && (
+				<OfflineTranslationToolbar
+					tabId={tabId}
+					paperId={paperId}
+					sourcePdf={pdfFilename || "paper.pdf"}
+					onOpen={handleOpenOfflineTranslation}
+				/>
+			)}
 			<div className="flex-1 overflow-hidden">
 				<ResizablePanelGroup
 					orientation="horizontal"
@@ -519,6 +538,16 @@ function ReaderCenterPanel({
 	htmlVersion: number;
 	tabId: string;
 }) {
+	const offlineId = useTabStore(
+		(s) => s.tabs.find((tab) => tab.id === tabId)?.offlineTranslationId,
+	);
+	const offlineDocument = useOfflineTranslationStore((s) =>
+		paperId
+			? s.documents[
+					offlineTranslationKey(paperId, pdfFilename || "paper.pdf")
+				]?.find((document) => document.id === offlineId)
+			: undefined,
+	);
 	const containerRef = useRef<HTMLDivElement>(null);
 	const lastHoveredRef = useRef<number | null>(null);
 	const autoscroll = useAutoscroll({ containerRef });
@@ -646,10 +675,19 @@ function ReaderCenterPanel({
 	return (
 		<div ref={containerRef} className="relative h-full w-full">
 			{/* Actual reader content */}
-			{readerMode === "pdf" && !bilingualMode && (
+			{readerMode === "pdf" && !bilingualMode && !offlineDocument && (
 				<PdfAnnotationViewer
 					paperId={paperId}
 					pdfUrl={pdfUrl}
+					pdfFilename={pdfFilename}
+					isActive={isActive}
+				/>
+			)}
+			{readerMode === "pdf" && !bilingualMode && offlineDocument && paperId && (
+				<BilingualTextViewer
+					key={offlineDocument.id}
+					document={offlineDocument}
+					paperId={paperId}
 					pdfFilename={pdfFilename}
 					isActive={isActive}
 				/>
@@ -1560,9 +1598,13 @@ function QuickPromptsDropdown() {
 	);
 }
 
-function QuickPromptIndicatorBadge({ indicator }: { indicator: PromptIndicator }) {
+function QuickPromptIndicatorBadge({
+	indicator,
+}: { indicator: PromptIndicator }) {
 	if (indicator.type === "emoji") {
-		return <span className="text-sm leading-none shrink-0">{indicator.value}</span>;
+		return (
+			<span className="text-sm leading-none shrink-0">{indicator.value}</span>
+		);
 	}
 	return (
 		<span
@@ -1853,7 +1895,10 @@ function HtmlReader({
 	// Sync bilingual layout (interleaved / side-by-side) to iframe
 	useEffect(() => {
 		if (!iframeReadyRef.current) return;
-		postToIframe({ type: "zr-html-set-bilingual-layout", layout: bilingualLayout });
+		postToIframe({
+			type: "zr-html-set-bilingual-layout",
+			layout: bilingualLayout,
+		});
 	}, [bilingualLayout, postToIframe]);
 
 	// Send annotations to iframe whenever they change

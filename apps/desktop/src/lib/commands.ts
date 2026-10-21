@@ -3,6 +3,53 @@
 // See LICENSE file in the project root for full license information.
 
 import { invoke } from "@tauri-apps/api/core";
+import { confirm, save } from "@tauri-apps/plugin-dialog";
+import { writeTextFile } from "@tauri-apps/plugin-fs";
+import { open } from "@tauri-apps/plugin-shell";
+import { openConfirmedTranslationUrl } from "./translationContent";
+
+export const exportAlignmentDiagnostics = async (content: string) => {
+	const path = await save({
+		defaultPath: "zoro-alignment-diagnostics.json",
+		filters: [{ name: "JSON / TXT", extensions: ["json", "txt"] }],
+	});
+	if (path) await writeTextFile(path, content);
+};
+
+export const openOfflineTranslationLink = async (
+	value: string,
+	confirmation: string,
+) => {
+	await openConfirmedTranslationUrl(value, () => confirm(confirmation), open);
+};
+
+export interface OfflineTranslation {
+	id: string;
+	sourcePdf: string;
+	name: string;
+	format: "md" | "txt";
+	content: string;
+	createdAt: string;
+}
+export const listOfflineTranslations = (paperId: string, sourcePdf: string) =>
+	invoke<OfflineTranslation[]>("list_offline_translations", {
+		paperId,
+		sourcePdf,
+	});
+export const importOfflineTranslation = (
+	paperId: string,
+	sourcePdf: string,
+	name: string,
+	content: string,
+) =>
+	invoke<OfflineTranslation>("import_offline_translation", {
+		paperId,
+		sourcePdf,
+		name,
+		content,
+	});
+export const deleteOfflineTranslation = (paperId: string, id: string) =>
+	invoke<void>("delete_offline_translation", { paperId, id });
 
 // Types matching the Rust backend
 export interface PaperResponse {
@@ -496,18 +543,23 @@ export const setDebugMode = (enabled: boolean) =>
 
 export const clearLogs = () => invoke<void>("clear_logs");
 
-export const pushFrontendLog = (level: string, source: string, message: string) =>
-	invoke<void>("push_frontend_log", { level, source, message });
+export const pushFrontendLog = (
+	level: string,
+	source: string,
+	message: string,
+) => invoke<void>("push_frontend_log", { level, source, message });
 
 export interface LogConfigResponse {
 	logToFile: boolean;
 	logRetentionDays: number;
 }
 
-export const getLogConfig = () =>
-	invoke<LogConfigResponse>("get_log_config");
+export const getLogConfig = () => invoke<LogConfigResponse>("get_log_config");
 
-export const updateLogConfig = (logToFile?: boolean, logRetentionDays?: number) =>
+export const updateLogConfig = (
+	logToFile?: boolean,
+	logRetentionDays?: number,
+) =>
 	invoke<void>("update_log_config", {
 		logToFile: logToFile ?? null,
 		logRetentionDays: logRetentionDays ?? null,
